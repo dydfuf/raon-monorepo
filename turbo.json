@@ -4,7 +4,13 @@
   "pipeline": {
     "build": {
       "dependsOn": ["^build"],
-      "outputs": [".next/**", "!.next/cache/**"]
+      "outputs": [".next/**", "!.next/cache/**"],
+      "env": []
+    },
+    "web#build": {
+      "dependsOn": ["^build"],
+      "outputs": [".next/**", "!.next/cache/**"],
+      "env": []
     },
     "lint": {
       "dependsOn": ["^lint"]
@@ -13,5 +19,6 @@
       "cache": false,
       "persistent": true
     }
-  }
+  },
+  "globalDotEnv": []
 }
