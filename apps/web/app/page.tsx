@@ -58,6 +58,7 @@ export default function Page(): JSX.Element {
         <p>
           examples/basic&nbsp;
           <Code className={styles.code}>web</Code>
+          v-0.0.1
         </p>
         <div>
           <a
