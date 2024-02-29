@@ -9,13 +9,16 @@
     "./styles.css": "./dist/index.css",
     "./button": "./src/ui/button.tsx",
     "./card": "./src/card.tsx",
-    "./code": "./src/code.tsx"
+    "./code": "./src/code.tsx",
+    "./lib/*": "./src/lib/*.ts",
+    "./components/*": "./src/ui/*.tsx"
   },
   "scripts": {
     "lint": "eslint ./src --max-warnings 0",
     "build": "tailwindcss -i ./src/styles.css -o dist/index.css",
     "dev": "tailwindcss -i ./src/styles.css -o ./dist/index.css --watch",
-    "type-check": "tsc --noEmit"
+    "type-check": "tsc --noEmit",
+    "ui:add": "pnpm dlx shadcn-ui@latest add"
   },
   "peerDependencies": {
     "react": "^18.2.0"

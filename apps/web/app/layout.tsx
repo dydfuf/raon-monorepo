@@ -17,7 +17,9 @@ export default function RootLayout({
 }): JSX.Element {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <div className="mx-auto flex min-h-full flex-col">{children}</div>
+      </body>
     </html>
   );
 }
