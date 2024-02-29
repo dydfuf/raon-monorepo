@@ -18,7 +18,8 @@
     "./components/avatar": "./src/components/ui/avatar.tsx",
     "./components/badge": "./src/components/ui/badge.tsx",
     "./components/button": "./src/components/ui/button.tsx",
-    "./components/calendar": "./src/components/ui/calendar.tsx"
+    "./components/calendar": "./src/components/ui/calendar.tsx",
+    "./components/card": "./src/components/ui/card.tsx"
   },
   "scripts": {
     "lint": "eslint ./src --max-warnings 0",

@@ -34,6 +34,14 @@ import {
 import { Badge } from "@repo/ui/components/badge";
 import { Calendar } from "@repo/ui/components/calendar";
 import { useState } from "react";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@repo/ui/components/card";
 
 export default function page() {
   const [date, setDate] = useState<Date | undefined>(new Date());
@@ -137,6 +145,20 @@ export default function page() {
           className="rounded-md border shadow"
         />
         {/** @TODO: Form을 활용한 캘린더를 추가해야 합니다. */}
+      </Preview>
+      <Preview title="Card">
+        <Card>
+          <CardHeader>
+            <CardTitle>Card Title</CardTitle>
+            <CardDescription>Card Description</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <p>Card Content</p>
+          </CardContent>
+          <CardFooter>
+            <p>Card Footer</p>
+          </CardFooter>
+        </Card>
       </Preview>
     </div>
   );
