@@ -13,11 +13,12 @@
     "./lib/*": "./src/lib/*.ts",
     "./components/accordion": "./src/components/ui/accordion.tsx",
     "./components/alert": "./src/components/ui/alert.tsx",
-    "./components/button": "./src/components/ui/button.tsx",
     "./components/alert-dialog": "./src/components/ui/alert-dialog.tsx",
     "./components/aspect-ratio": "./src/components/ui/aspect-ratio.tsx",
     "./components/avatar": "./src/components/ui/avatar.tsx",
-    "./components/badge": "./src/components/ui/badge.tsx"
+    "./components/badge": "./src/components/ui/badge.tsx",
+    "./components/button": "./src/components/ui/button.tsx",
+    "./components/calendar": "./src/components/ui/calendar.tsx"
   },
   "scripts": {
     "lint": "eslint ./src --max-warnings 0",
@@ -54,6 +55,8 @@
     "@radix-ui/react-slot": "^1.0.2",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
+    "date-fns": "^3.3.1",
+    "react-day-picker": "^8.10.0",
     "tailwind-merge": "^2.2.1",
     "tailwindcss-animate": "^1.0.7"
   }

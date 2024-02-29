@@ -32,8 +32,12 @@ import {
   AvatarImage,
 } from "@repo/ui/components/avatar";
 import { Badge } from "@repo/ui/components/badge";
+import { Calendar } from "@repo/ui/components/calendar";
+import { useState } from "react";
 
 export default function page() {
+  const [date, setDate] = useState<Date | undefined>(new Date());
+
   return (
     <div className="p-20">
       <Preview title="Accordion">
@@ -124,6 +128,15 @@ export default function page() {
         <Button variant="outline">Outline</Button>
         <Button variant="ghost">Ghost</Button>
         <Button variant="link">Link</Button>
+      </Preview>
+      <Preview title="Calendar">
+        <Calendar
+          mode="single"
+          selected={date}
+          onSelect={setDate}
+          className="rounded-md border shadow"
+        />
+        {/** @TODO: Form을 활용한 캘린더를 추가해야 합니다. */}
       </Preview>
     </div>
   );
