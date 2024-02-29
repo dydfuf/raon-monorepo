@@ -11,7 +11,9 @@
     "./card": "./src/card.tsx",
     "./code": "./src/code.tsx",
     "./lib/*": "./src/lib/*.ts",
-    "./components/*": "./src/ui/*.tsx"
+    "./components/accordion": "./src/components/ui/accordion.tsx",
+    "./components/alert": "./src/components/ui/alert.tsx",
+    "./components/button": "./src/components/ui/button.tsx"
   },
   "scripts": {
     "lint": "eslint ./src --max-warnings 0",

@@ -8,8 +8,11 @@ import {
   AccordionTrigger,
 } from "@repo/ui/components/accordion";
 
+
 import Link from "next/link";
 import Preview from "./Preview";
+import { Alert, AlertDescription, AlertTitle } from "@repo/ui/components/alert";
+import { RocketIcon } from "@radix-ui/react-icons";
 
 export default function page() {
   return (
@@ -52,6 +55,15 @@ export default function page() {
             </AccordionContent>
           </AccordionItem>
         </Accordion>
+      </Preview>
+      <Preview title="Alert">
+        <Alert>
+          <RocketIcon className="h-4 w-4" />
+          <AlertTitle>Heads up!</AlertTitle>
+          <AlertDescription>
+            You can add components to your app using the cli.
+          </AlertDescription>
+        </Alert>
       </Preview>
     </div>
   );
