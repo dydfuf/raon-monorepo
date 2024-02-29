@@ -1,5 +1,8 @@
 "use client";
 
+import Link from "next/link";
+import Image from "next/image";
+
 import { Button, buttonVariants } from "@repo/ui/components/button";
 import {
   Accordion,
@@ -8,11 +11,9 @@ import {
   AccordionTrigger,
 } from "@repo/ui/components/accordion";
 
-
-import Link from "next/link";
-import Preview from "./Preview";
 import { Alert, AlertDescription, AlertTitle } from "@repo/ui/components/alert";
 import { RocketIcon } from "@radix-ui/react-icons";
+import Preview from "./Preview";
 import {
   AlertDialog,
   AlertDialogAction,
@@ -25,7 +26,11 @@ import {
   AlertDialogTrigger,
 } from "@repo/ui/components/alert-dialog";
 import { AspectRatio } from "@repo/ui/components/aspect-ratio";
-import Image from "next/image";
+import {
+  Avatar,
+  AvatarFallback,
+  AvatarImage,
+} from "@repo/ui/components/avatar";
 
 export default function page() {
   return (
@@ -106,6 +111,12 @@ export default function page() {
             unoptimized
           />
         </AspectRatio>
+      </Preview>
+      <Preview title="Avatar">
+        <Avatar>
+          <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
+          <AvatarFallback>CN</AvatarFallback>
+        </Avatar>
       </Preview>
     </div>
   );
