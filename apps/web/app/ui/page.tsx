@@ -36,21 +36,6 @@ import { Badge } from "@repo/ui/components/badge";
 export default function page() {
   return (
     <div className="p-20">
-      <Preview title="Button">
-        <Button variant="outline">Button</Button>
-        <Link className={buttonVariants({ variant: "outline" })} href={"/"}>
-          Click here
-        </Link>
-        <Button asChild>
-          <Link href="/login">Login</Link>
-        </Button>
-        <Button>Secondary</Button>
-        <Button variant="secondary">Secondary</Button>
-        <Button variant="destructive">Destructive</Button>
-        <Button variant="outline">Outline</Button>
-        <Button variant="ghost">Ghost</Button>
-        <Button variant="link">Link</Button>
-      </Preview>
       <Preview title="Accordion">
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="item-1">
@@ -124,6 +109,21 @@ export default function page() {
         <Badge variant="secondary">Secondary</Badge>
         <Badge variant="outline">Outline</Badge>
         <Badge variant="destructive">Destructive</Badge>
+      </Preview>
+      <Preview title="Button">
+        <Button variant="outline">Button</Button>
+        <Link className={buttonVariants({ variant: "outline" })} href={"/"}>
+          Click here
+        </Link>
+        <Button asChild>
+          <Link href="/login">Login</Link>
+        </Button>
+        <Button>Secondary</Button>
+        <Button variant="secondary">Secondary</Button>
+        <Button variant="destructive">Destructive</Button>
+        <Button variant="outline">Outline</Button>
+        <Button variant="ghost">Ghost</Button>
+        <Button variant="link">Link</Button>
       </Preview>
     </div>
   );
