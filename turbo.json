@@ -12,6 +12,11 @@
       "outputs": [".next/**", "!.next/cache/**"],
       "env": []
     },
+    "web#docs": {
+      "dependsOn": ["^build"],
+      "outputs": [".next/**", "!.next/cache/**"],
+      "env": []
+    },
     "lint": {
       "dependsOn": ["^lint"]
     },
