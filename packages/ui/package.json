@@ -16,7 +16,8 @@
     "./components/button": "./src/components/ui/button.tsx",
     "./components/alert-dialog": "./src/components/ui/alert-dialog.tsx",
     "./components/aspect-ratio": "./src/components/ui/aspect-ratio.tsx",
-    "./components/avatar": "./src/components/ui/avatar.tsx"
+    "./components/avatar": "./src/components/ui/avatar.tsx",
+    "./components/badge": "./src/components/ui/badge.tsx"
   },
   "scripts": {
     "lint": "eslint ./src --max-warnings 0",

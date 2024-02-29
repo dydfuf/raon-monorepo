@@ -31,6 +31,7 @@ import {
   AvatarFallback,
   AvatarImage,
 } from "@repo/ui/components/avatar";
+import { Badge } from "@repo/ui/components/badge";
 
 export default function page() {
   return (
@@ -117,6 +118,12 @@ export default function page() {
           <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
           <AvatarFallback>CN</AvatarFallback>
         </Avatar>
+      </Preview>
+      <Preview title="Badge">
+        <Badge>Badge</Badge>
+        <Badge variant="secondary">Secondary</Badge>
+        <Badge variant="outline">Outline</Badge>
+        <Badge variant="destructive">Destructive</Badge>
       </Preview>
     </div>
   );
