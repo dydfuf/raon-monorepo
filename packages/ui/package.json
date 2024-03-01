@@ -4,7 +4,6 @@
   "sideEffects": [
     "**/*.css"
   ],
-  "private": true,
   "exports": {
     "./styles.css": "./dist/index.css",
     "./button": "./src/ui/button.tsx",
