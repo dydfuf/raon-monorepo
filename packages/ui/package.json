@@ -10,6 +10,7 @@
     "./button": "./src/ui/button.tsx",
     "./card": "./src/card.tsx",
     "./code": "./src/code.tsx",
+    "./Version": "./src/version.tsx",
     "./lib/*": "./src/lib/*.ts",
     "./components/accordion": "./src/components/ui/accordion.tsx",
     "./components/alert": "./src/components/ui/alert.tsx",
