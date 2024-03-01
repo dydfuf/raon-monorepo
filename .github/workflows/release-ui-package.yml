@@ -37,6 +37,6 @@ jobs:
         with:
             version: 8
       - run: pnpm install
-      - run: pnpm publish
+      - run: pnpm publish --filter=ui --no-git-checks 
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
