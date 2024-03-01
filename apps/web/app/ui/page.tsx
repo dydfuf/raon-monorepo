@@ -3,15 +3,19 @@
 import Link from "next/link";
 import Image from "next/image";
 
-import { Button, buttonVariants } from "@repo/ui/components/button";
+import { Button, buttonVariants } from "@dydfuf/ui/components/button";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@repo/ui/components/accordion";
+} from "@dydfuf/ui/components/accordion";
 
-import { Alert, AlertDescription, AlertTitle } from "@repo/ui/components/alert";
+import {
+  Alert,
+  AlertDescription,
+  AlertTitle,
+} from "@dydfuf/ui/components/alert";
 import {
   BarChartIcon,
   CalendarIcon,
@@ -39,15 +43,15 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
   AlertDialogTrigger,
-} from "@repo/ui/components/alert-dialog";
-import { AspectRatio } from "@repo/ui/components/aspect-ratio";
+} from "@dydfuf/ui/components/alert-dialog";
+import { AspectRatio } from "@dydfuf/ui/components/aspect-ratio";
 import {
   Avatar,
   AvatarFallback,
   AvatarImage,
-} from "@repo/ui/components/avatar";
-import { Badge } from "@repo/ui/components/badge";
-import { Calendar } from "@repo/ui/components/calendar";
+} from "@dydfuf/ui/components/avatar";
+import { Badge } from "@dydfuf/ui/components/badge";
+import { Calendar } from "@dydfuf/ui/components/calendar";
 import {
   CSSProperties,
   ComponentPropsWithoutRef,
@@ -62,25 +66,25 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@repo/ui/components/card";
+} from "@dydfuf/ui/components/card";
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from "@repo/ui/components/carousel";
-import { Checkbox } from "@repo/ui/components/checkbox";
+} from "@dydfuf/ui/components/carousel";
+import { Checkbox } from "@dydfuf/ui/components/checkbox";
 import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
-} from "@repo/ui/components/collapsible";
+} from "@dydfuf/ui/components/collapsible";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@repo/ui/components/popover";
+} from "@dydfuf/ui/components/popover";
 import {
   Command,
   CommandEmpty,
@@ -90,8 +94,8 @@ import {
   CommandList,
   CommandSeparator,
   CommandShortcut,
-} from "@repo/ui/components/command";
-import { cn } from "@repo/ui/lib/utils";
+} from "@dydfuf/ui/components/command";
+import { cn } from "@dydfuf/ui/lib/utils";
 import {
   ContextMenu,
   ContextMenuCheckboxItem,
@@ -106,7 +110,7 @@ import {
   ContextMenuSubContent,
   ContextMenuSubTrigger,
   ContextMenuTrigger,
-} from "@repo/ui/components/context-menu";
+} from "@dydfuf/ui/components/context-menu";
 import { format } from "date-fns";
 import {
   Dialog,
@@ -116,9 +120,9 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@repo/ui/components/dialog";
-import { Label } from "@repo/ui/components/label";
-import { Input } from "@repo/ui/components/input";
+} from "@dydfuf/ui/components/dialog";
+import { Label } from "@dydfuf/ui/components/label";
+import { Input } from "@dydfuf/ui/components/input";
 import {
   Drawer,
   DrawerClose,
@@ -128,7 +132,7 @@ import {
   DrawerHeader,
   DrawerTitle,
   DrawerTrigger,
-} from "@repo/ui/components/drawer";
+} from "@dydfuf/ui/components/drawer";
 import { Bar, ResponsiveContainer } from "recharts";
 import {
   DropdownMenu,
@@ -143,12 +147,12 @@ import {
   DropdownMenuSubContent,
   DropdownMenuSubTrigger,
   DropdownMenuTrigger,
-} from "@repo/ui/components/dropdown-menu";
+} from "@dydfuf/ui/components/dropdown-menu";
 import {
   HoverCard,
   HoverCardContent,
   HoverCardTrigger,
-} from "@repo/ui/components/hover-card";
+} from "@dydfuf/ui/components/hover-card";
 import {
   Menubar,
   MenubarCheckboxItem,
@@ -163,7 +167,7 @@ import {
   MenubarSubContent,
   MenubarSubTrigger,
   MenubarTrigger,
-} from "@repo/ui/components/menubar";
+} from "@dydfuf/ui/components/menubar";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -172,7 +176,7 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
-} from "@repo/ui/components/navigation-menu";
+} from "@dydfuf/ui/components/navigation-menu";
 import {
   Pagination,
   PaginationContent,
@@ -181,16 +185,16 @@ import {
   PaginationLink,
   PaginationNext,
   PaginationPrevious,
-} from "@repo/ui/components/pagination";
-import { Progress } from "@repo/ui/components/progress";
-import { RadioGroup, RadioGroupItem } from "@repo/ui/components/radio-group";
+} from "@dydfuf/ui/components/pagination";
+import { Progress } from "@dydfuf/ui/components/progress";
+import { RadioGroup, RadioGroupItem } from "@dydfuf/ui/components/radio-group";
 import {
   ResizableHandle,
   ResizablePanel,
   ResizablePanelGroup,
-} from "@repo/ui/components/resizable";
-import { ScrollArea } from "@repo/ui/components/scroll-area";
-import { Separator } from "@repo/ui/components/separator";
+} from "@dydfuf/ui/components/resizable";
+import { ScrollArea } from "@dydfuf/ui/components/scroll-area";
+import { Separator } from "@dydfuf/ui/components/separator";
 import {
   Select,
   SelectContent,
@@ -199,7 +203,7 @@ import {
   SelectLabel,
   SelectTrigger,
   SelectValue,
-} from "@repo/ui/components/select";
+} from "@dydfuf/ui/components/select";
 import {
   Sheet,
   SheetClose,
@@ -209,11 +213,11 @@ import {
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-} from "@repo/ui/components/sheet";
-import { Skeleton } from "@repo/ui/components/skeleton";
-import { Slider } from "@repo/ui/components/slider";
-import { toast } from "@repo/ui/components/sonner";
-import { Switch } from "@repo/ui/components/switch";
+} from "@dydfuf/ui/components/sheet";
+import { Skeleton } from "@dydfuf/ui/components/skeleton";
+import { Slider } from "@dydfuf/ui/components/slider";
+import { toast } from "@dydfuf/ui/components/sonner";
+import { Switch } from "@dydfuf/ui/components/switch";
 import {
   Table,
   TableBody,
@@ -223,22 +227,25 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@repo/ui/components/table";
+} from "@dydfuf/ui/components/table";
 import {
   Tabs,
   TabsContent,
   TabsList,
   TabsTrigger,
-} from "@repo/ui/components/tabs";
-import { Textarea } from "@repo/ui/components/textarea";
-import { Toggle } from "@repo/ui/components/toggle";
-import { ToggleGroup, ToggleGroupItem } from "@repo/ui/components/toggle-group";
+} from "@dydfuf/ui/components/tabs";
+import { Textarea } from "@dydfuf/ui/components/textarea";
+import { Toggle } from "@dydfuf/ui/components/toggle";
+import {
+  ToggleGroup,
+  ToggleGroupItem,
+} from "@dydfuf/ui/components/toggle-group";
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "@repo/ui/components/tooltip";
+} from "@dydfuf/ui/components/tooltip";
 import { ToggleTheme } from "../components/ToggleTheme";
 
 const frameworks = [

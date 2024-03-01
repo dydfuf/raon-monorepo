@@ -1,4 +1,4 @@
-import Version from "@repo/ui/Version";
+import Version from "@dydfuf/ui/Version";
 
 export default function page() {
   return (

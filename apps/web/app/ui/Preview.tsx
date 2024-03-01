@@ -1,4 +1,4 @@
-import { cn } from "@repo/ui/lib/utils";
+import { cn } from "@dydfuf/ui/lib/utils";
 import { PropsWithChildren } from "react";
 
 interface Props {
