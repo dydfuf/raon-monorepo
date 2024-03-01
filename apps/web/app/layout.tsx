@@ -3,6 +3,8 @@ import "./globals.css";
 import "@repo/ui/styles.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { ThemeProvider } from "./components/ThemeProvider";
+import { cn } from "@repo/ui/lib/utils";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,9 +20,18 @@ export default function RootLayout({
 }): JSX.Element {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <div className="mx-auto flex min-h-full flex-col">{children}</div>
-        <Toaster />
+      <body className={(cn(inter.className), "bg-background")}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <div className="mx-auto flex min-h-full flex-col bg-background">
+            {children}
+          </div>
+          <Toaster />
+        </ThemeProvider>
       </body>
     </html>
   );

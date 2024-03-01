@@ -239,6 +239,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@repo/ui/components/tooltip";
+import { ToggleTheme } from "../components/ToggleTheme";
 
 const frameworks = [
   {
@@ -406,7 +407,8 @@ export default function page() {
   }
 
   return (
-    <div className="p-20">
+    <div className="p-20 flex flex-col gap-10">
+      <ToggleTheme />
       <Preview title="Accordion">
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="item-1">
