@@ -1,3 +1,4 @@
+import { Toaster } from "@repo/ui/components/sonner";
 import "./globals.css";
 import "@repo/ui/styles.css";
 import type { Metadata } from "next";
@@ -19,6 +20,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <div className="mx-auto flex min-h-full flex-col">{children}</div>
+        <Toaster />
       </body>
     </html>
   );
