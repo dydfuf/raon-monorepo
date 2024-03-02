@@ -6,11 +6,13 @@
     "dev": "turbo dev",
     "lint": "turbo lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "ui:add": "pnpm --filter @repo/ui ui:add"
+    "ui:add": "pnpm --filter @repo/ui ui:add",
+    "commit": "better-commits"
   },
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
+    "better-commits": "^1.12.0",
     "prettier": "^3.1.1",
     "turbo": "latest"
   },
