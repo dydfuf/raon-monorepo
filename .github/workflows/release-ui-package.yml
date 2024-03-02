@@ -33,6 +33,7 @@ jobs:
         with:
           node-version: 20.11.1
           registry-url: https://npm.pkg.github.com/
+          scope: '@dydfuf'
       - uses: pnpm/action-setup@v3
         with:
             version: 8

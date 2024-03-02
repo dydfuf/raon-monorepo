@@ -1,6 +1,10 @@
 {
   "name": "@dydfuf/ui",
   "version": "0.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dydfuf/raon-monorepo.git"
+  },
   "sideEffects": [
     "**/*.css"
   ],
