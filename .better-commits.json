@@ -4,8 +4,8 @@
     "enable": true,
     "initial_value": "feat",
     "infer_type_from_branch": true,
-    "append_emoji_to_label": false,
-    "append_emoji_to_commit": false,
+    "append_emoji_to_label": true,
+    "append_emoji_to_commit": true,
     "options": [
       {
         "value": "feat",
@@ -36,25 +36,11 @@
         "trailer": "Changelog: refactor"
       },
       {
-        "value": "perf",
-        "label": "perf",
-        "hint": "A code change that improves performance",
-        "emoji": "🚀",
-        "trailer": "Changelog: performance"
-      },
-      {
         "value": "test",
         "label": "test",
         "hint": "Adding missing tests or correcting existing tests",
         "emoji": "🚨",
         "trailer": "Changelog: test"
-      },
-      {
-        "value": "build",
-        "label": "build",
-        "hint": "Changes that affect the build system or external dependencies",
-        "emoji": "🚧",
-        "trailer": "Changelog: build"
       },
       {
         "value": "ci",
@@ -86,16 +72,12 @@
         "label": "app"
       },
       {
-        "value": "shared",
-        "label": "shared"
+        "value": "package",
+        "label": "package"
       },
       {
-        "value": "server",
-        "label": "server"
-      },
-      {
-        "value": "tools",
-        "label": "tools"
+        "value": "common",
+        "label": "common"
       },
       {
         "value": "",
@@ -119,12 +101,7 @@
     "required": false
   },
   "commit_footer": {
-    "enable": true,
-    "initial_value": [],
-    "options": ["closes", "trailer", "breaking-change", "deprecated", "custom"]
-  },
-  "breaking_change": {
-    "add_exclamation_to_title": true
+    "enable": false
   },
   "confirm_commit": true,
   "confirm_with_editor": false,
