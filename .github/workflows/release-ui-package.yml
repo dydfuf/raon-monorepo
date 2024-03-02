@@ -39,4 +39,4 @@ jobs:
       - run: pnpm install
       - run: npm publish --filter=ui --no-git-checks 
         env:
-          NODE_AUTH_TOKEN: ${{secrets.RELEASE_TOKEN}}
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
