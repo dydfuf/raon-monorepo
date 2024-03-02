@@ -1,5 +1,9 @@
 import { defineConfig } from "astro/config";
 import starlight from "@astrojs/starlight";
+import liveCode from "astro-live-code";
+import react from "@astrojs/react";
+
+import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
@@ -14,14 +18,24 @@ export default defineConfig({
           label: "Guides",
           items: [
             // Each item here is one entry in the navigation menu.
-            { label: "Example Guide", link: "/guides/example/" },
+            {
+              label: "Example Guide",
+              link: "/guides/example/",
+            },
           ],
         },
         {
           label: "Reference",
-          autogenerate: { directory: "reference" },
+          autogenerate: {
+            directory: "reference",
+          },
         },
       ],
+    }),
+    liveCode(),
+    react(),
+    tailwind({
+      applyBaseStyles: false,
     }),
   ],
 });
