@@ -90,7 +90,7 @@
     "confirm_ticket": true,
     "add_to_title": true,
     "append_hashtag": false,
-    "surround": "",
+    "surround": "[]",
     "title_position": "start"
   },
   "commit_title": {
