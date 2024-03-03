@@ -1,6 +1,6 @@
 import { cn } from "@repo/ui/lib/utils";
-import "@repo/ui/styles.css";
 import "./globals.css";
+import "@repo/ui/styles.css";
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import { ThemeProvider } from "../components/providers";
