@@ -13,6 +13,13 @@ const config: Omit<Config, "content"> = {
         "2xl": "1400px",
       },
     },
+    screen: {
+      sm: "640px",
+      md: "768px",
+      lg: "1024px",
+      xl: "1280px",
+      "2xl": "1536px",
+    },
     extend: {
       colors: {
         border: "hsl(var(--border))",
