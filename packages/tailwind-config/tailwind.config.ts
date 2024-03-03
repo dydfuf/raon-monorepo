@@ -13,7 +13,7 @@ const config: Omit<Config, "content"> = {
         "2xl": "1400px",
       },
     },
-    screen: {
+    screens: {
       sm: "640px",
       md: "768px",
       lg: "1024px",
