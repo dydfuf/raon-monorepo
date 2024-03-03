@@ -6,7 +6,9 @@
   ],
   "private": true,
   "exports": {
-    "./globals.css": "./src/styles.css",
+    "./tailwind.config": "./tailwind.config.ts",
+    "./postcss.config": "./postcss.config.js",
+    "./globals.css": "./src/globals.css",
     "./styles.css": "./dist/index.css",
     "./button": "./src/ui/button.tsx",
     "./card": "./src/card.tsx",
@@ -61,7 +63,6 @@
   "scripts": {
     "lint": "eslint ./src --max-warnings 0",
     "build": "tailwindcss -i ./src/styles.css -o dist/index.css",
-    "dev": "tailwindcss -i ./src/styles.css -o ./dist/index.css --watch",
     "type-check": "tsc --noEmit",
     "ui:add": "pnpm dlx shadcn-ui@latest add"
   },

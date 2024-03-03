@@ -1,6 +1,5 @@
 import { Toaster } from "@repo/ui/components/sonner";
-import "./globals.css";
-import "@repo/ui/styles.css";
+import "@repo/ui/globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { ThemeProvider } from "./components/ThemeProvider";
