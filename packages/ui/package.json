@@ -62,7 +62,6 @@
   },
   "scripts": {
     "lint": "eslint ./src --max-warnings 0",
-    "build": "tailwindcss -i ./src/styles.css -o dist/index.css",
     "type-check": "tsc --noEmit",
     "ui:add": "pnpm dlx shadcn-ui@latest add"
   },
