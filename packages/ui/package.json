@@ -9,7 +9,6 @@
     "./tailwind.config": "./tailwind.config.ts",
     "./postcss.config": "./postcss.config.js",
     "./globals.css": "./src/globals.css",
-    "./styles.css": "./dist/index.css",
     "./button": "./src/ui/button.tsx",
     "./card": "./src/card.tsx",
     "./code": "./src/code.tsx",
