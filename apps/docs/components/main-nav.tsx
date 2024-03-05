@@ -4,9 +4,8 @@ import * as React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@repo/ui/lib/utils";
-
-// @TODO: RAON-29 - Add siteConfig
-// import { siteConfig } from "@/config/site";
+import { siteConfig } from "../config/site";
+import { Icons } from "./icons";
 
 export function MainNav() {
   const pathname = usePathname();
@@ -14,9 +13,9 @@ export function MainNav() {
   return (
     <div className="mr-4 hidden md:flex">
       <Link href="/" className="mr-6 flex items-center space-x-2">
-        {/* <Icons.logo className="h-6 w-6" /> */}
+        <Icons.logo className="h-6 w-6" />
         <span className="hidden font-bold sm:inline-block">
-          {/* {siteConfig.name} */}
+          {siteConfig.name}
         </span>
       </Link>
       <nav className="flex items-center gap-6 text-sm">
@@ -63,8 +62,7 @@ export function MainNav() {
           Examples
         </Link>
         <Link
-          //   href={siteConfig.links.github}
-          href="/github"
+          href={siteConfig.links.github}
           className={cn(
             "hidden text-foreground/60 transition-colors hover:text-foreground/80 lg:block"
           )}
