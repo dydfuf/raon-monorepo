@@ -7,9 +7,9 @@ import { Sheet, SheetContent, SheetTrigger } from "@repo/ui/components/sheet";
 import { ScrollArea } from "@repo/ui/components/scroll-area";
 import { Button } from "@repo/ui/components/button";
 import { cn } from "@repo/ui/lib/utils";
-
-// @TODO: RAON-29 - Add siteConfig
-// import { siteConfig } from "@/config/site";
+import { siteConfig } from "../config/site";
+import { Icons } from "./icons";
+import { docsConfig } from "../config/docs";
 
 export function MobileNav() {
   const [open, setOpen] = React.useState(false);
@@ -59,13 +59,12 @@ export function MobileNav() {
           className="flex items-center"
           onOpenChange={setOpen}
         >
-          {/* <Icons.logo className="mr-2 h-4 w-4" />
-          <span className="font-bold">{siteConfig.name}</span> */}
-          todo
+          <Icons.logo className="mr-2 h-4 w-4" />
+          <span className="font-bold">{siteConfig.name}</span>
         </MobileLink>
         <ScrollArea className="my-4 h-[calc(100vh-8rem)] pb-10 pl-6">
           <div className="flex flex-col space-y-3">
-            {/* {docsConfig.mainNav?.map(
+            {docsConfig.mainNav?.map(
               (item) =>
                 item.href && (
                   <MobileLink
@@ -76,10 +75,10 @@ export function MobileNav() {
                     {item.title}
                   </MobileLink>
                 )
-            )} */}
+            )}
           </div>
           <div className="flex flex-col space-y-2">
-            {/* {docsConfig.sidebarNav.map((item, index) => (
+            {docsConfig.sidebarNav.map((item, index) => (
               <div key={index} className="flex flex-col space-y-3 pt-6">
                 <h4 className="font-medium">{item.title}</h4>
                 {item?.items?.length &&
@@ -105,7 +104,7 @@ export function MobileNav() {
                     </React.Fragment>
                   ))}
               </div>
-            ))} */}
+            ))}
           </div>
         </ScrollArea>
       </SheetContent>

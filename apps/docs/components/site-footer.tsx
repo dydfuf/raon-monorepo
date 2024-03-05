@@ -1,5 +1,4 @@
-// @TODO: RAON-29 - Add siteConfig
-// import { siteConfig } from "@/config/site";
+import { siteConfig } from "../config/site";
 
 export function SiteFooter() {
   return (
@@ -8,18 +7,16 @@ export function SiteFooter() {
         <p className="text-balance text-center text-sm leading-loose text-muted-foreground md:text-left">
           해당 UI 패키지는{" "}
           <a
-            // href={siteConfig.links.twitter}
-            href="/twitter"
+            href="https://ui.shadcn.com"
             target="_blank"
             rel="noreferrer"
             className="font-medium underline underline-offset-4"
           >
             shadcn
           </a>
-          을 기반으로 만들어졌습니다. 소스코드는{" "}
+          을 기반으로 확장했습니다. 소스코드는{" "}
           <a
-            // href={siteConfig.links.github}
-            href="/github"
+            href={siteConfig.links.github}
             target="_blank"
             rel="noreferrer"
             className="font-medium underline underline-offset-4"
