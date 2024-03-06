@@ -20,15 +20,6 @@ export function MainNav() {
       </Link>
       <nav className="flex items-center gap-6 text-sm">
         <Link
-          href="/docs"
-          className={cn(
-            "transition-colors hover:text-foreground/80",
-            pathname === "/docs" ? "text-foreground" : "text-foreground/60"
-          )}
-        >
-          Docs
-        </Link>
-        <Link
           href="/docs/components"
           className={cn(
             "transition-colors hover:text-foreground/80",
@@ -40,32 +31,26 @@ export function MainNav() {
           Components
         </Link>
         <Link
-          href="/themes"
-          className={cn(
-            "transition-colors hover:text-foreground/80",
-            pathname?.startsWith("/themes")
-              ? "text-foreground"
-              : "text-foreground/60"
-          )}
+          href={siteConfig.links.blog}
+          className="transition-colors hover:text-foreground/80 text-foreground/60"
+          target="_blank"
+          rel="noopener noreferrer"
         >
-          Themes
+          Blog
         </Link>
         <Link
-          href="/examples"
-          className={cn(
-            "transition-colors hover:text-foreground/80",
-            pathname?.startsWith("/examples")
-              ? "text-foreground"
-              : "text-foreground/60"
-          )}
+          href={siteConfig.links.cookieJelly}
+          className="transition-colors hover:text-foreground/80 text-foreground/60"
+          target="_blank"
+          rel="noopener noreferrer"
         >
-          Examples
+          Cookie-Jelly
         </Link>
         <Link
           href={siteConfig.links.github}
-          className={cn(
-            "hidden text-foreground/60 transition-colors hover:text-foreground/80 lg:block"
-          )}
+          className="hidden text-foreground/60 transition-colors hover:text-foreground/80 lg:block"
+          target="_blank"
+          rel="noopener noreferrer"
         >
           GitHub
         </Link>

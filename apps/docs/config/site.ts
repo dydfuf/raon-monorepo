@@ -7,6 +7,8 @@ export const siteConfig = {
   links: {
     linkedIn: "https://www.linkedin.com/in/%EC%B5%9C%EC%9A%A9%EC%97%B4/",
     github: "https://github.com/dydfuf/raon-monorepo",
+    blog: "https://raondev.vercel.app",
+    cookieJelly: "https://cookie-jelly.vercel.app",
   },
 };
 
