@@ -1,5 +1,5 @@
 import { MainNavItem, SidebarNavItem } from "../types/nav";
-
+import { siteConfig } from "./site";
 interface DocsConfig {
   mainNav: MainNavItem[];
   sidebarNav: SidebarNavItem[];
@@ -8,33 +8,27 @@ interface DocsConfig {
 export const docsConfig: DocsConfig = {
   mainNav: [
     {
-      title: "Documentation",
-      href: "/docs",
-    },
-    {
       title: "Components",
       href: "/docs/components/accordion",
     },
     {
-      title: "Themes",
-      href: "/themes",
-    },
-    {
-      title: "Examples",
-      href: "/examples",
-    },
-    {
-      title: "Figma",
-      href: "/docs/figma",
-    },
-    {
-      title: "GitHub",
-      href: "https://github.com/shadcn/ui",
+      title: "Blog",
+      href: siteConfig.links.blog,
       external: true,
     },
     {
-      title: "Twitter",
-      href: "https://twitter.com/shadcn",
+      title: "Cookie-Jelly",
+      href: siteConfig.links.cookieJelly,
+      external: true,
+    },
+    {
+      title: "LinkedIn",
+      href: siteConfig.links.linkedIn,
+      external: true,
+    },
+    {
+      title: "GitHub",
+      href: siteConfig.links.github,
       external: true,
     },
   ],
