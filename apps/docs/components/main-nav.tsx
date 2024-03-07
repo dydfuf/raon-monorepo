@@ -31,6 +31,17 @@ export function MainNav() {
           Components
         </Link>
         <Link
+          href="/docs/projects"
+          className={cn(
+            "transition-colors hover:text-foreground/80",
+            pathname?.startsWith("/docs/projects")
+              ? "text-foreground"
+              : "text-foreground/60"
+          )}
+        >
+          Projects
+        </Link>
+        <Link
           href={siteConfig.links.blog}
           className="transition-colors hover:text-foreground/80 text-foreground/60"
           target="_blank"

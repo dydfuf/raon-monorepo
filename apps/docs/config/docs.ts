@@ -6,80 +6,36 @@ interface DocsConfig {
 }
 
 export const docsConfig: DocsConfig = {
-  mainNav: [
-    {
-      title: "Components",
-      href: "/docs/components/accordion",
-    },
-    {
-      title: "Blog",
-      href: siteConfig.links.blog,
-      external: true,
-    },
-    {
-      title: "Cookie-Jelly",
-      href: siteConfig.links.cookieJelly,
-      external: true,
-    },
-    {
-      title: "LinkedIn",
-      href: siteConfig.links.linkedIn,
-      external: true,
-    },
-    {
-      title: "GitHub",
-      href: siteConfig.links.github,
-      external: true,
-    },
-  ],
+  mainNav: [],
   sidebarNav: [
     {
-      title: "Getting Started",
+      title: "Raonc Projects",
       items: [
         {
-          title: "Introduction",
-          href: "/docs",
+          title: "Blog",
+          href: "/docs/projects/blog",
           items: [],
+          label: "✍️",
         },
         {
-          title: "Installation",
-          href: "/docs/installation",
+          title: "Cookie-Jelly",
+          href: "/docs/projects/cookie-jelly",
           items: [],
+          label: "🍪",
         },
         {
-          title: "components.json",
-          href: "/docs/components-json",
+          title: "LinkedIn",
+          href: siteConfig.links.linkedIn,
+          external: true,
           items: [],
+          label: "↗️",
         },
         {
-          title: "Theming",
-          href: "/docs/theming",
+          title: "GitHub",
+          href: siteConfig.links.github,
+          external: true,
           items: [],
-        },
-        {
-          title: "Dark mode",
-          href: "/docs/dark-mode",
-          items: [],
-        },
-        {
-          title: "CLI",
-          href: "/docs/cli",
-          items: [],
-        },
-        {
-          title: "Typography",
-          href: "/docs/components/typography",
-          items: [],
-        },
-        {
-          title: "Figma",
-          href: "/docs/figma",
-          items: [],
-        },
-        {
-          title: "Changelog",
-          href: "/docs/changelog",
-          items: [],
+          label: "↗️",
         },
       ],
     },
@@ -135,7 +91,6 @@ export const docsConfig: DocsConfig = {
           title: "Carousel",
           href: "/docs/components/carousel",
           items: [],
-          label: "New",
         },
         {
           title: "Checkbox",
@@ -181,7 +136,6 @@ export const docsConfig: DocsConfig = {
           title: "Drawer",
           href: "/docs/components/drawer",
           items: [],
-          label: "New",
         },
         {
           title: "Dropdown Menu",
@@ -222,7 +176,6 @@ export const docsConfig: DocsConfig = {
           title: "Pagination",
           href: "/docs/components/pagination",
           items: [],
-          label: "New",
         },
         {
           title: "Popover",
@@ -243,7 +196,6 @@ export const docsConfig: DocsConfig = {
           title: "Resizable",
           href: "/docs/components/resizable",
           items: [],
-          label: "New",
         },
         {
           title: "Scroll Area",
@@ -279,7 +231,6 @@ export const docsConfig: DocsConfig = {
           title: "Sonner",
           href: "/docs/components/sonner",
           items: [],
-          label: "New",
         },
         {
           title: "Switch",
