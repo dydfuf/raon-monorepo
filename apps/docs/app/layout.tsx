@@ -1,4 +1,5 @@
 import "@repo/ui/globals.css";
+import "../styles/mdx.css";
 import { cn } from "@repo/ui/lib/utils";
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
