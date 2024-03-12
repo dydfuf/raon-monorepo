@@ -21,6 +21,10 @@ import {
 } from "@repo/ui/components/tabs";
 import { cn } from "@repo/ui/lib/utils";
 import { CopyButton } from "./copy-button";
+import { Callout } from "./callout";
+import { CodeBlockWrapper } from "./code-block-wrapper";
+import { ComponentPreview } from "./component-preview";
+import { ComponentSource } from "./component-source";
 
 const components = {
   Accordion,
@@ -191,14 +195,13 @@ const components = {
     />
   ),
   Image,
-  //   Callout,
-  //   ComponentPreview,
-  //   ComponentExample,
-  //   ComponentSource,
+  Callout,
+  ComponentPreview,
+  ComponentSource,
   AspectRatio,
-  //   CodeBlockWrapper: ({ ...props }) => (
-  //     <CodeBlockWrapper className="rounded-md border" {...props} />
-  //   ),
+  CodeBlockWrapper: ({ ...props }) => (
+    <CodeBlockWrapper className="rounded-md border" {...props} />
+  ),
   Step: ({ className, ...props }: React.ComponentProps<"h3">) => (
     <h3
       className={cn(
@@ -253,12 +256,6 @@ const components = {
       {...props}
     />
   ),
-  //   FrameworkDocs: ({
-  //     className,
-  //     ...props
-  //   }: React.ComponentProps<typeof FrameworkDocs>) => (
-  //     <FrameworkDocs className={cn(className)} {...props} />
-  //   ),
   Link: ({ className, ...props }: React.ComponentProps<typeof Link>) => (
     <Link
       className={cn("font-medium underline underline-offset-4", className)}

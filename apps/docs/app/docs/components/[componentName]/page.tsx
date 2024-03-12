@@ -5,14 +5,53 @@ import { cn } from "@repo/ui/lib/utils";
 import { Mdx } from "components/mdx-components";
 import { DocsPager } from "components/pager";
 import { DashboardTableOfContents } from "components/toc";
+import { siteConfig } from "config/site";
 import { allDocs } from "contentlayer/generated";
 import { getTableOfContents } from "lib/toc";
+import { absoluteUrl } from "lib/utils";
+import { Metadata } from "next";
 import Link from "next/link";
 import Balancer from "react-wrap-balancer";
 
 interface ComponentsDetailPageProps {
   params: {
     componentName: string;
+  };
+}
+
+export async function generateMetadata({
+  params,
+}: ComponentsDetailPageProps): Promise<Metadata> {
+  const doc = await getDocFromParams({ params });
+
+  if (!doc) {
+    return {};
+  }
+
+  return {
+    title: doc.title,
+    description: doc.description,
+    openGraph: {
+      title: doc.title,
+      description: doc.description,
+      type: "article",
+      url: absoluteUrl(doc.slug),
+      images: [
+        {
+          url: siteConfig.ogImage,
+          width: 1200,
+          height: 630,
+          alt: siteConfig.name,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: doc.title,
+      description: doc.description,
+      images: [siteConfig.ogImage],
+      creator: "@shadcn",
+    },
   };
 }
 
@@ -25,6 +64,14 @@ async function getDocFromParams({ params }: ComponentsDetailPageProps) {
   }
 
   return doc;
+}
+
+export async function generateStaticParams(): Promise<
+  ComponentsDetailPageProps["params"][]
+> {
+  return allDocs.map((doc) => ({
+    componentName: doc.slugAsParams,
+  }));
 }
 
 export default async function ComponentsDetailPage({

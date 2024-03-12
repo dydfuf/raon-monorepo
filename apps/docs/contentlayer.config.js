@@ -12,6 +12,7 @@ import rehypePrettyCode from "rehype-pretty-code";
 import { getHighlighter, loadTheme } from "shiki";
 import path from "path";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
+import { rehypeComponent } from "./lib/rehype-component";
 
 /** @type {import('contentlayer/source-files').ComputedFields} */
 const computedFields = {
@@ -88,6 +89,7 @@ const contentSource = makeSource({
     remarkPlugins: [remarkGfm, codeImport],
     rehypePlugins: [
       rehypeSlug,
+      rehypeComponent,
       () => (tree) => {
         visit(tree, (node) => {
           if (node?.type === "element" && node?.tagName === "pre") {

@@ -114,6 +114,9 @@ importers:
       typescript:
         specifier: ^5.3.3
         version: 5.3.3
+      unist-builder:
+        specifier: 3.0.0
+        version: 3.0.0
       unist-util-visit:
         specifier: ^5.0.0
         version: 5.0.0
@@ -9544,6 +9547,12 @@ packages:
     engines: {node: '>=8'}
     dependencies:
       crypto-random-string: 2.0.0
+    dev: true
+
+  /unist-builder@3.0.0:
+    resolution: {integrity: sha512-GFxmfEAa0vi9i5sd0R2kcrI9ks0r82NasRq5QHh2ysGngrc6GiqD5CDf1FjPenY4vApmFASBIIlk/jj5J5YbmQ==}
+    dependencies:
+      '@types/unist': 2.0.10
     dev: true
 
   /unist-util-generated@2.0.1:
