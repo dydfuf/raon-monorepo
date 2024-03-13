@@ -26,8 +26,8 @@ const computedFields = {
   },
 };
 
-const LinksProperties = defineNestedType(() => ({
-  name: "LinksProperties",
+const DocLinksProperties = defineNestedType(() => ({
+  name: "DocLinksProperties",
   fields: {
     doc: {
       type: "string",
@@ -43,7 +43,7 @@ const LinksProperties = defineNestedType(() => ({
 
 export const Doc = defineDocumentType(() => ({
   name: "Doc",
-  filePathPattern: `docs/**/*.mdx`,
+  filePathPattern: `docs/components/**/*.mdx`,
   contentType: "mdx",
   fields: {
     title: {
@@ -60,7 +60,7 @@ export const Doc = defineDocumentType(() => ({
     },
     links: {
       type: "nested",
-      of: LinksProperties,
+      of: DocLinksProperties,
     },
     featured: {
       type: "boolean",
@@ -81,10 +81,48 @@ export const Doc = defineDocumentType(() => ({
   computedFields,
 }));
 
+const ProjectLinksProperties = defineNestedType(() => ({
+  name: "ProjectLinksProperties",
+  fields: {
+    site: {
+      type: "string",
+    },
+    github: {
+      type: "string",
+    },
+  },
+}));
+
+export const Project = defineDocumentType(() => ({
+  name: "Project",
+  filePathPattern: `docs/projects/**/*.mdx`,
+  contentType: "mdx",
+  fields: {
+    title: {
+      type: "string",
+      required: true,
+    },
+    description: {
+      type: "string",
+      required: true,
+    },
+    links: {
+      type: "nested",
+      of: ProjectLinksProperties,
+    },
+    toc: {
+      type: "boolean",
+      default: true,
+      required: false,
+    },
+  },
+  computedFields,
+}));
+
 const contentSource = makeSource({
   // 마크다운 파일이 저장되어 있는 루트 폴더
   contentDirPath: "./content",
-  documentTypes: [Doc],
+  documentTypes: [Doc, Project],
   mdx: {
     remarkPlugins: [remarkGfm, codeImport],
     rehypePlugins: [
