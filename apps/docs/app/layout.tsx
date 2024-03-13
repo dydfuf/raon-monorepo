@@ -1,5 +1,5 @@
-import "@repo/ui/globals.css";
 import "../styles/mdx.css";
+import "@repo/ui/globals.css";
 import { cn } from "@repo/ui/lib/utils";
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
@@ -55,7 +55,6 @@ export const metadata: Metadata = {
     title: siteConfig.name,
     description: siteConfig.description,
     images: [siteConfig.ogImage],
-    creator: "@shadcn",
   },
   icons: {
     icon: "/favicon.ico",
@@ -71,7 +70,6 @@ export const viewport: Viewport = {
     { media: "(prefers-color-scheme: dark)", color: "black" },
   ],
 };
-
 
 export default function RootLayout({ children }: PropsWithChildren) {
   return (

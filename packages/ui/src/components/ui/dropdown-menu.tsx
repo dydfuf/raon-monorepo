@@ -10,6 +10,9 @@ import {
 
 import { cn } from "../../lib/utils";
 
+type DropdownMenuCheckboxItemProps =
+  DropdownMenuPrimitive.DropdownMenuCheckboxItemProps;
+
 const DropdownMenu = DropdownMenuPrimitive.Root;
 
 const DropdownMenuTrigger = DropdownMenuPrimitive.Trigger;
@@ -202,4 +205,5 @@ export {
   DropdownMenuSubContent,
   DropdownMenuSubTrigger,
   DropdownMenuRadioGroup,
+  type DropdownMenuCheckboxItemProps,
 };

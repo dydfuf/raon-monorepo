@@ -19,6 +19,17 @@ interface ComponentsDetailPageProps {
   };
 }
 
+async function getDocFromParams({ params }: ComponentsDetailPageProps) {
+  const { componentName } = params;
+  const doc = allDocs.find((d) => d.slugAsParams === componentName);
+
+  if (!doc) {
+    return null;
+  }
+
+  return doc;
+}
+
 export async function generateMetadata({
   params,
 }: ComponentsDetailPageProps): Promise<Metadata> {
@@ -53,17 +64,6 @@ export async function generateMetadata({
       creator: "@shadcn",
     },
   };
-}
-
-async function getDocFromParams({ params }: ComponentsDetailPageProps) {
-  const { componentName } = params;
-  const doc = allDocs.find((d) => d.slugAsParams === componentName);
-
-  if (!doc) {
-    return null;
-  }
-
-  return doc;
 }
 
 export async function generateStaticParams(): Promise<
@@ -149,7 +149,7 @@ export default async function ComponentsDetailPage({
         <div className="pb-12 pt-8">
           <Mdx code={doc.body.code} />
         </div>
-        <DocsPager doc={doc} />
+        <DocsPager content={doc} />
       </div>
       {doc.toc && (
         <div className="hidden text-sm xl:block">
