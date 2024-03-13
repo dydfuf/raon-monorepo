@@ -26,6 +26,7 @@
     "react-hook-form": "^7.50.1",
     "react-wrap-balancer": "^1.1.0",
     "recharts": "^2.12.1",
+    "sonner": "^1.4.2",
     "zod": "^3.22.4"
   },
   "devDependencies": {
