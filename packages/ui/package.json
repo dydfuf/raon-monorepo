@@ -57,7 +57,9 @@
     "./components/use-toast": "./src/components/ui/use-toast.ts",
     "./components/toggle": "./src/components/ui/toggle.tsx",
     "./components/toggle-group": "./src/components/ui/toggle-group.tsx",
-    "./components/tooltip": "./src/components/ui/tooltip.tsx"
+    "./components/tooltip": "./src/components/ui/tooltip.tsx",
+    "./components/breadcrumb": "./src/components/ui/breadcrumb.tsx",
+    "./components/input-otp": "./src/components/ui/input-otp.tsx"
   },
   "scripts": {
     "lint": "eslint ./src --max-warnings 0",
@@ -117,6 +119,7 @@
     "cmdk": "^0.2.1",
     "date-fns": "^3.3.1",
     "embla-carousel-react": "^8.0.0",
+    "input-otp": "^1.1.0",
     "next-themes": "^0.2.1",
     "react-day-picker": "^8.10.0",
     "react-hook-form": "^7.50.1",

@@ -240,6 +240,21 @@ import {
   TooltipTrigger,
 } from "@repo/ui/components/tooltip";
 import { ToggleTheme } from "../components/ToggleTheme";
+import {
+  Breadcrumb,
+  BreadcrumbEllipsis,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from "@repo/ui/components/breadcrumb";
+import {
+  InputOTP,
+  InputOTPGroup,
+  InputOTPSeparator,
+  InputOTPSlot,
+} from "@repo/ui/components/input-otp";
 
 const frameworks = [
   {
@@ -1473,6 +1488,59 @@ export default function page() {
             </TooltipContent>
           </Tooltip>
         </TooltipProvider>
+      </Preview>
+      <Preview title="BreadCrumb">
+        <Breadcrumb>
+          <BreadcrumbList>
+            <BreadcrumbItem>
+              <BreadcrumbLink href="/">Home</BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
+              <DropdownMenu>
+                <DropdownMenuTrigger className="flex items-center gap-1">
+                  <BreadcrumbEllipsis className="h-4 w-4" />
+                  <span className="sr-only">Toggle menu</span>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="start">
+                  <DropdownMenuItem>Documentation</DropdownMenuItem>
+                  <DropdownMenuItem>Themes</DropdownMenuItem>
+                  <DropdownMenuItem>GitHub</DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
+              <BreadcrumbLink href="/docs/components">
+                Components
+              </BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
+              <BreadcrumbPage>Breadcrumb</BreadcrumbPage>
+            </BreadcrumbItem>
+          </BreadcrumbList>
+        </Breadcrumb>
+      </Preview>
+      <Preview title="InputOTP">
+        <InputOTP
+          maxLength={6}
+          render={({ slots }) => (
+            <>
+              <InputOTPGroup>
+                {slots.slice(0, 3).map((slot, index) => (
+                  <InputOTPSlot key={index} {...slot} />
+                ))}{" "}
+              </InputOTPGroup>
+              <InputOTPSeparator />
+              <InputOTPGroup>
+                {slots.slice(3).map((slot, index) => (
+                  <InputOTPSlot key={index + 3} {...slot} />
+                ))}
+              </InputOTPGroup>
+            </>
+          )}
+        />
       </Preview>
     </div>
   );
