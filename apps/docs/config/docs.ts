@@ -73,6 +73,11 @@ export const docsConfig: DocsConfig = {
           items: [],
         },
         {
+          title: "Breadcrumb",
+          href: "/docs/components/breadcrumb",
+          items: [],
+        },
+        {
           title: "Button",
           href: "/docs/components/button",
           items: [],
@@ -150,6 +155,11 @@ export const docsConfig: DocsConfig = {
         {
           title: "Input",
           href: "/docs/components/input",
+          items: [],
+        },
+        {
+          title: "Input OTP",
+          href: "/docs/components/input-otp",
           items: [],
         },
         {
