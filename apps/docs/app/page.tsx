@@ -26,7 +26,6 @@ export default function IndexPage() {
   return (
     <div className="container relative">
       <PageHeader>
-        {/* <Announcement /> */}
         <PageHeaderHeading>Raon 모노레포의 UI 패키지 문서</PageHeaderHeading>
         <PageHeaderDescription>
           Shadcn/ui를 기반으로 작성되었으며, 프로젝트 목적에 맞게 커스터마이징

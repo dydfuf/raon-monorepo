@@ -31,7 +31,7 @@ export const docsConfig: DocsConfig = {
           label: "↗️",
         },
         {
-          title: "GitHub",
+          title: "Github",
           href: siteConfig.links.github,
           external: true,
           items: [],

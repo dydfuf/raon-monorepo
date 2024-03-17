@@ -7,6 +7,7 @@ import { MainNav } from "./main-nav";
 import { MobileNav } from "./mobile-nav";
 import { siteConfig } from "../config/site";
 import { Icons } from "./icons";
+import { CommandMenu } from "./command-menu";
 
 export function SiteHeader() {
   return (
@@ -16,7 +17,7 @@ export function SiteHeader() {
         <MobileNav />
         <div className="flex flex-1 items-center justify-between space-x-2 md:justify-end">
           <div className="w-full flex-1 md:w-auto md:flex-none">
-            {/* <CommandMenu /> */}
+            <CommandMenu />
           </div>
           <nav className="flex items-center">
             <Link
