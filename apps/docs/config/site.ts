@@ -1,7 +1,7 @@
 export const siteConfig = {
   name: "raonc/ui",
   url: "https://ui.raonc.dev",
-  ogImage: "https://ui.raonc.dev/og.jpg",
+  ogImage: "https://ui.raonc.dev/og.png",
   description:
     "Shadcn UI를 기반으로 확장한 raon-monorepo를 위한 UI 라이브러리 문서입니다.",
   links: {
