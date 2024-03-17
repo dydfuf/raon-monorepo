@@ -1,6 +1,6 @@
 import { FontItalicIcon } from "@radix-ui/react-icons";
 
-import { Toggle } from "@repo/ui/components/toggle";
+import { Toggle } from "@raonc/ui/components/toggle";
 
 export default function ToggleSm() {
   return (

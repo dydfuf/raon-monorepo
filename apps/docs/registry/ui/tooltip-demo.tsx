@@ -1,10 +1,10 @@
-import { Button } from "@repo/ui/components/button";
+import { Button } from "@raonc/ui/components/button";
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "@repo/ui/components/tooltip";
+} from "@raonc/ui/components/tooltip";
 
 export default function TooltipDemo() {
   return (

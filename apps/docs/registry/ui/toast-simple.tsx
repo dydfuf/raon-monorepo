@@ -1,7 +1,7 @@
 "use client";
 
-import { Button } from "@repo/ui/components/button";
-import { useToast } from "@repo/ui/components/use-toast";
+import { Button } from "@raonc/ui/components/button";
+import { useToast } from "@raonc/ui/components/use-toast";
 
 export default function ToastSimple() {
   const { toast } = useToast();

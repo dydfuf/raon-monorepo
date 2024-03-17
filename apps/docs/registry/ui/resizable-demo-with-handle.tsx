@@ -2,7 +2,7 @@ import {
   ResizableHandle,
   ResizablePanel,
   ResizablePanelGroup,
-} from "@repo/ui/components/resizable";
+} from "@raonc/ui/components/resizable";
 
 export default function ResizableDemo() {
   return (

@@ -8,7 +8,7 @@ import {
   SelectLabel,
   SelectTrigger,
   SelectValue,
-} from "@repo/ui/components/select";
+} from "@raonc/ui/components/select";
 
 export default function SelectScrollable() {
   return (

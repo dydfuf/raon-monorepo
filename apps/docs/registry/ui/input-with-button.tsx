@@ -1,5 +1,5 @@
-import { Button } from "@repo/ui/components/button";
-import { Input } from "@repo/ui/components/input";
+import { Button } from "@raonc/ui/components/button";
+import { Input } from "@raonc/ui/components/input";
 
 export default function InputWithButton() {
   return (

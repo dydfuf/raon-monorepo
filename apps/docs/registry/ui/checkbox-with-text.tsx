@@ -1,6 +1,6 @@
 "use client";
 
-import { Checkbox } from "@repo/ui/components/checkbox";
+import { Checkbox } from "@raonc/ui/components/checkbox";
 
 export default function CheckboxWithText() {
   return (

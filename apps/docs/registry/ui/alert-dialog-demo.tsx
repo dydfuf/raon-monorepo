@@ -8,8 +8,8 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
   AlertDialogTrigger,
-} from "@repo/ui/components/alert-dialog";
-import { Button } from "@repo/ui/components/button";
+} from "@raonc/ui/components/alert-dialog";
+import { Button } from "@raonc/ui/components/button";
 
 export default function AlertDialogDemo() {
   return (

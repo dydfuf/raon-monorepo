@@ -1,4 +1,4 @@
-import { Skeleton } from "@repo/ui/components/skeleton";
+import { Skeleton } from "@raonc/ui/components/skeleton";
 
 export default function SkeletonCard() {
   return (

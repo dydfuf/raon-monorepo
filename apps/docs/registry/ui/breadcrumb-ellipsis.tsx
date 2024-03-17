@@ -8,7 +8,7 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from "@repo/ui/components/breadcrumb";
+} from "@raonc/ui/components/breadcrumb";
 
 export default function BreadcrumbCollapsed() {
   return (

@@ -1,4 +1,4 @@
-import { Separator } from "@repo/ui/components/separator";
+import { Separator } from "@raonc/ui/components/separator";
 
 export default function SeparatorDemo() {
   return (
