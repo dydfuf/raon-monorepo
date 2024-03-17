@@ -1,4 +1,4 @@
-import { Button } from "@repo/ui/components/button";
+import { Button } from "@raonc/ui/components/button";
 import {
   Card,
   CardContent,
@@ -6,15 +6,15 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@repo/ui/components/card";
-import { Input } from "@repo/ui/components/input";
-import { Label } from "@repo/ui/components/label";
+} from "@raonc/ui/components/card";
+import { Input } from "@raonc/ui/components/input";
+import { Label } from "@raonc/ui/components/label";
 import {
   Tabs,
   TabsContent,
   TabsList,
   TabsTrigger,
-} from "@repo/ui/components/tabs";
+} from "@raonc/ui/components/tabs";
 
 export default function TabsDemo() {
   return (

@@ -2,15 +2,15 @@ import {
   Avatar,
   AvatarFallback,
   AvatarImage,
-} from "@repo/ui/components/avatar";
-import { buttonVariants } from "@repo/ui/components/button";
+} from "@raonc/ui/components/avatar";
+import { buttonVariants } from "@raonc/ui/components/button";
 import {
   Card,
   CardContent,
   CardFooter,
   CardHeader,
-} from "@repo/ui/components/card";
-import { cn } from "@repo/ui/lib/utils";
+} from "@raonc/ui/components/card";
+import { cn } from "@raonc/ui/lib/utils";
 import { Icons } from "components/icons";
 import {
   PageActions,

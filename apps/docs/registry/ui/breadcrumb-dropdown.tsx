@@ -1,19 +1,19 @@
 import { ChevronDownIcon, SlashIcon } from "@radix-ui/react-icons";
 
-import { BreadcrumbPage } from "@repo/ui/components/breadcrumb";
+import { BreadcrumbPage } from "@raonc/ui/components/breadcrumb";
 import {
   Breadcrumb,
   BreadcrumbItem,
   BreadcrumbLink,
   BreadcrumbList,
   BreadcrumbSeparator,
-} from "@repo/ui/components/breadcrumb";
+} from "@raonc/ui/components/breadcrumb";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@repo/ui/components/dropdown-menu";
+} from "@raonc/ui/components/dropdown-menu";
 
 export default function BreadcrumbWithDropdown() {
   return (

@@ -1,4 +1,4 @@
-import { Badge } from "@repo/ui/components/badge";
+import { Badge } from "@raonc/ui/components/badge";
 
 export default function BadgeDestructive() {
   return <Badge variant="destructive">Destructive</Badge>;

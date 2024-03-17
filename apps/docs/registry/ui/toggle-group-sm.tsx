@@ -4,7 +4,10 @@ import {
   UnderlineIcon,
 } from "@radix-ui/react-icons";
 
-import { ToggleGroup, ToggleGroupItem } from "@repo/ui/components/toggle-group";
+import {
+  ToggleGroup,
+  ToggleGroupItem,
+} from "@raonc/ui/components/toggle-group";
 
 export default function ToggleGroupDemo() {
   return (

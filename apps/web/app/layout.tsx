@@ -1,9 +1,9 @@
-import { Toaster } from "@repo/ui/components/sonner";
-import "@repo/ui/globals.css";
+import { Toaster } from "@raonc/ui/components/sonner";
+import "@raonc/ui/globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { ThemeProvider } from "./components/ThemeProvider";
-import { cn } from "@repo/ui/lib/utils";
+import { cn } from "@raonc/ui/lib/utils";
 
 const inter = Inter({ subsets: ["latin"] });
 

@@ -1,6 +1,6 @@
-import { Button } from "@repo/ui/components/button";
-import { Input } from "@repo/ui/components/input";
-import { Label } from "@repo/ui/components/label";
+import { Button } from "@raonc/ui/components/button";
+import { Input } from "@raonc/ui/components/input";
+import { Label } from "@raonc/ui/components/label";
 import {
   Sheet,
   SheetClose,
@@ -10,7 +10,7 @@ import {
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-} from "@repo/ui/components/sheet";
+} from "@raonc/ui/components/sheet";
 
 export default function SheetDemo() {
   return (

@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import { Button } from "@repo/ui/components/button";
+import { Button } from "@raonc/ui/components/button";
 import {
   Card,
   CardContent,
@@ -8,16 +8,16 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@repo/ui/components/card";
-import { Input } from "@repo/ui/components/input";
-import { Label } from "@repo/ui/components/label";
+} from "@raonc/ui/components/card";
+import { Input } from "@raonc/ui/components/input";
+import { Label } from "@raonc/ui/components/label";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@repo/ui/components/select";
+} from "@raonc/ui/components/select";
 
 export default function CardWithForm() {
   return (

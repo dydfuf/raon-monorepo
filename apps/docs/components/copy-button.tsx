@@ -2,8 +2,8 @@
 
 import * as React from "react";
 import { CheckIcon, CopyIcon } from "@radix-ui/react-icons";
-import { cn } from "@repo/ui/lib/utils";
-import { Button } from "@repo/ui/components/button";
+import { cn } from "@raonc/ui/lib/utils";
+import { Button } from "@raonc/ui/components/button";
 
 interface CopyButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
   value: string;

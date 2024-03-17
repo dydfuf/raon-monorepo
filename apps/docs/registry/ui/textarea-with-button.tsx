@@ -1,5 +1,5 @@
-import { Button } from "@repo/ui/components/button";
-import { Textarea } from "@repo/ui/components/textarea";
+import { Button } from "@raonc/ui/components/button";
+import { Textarea } from "@raonc/ui/components/textarea";
 
 export default function TextareaWithButton() {
   return (

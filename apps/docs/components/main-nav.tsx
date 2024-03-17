@@ -3,7 +3,7 @@
 import * as React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { cn } from "@repo/ui/lib/utils";
+import { cn } from "@raonc/ui/lib/utils";
 import { siteConfig } from "../config/site";
 import { Icons } from "./icons";
 

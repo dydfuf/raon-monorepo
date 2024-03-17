@@ -2,14 +2,14 @@
 
 import * as React from "react";
 
-import { cn } from "@repo/ui/lib/utils";
+import { cn } from "@raonc/ui/lib/utils";
 
 import {
   Tabs,
   TabsContent,
   TabsList,
   TabsTrigger,
-} from "@repo/ui/components/tabs";
+} from "@raonc/ui/components/tabs";
 import { CopyButton } from "./copy-button";
 import { Icons } from "./icons";
 import { ThemeWrapper } from "./theme-wrapper";

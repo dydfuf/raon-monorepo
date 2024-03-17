@@ -3,7 +3,7 @@ import {
   InputOTPGroup,
   InputOTPSeparator,
   InputOTPSlot,
-} from "@repo/ui/components/input-otp";
+} from "@raonc/ui/components/input-otp";
 
 export default function InputOTPDemo() {
   return (

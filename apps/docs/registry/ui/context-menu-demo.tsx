@@ -12,7 +12,7 @@ import {
   ContextMenuSubContent,
   ContextMenuSubTrigger,
   ContextMenuTrigger,
-} from "@repo/ui/components/context-menu";
+} from "@raonc/ui/components/context-menu";
 
 export default function ContextMenuDemo() {
   return (

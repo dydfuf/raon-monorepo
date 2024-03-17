@@ -2,7 +2,7 @@
 
 "use client";
 
-import { cn } from "@repo/ui/lib/utils";
+import { cn } from "@raonc/ui/lib/utils";
 import useMounted from "hooks/useMounted";
 import { TableOfContents } from "lib/toc";
 import * as React from "react";

@@ -2,7 +2,7 @@
 
 import * as React from "react";
 
-import { Button } from "@repo/ui/components/button";
+import { Button } from "@raonc/ui/components/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -11,7 +11,7 @@ import {
   DropdownMenuRadioItem,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@repo/ui/components/dropdown-menu";
+} from "@raonc/ui/components/dropdown-menu";
 
 export default function DropdownMenuRadioGroupDemo() {
   const [position, setPosition] = React.useState("bottom");

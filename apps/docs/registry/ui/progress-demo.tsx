@@ -1,9 +1,9 @@
 "use client";
-import "@repo/ui/globals.css";
+import "@raonc/ui/globals.css";
 
 import * as React from "react";
 
-import { Progress } from "@repo/ui/components/progress";
+import { Progress } from "@raonc/ui/components/progress";
 
 export default function ProgressDemo() {
   const [progress, setProgress] = React.useState(13);

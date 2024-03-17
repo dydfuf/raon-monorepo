@@ -3,7 +3,7 @@
 import * as React from "react";
 import { ThemeProvider as NextThemesProvider } from "next-themes";
 import { ThemeProviderProps } from "next-themes/dist/types";
-import { TooltipProvider } from "@repo/ui/components/tooltip";
+import { TooltipProvider } from "@raonc/ui/components/tooltip";
 
 export function ThemeProvider({ children, ...props }: ThemeProviderProps) {
   return (

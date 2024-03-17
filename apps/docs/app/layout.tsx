@@ -1,6 +1,6 @@
 import "../styles/mdx.css";
-import "@repo/ui/globals.css";
-import { cn } from "@repo/ui/lib/utils";
+import "@raonc/ui/globals.css";
+import { cn } from "@raonc/ui/lib/utils";
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import { ThemeProvider } from "../components/providers";

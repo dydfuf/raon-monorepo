@@ -1,5 +1,5 @@
-import { Input } from "@repo/ui/components/input";
-import { Label } from "@repo/ui/components/label";
+import { Input } from "@raonc/ui/components/input";
+import { Label } from "@raonc/ui/components/label";
 
 export default function InputWithLabel() {
   return (

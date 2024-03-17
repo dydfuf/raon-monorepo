@@ -16,7 +16,7 @@ import {
   CommandList,
   CommandSeparator,
   CommandShortcut,
-} from "@repo/ui/components/command";
+} from "@raonc/ui/components/command";
 
 export default function CommandDemo() {
   return (

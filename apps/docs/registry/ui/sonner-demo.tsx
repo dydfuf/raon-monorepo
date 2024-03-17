@@ -1,6 +1,6 @@
 import { toast } from "sonner";
 
-import { Button } from "@repo/ui/components/button";
+import { Button } from "@raonc/ui/components/button";
 
 export default function SonnerDemo() {
   return (

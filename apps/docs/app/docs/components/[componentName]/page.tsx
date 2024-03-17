@@ -1,7 +1,7 @@
 import { ChevronRightIcon, ExternalLinkIcon } from "@radix-ui/react-icons";
-import { badgeVariants } from "@repo/ui/components/badge";
-import { ScrollArea } from "@repo/ui/components/scroll-area";
-import { cn } from "@repo/ui/lib/utils";
+import { badgeVariants } from "@raonc/ui/components/badge";
+import { ScrollArea } from "@raonc/ui/components/scroll-area";
+import { cn } from "@raonc/ui/lib/utils";
 import { Mdx } from "components/mdx-components";
 import { DocsPager } from "components/pager";
 import { DashboardTableOfContents } from "components/toc";
