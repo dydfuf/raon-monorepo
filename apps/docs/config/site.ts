@@ -10,6 +10,21 @@ export const siteConfig = {
     blog: "https://raondev.vercel.app",
     cookieJelly: "https://cookie-jelly.vercel.app",
   },
+  projects: {
+    blog: {
+      name: "Raonc/blog",
+      description:
+        "프론트엔드 개발자 Raon의 개발 블로그입니다. 주로 Front-end 관련 글을 작성합니다.",
+      siteLink: "https://raondev.vercel.app",
+      githubLink: "https://github.com/dydfuf/raondev",
+    },
+    cookieJelly: {
+      name: "Raonc/Cookie-Jelly",
+      description: "그룹간 사진 공유를 위한 서비스 입니다.",
+      siteLink: "https://cookie-jelly.vercel.app",
+      githubLink: "https://github.com/dydfuf/jelly",
+    },
+  },
 };
 
 export type SiteConfig = typeof siteConfig;
