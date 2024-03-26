@@ -10,7 +10,7 @@ category: 모노레포, TurboRepo, 브랜치 전략, TBD
 > 고민하는 과정을 공유하며, Trunk Based Development 브랜치 전략을 기반으로 브랜치 전략을 수립했습니다.
 
 안녕하세요! 모노레포와 관련한 두 번째 글 입니다.  
-[이전 글](https://raondev.vercel.app/posts/raon-monorepo-1)에서는 패키지매니저 선택과 간단히 TurboRepo를 세팅해보고 Vercel에 배포해보았습니다.
+[이전 글](https://blog.raonc.dev/posts/raon-monorepo-1)에서는 패키지매니저 선택과 간단히 TurboRepo를 세팅해보고 Vercel에 배포해보았습니다.
 
 이번 글에서는 모노레포에서의 브랜치 전략을 수립해보고 관련하여 배포 전략도 수립하여 효율적으로 개발을 진행할 수 있는 방법을 알아보겠습니다.
 

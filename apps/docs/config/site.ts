@@ -7,7 +7,7 @@ export const siteConfig = {
   links: {
     linkedIn: "https://www.linkedin.com/in/%EC%B5%9C%EC%9A%A9%EC%97%B4/",
     github: "https://github.com/dydfuf/raon-monorepo",
-    blog: "https://raondev.vercel.app",
+    blog: "https://blog.raonc.dev",
     cookieJelly: "https://cookie-jelly.vercel.app",
   },
   projects: {
@@ -15,7 +15,7 @@ export const siteConfig = {
       name: "Raonc/blog",
       description:
         "프론트엔드 개발자 Raon의 개발 블로그입니다. 주로 Front-end 관련 글을 작성합니다.",
-      siteLink: "https://raondev.vercel.app",
+      siteLink: "https://blog.raonc.dev",
       githubLink: "https://github.com/dydfuf/raondev",
     },
     cookieJelly: {
