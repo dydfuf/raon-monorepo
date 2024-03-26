@@ -27,7 +27,7 @@ category: Next.js 13, App Router, sitemap, metadata
 export default async function sitemap() {
   return [
     {
-      url: 'https://raondev.vercel.app',
+      url: 'https://blog.raonc.dev',
       lastModified: new Date(),
     },
   ];
@@ -40,7 +40,7 @@ export default async function sitemap() {
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <script/>
     <url>
-        <loc>https://raondev.vercel.app</loc>
+        <loc>https://blog.raonc.dev</loc>
         <lastmod>2023-05-13T12:18:17.447Z</lastmod>
     </url>
 </urlset>
@@ -54,7 +54,7 @@ URL을 상수로 지정하고 `['', '/aboutme']`라우트에 대해 url및 lastM
 ```ts
 `app/sitemap.ts`;
 
-const URL = 'https://raondev.vercel.app';
+const URL = 'https://blog.raonc.dev';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const routes = ['', '/aboutme'].map(route => ({
@@ -70,11 +70,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <script/>
     <url>
-        <loc>https://raondev.vercel.app</loc>
+        <loc>https://blog.raonc.dev</loc>
         <lastmod>2023-05-13T12:18:17.447Z</lastmod>
     </url>
     <url>
-        <loc>https://raondev.vercel.app/aboutme</loc>
+        <loc>https://blog.raonc.dev/aboutme</loc>
         <lastmod>2023-05-13T12:23:45.133Z</lastmod>
     </url>
 </urlset>
@@ -91,7 +91,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 ```ts
 `app/sitemap.ts`;
 
-const URL = 'https://raondev.vercel.app';
+const URL = 'https://blog.raonc.dev';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const postList = getPostNameList().map(postName => ({
@@ -119,23 +119,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <script/>
     <url>
-        <loc>https://raondev.vercel.app</loc>
+        <loc>https://blog.raonc.dev</loc>
         <lastmod>2023-05-13T12:23:45.133Z</lastmod>
     </url>
     <url>
-        <loc>https://raondev.vercel.app/aboutme</loc>
+        <loc>https://blog.raonc.dev/aboutme</loc>
         <lastmod>2023-05-13T12:23:45.133Z</lastmod>
     </url>
     <url>
-        <loc>https://raondev.vercel.app/posts/appdir</loc>
+        <loc>https://blog.raonc.dev/posts/appdir</loc>
         <lastmod>2023-05-15</lastmod>
     </url>
     <url>
-        <loc>https://raondev.vercel.app/posts/appdir</loc>
+        <loc>https://blog.raonc.dev/posts/appdir</loc>
         <lastmod>2023-05-15</lastmod>
     </url>
     <url>
-        <loc>https://raondev.vercel.app/posts/todo</loc>
+        <loc>https://blog.raonc.dev/posts/todo</loc>
         <lastmod>2023-01-01</lastmod>
     </url>
 </urlset>

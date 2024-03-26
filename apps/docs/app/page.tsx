@@ -87,7 +87,7 @@ export default function IndexPage() {
 
 const PROJECTS = [
   {
-    avatarImage: "https://raondev.vercel.app/avatar.png",
+    avatarImage: "https://blog.raonc.dev/avatar.png",
     avatarFallback: "RN",
     name: siteConfig.projects.blog.name,
     description: siteConfig.projects.blog.description,

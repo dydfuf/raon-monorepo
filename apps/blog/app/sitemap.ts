@@ -1,8 +1,7 @@
 import { getPostNameList, getPostByName } from "../utils/post";
 import { parseMarkdownMetadata } from "../utils/parseMarkdownMetadata";
 import { MetadataRoute } from "next";
-
-const URL = "https://raondev.vercel.app";
+import { BLOG_URL } from "../constant/common";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const postList = getPostNameList().map((postName) => ({
@@ -12,13 +11,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const postsRoute = postList.map(({ name, content }) => {
     const { date } = parseMarkdownMetadata(content);
     return {
-      url: `${URL}/posts/${name}`,
+      url: `${BLOG_URL}/posts/${name}`,
       lastModified: date,
     };
   });
 
   const routes = ["", "/aboutme"].map((route) => ({
-    url: `${URL}${route}`,
+    url: `${BLOG_URL}${route}`,
     lastModified: new Date().toISOString(),
   }));
 

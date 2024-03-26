@@ -3,7 +3,7 @@ import "@radix-ui/themes/styles.css";
 
 import Layout from "../components/Layout";
 import { BLOG_TITLE, BLOG_URL } from "../constant/common";
-import Analytics from "../components/Analytics";
+import { Analytics } from "@vercel/analytics/next";
 import { Metadata } from "next";
 import Head from "./head";
 import { Theme, ThemePanel } from "@radix-ui/themes";
@@ -24,13 +24,13 @@ export const metadata: Metadata = {
   openGraph: {
     title: BLOG_TITLE,
     description,
-    url: "https://raondev.vercel.app",
+    url: BLOG_URL,
     siteName: BLOG_TITLE,
     locale: "ko-Kr",
     type: "website",
     images: [
       {
-        url: "https://raondev.vercel.app/og.png",
+        url: `${BLOG_URL}/og.png`,
         width: 400,
         height: 600,
       },
