@@ -1,3 +1,4 @@
+import { Button } from "@raonc/ui/components/button";
 import type { MetaFunction } from "@remix-run/node";
 
 export const meta: MetaFunction = () => {
@@ -11,6 +12,8 @@ export default function Index() {
   return (
     <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.8" }}>
       <h1>Welcome to Remix</h1>
+      <h1 className="text-3xl font-bold underline">Welcome to Remix</h1>
+      <Button variant={"destructive"}>hello world</Button>
       <ul>
         <li>
           <a
