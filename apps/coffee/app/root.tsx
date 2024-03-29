@@ -5,7 +5,7 @@ import {
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
-import stylesheet from "@raonc/ui/globals.css";
+import stylesheet from "@raonc/ui/globals.css?url";
 import { LinksFunction } from "@remix-run/node";
 
 export const links: LinksFunction = () => [

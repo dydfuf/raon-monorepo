@@ -136,6 +136,9 @@ importers:
         specifier: ^18.2.0
         version: 18.2.0(react@18.2.0)
     devDependencies:
+      '@raonc/typescript-config':
+        specifier: workspace:^
+        version: link:../../packages/typescript-config
       '@remix-run/dev':
         specifier: ^2.8.1
         version: 2.8.1(@remix-run/serve@2.8.1)(typescript@5.3.3)(vite@5.2.6)
