@@ -4,7 +4,7 @@ import { DEFAULT_FIELD_VALUE } from "./constant";
 import { CoffeeInfo } from "../../types/coffee";
 
 export const getCoffeeInfoList = async () => {
-  const coffeeInfoList = [];
+  const coffeeInfoList: CoffeeInfo[] = [];
 
   for await (const block of iteratePaginatedAPI(notion.databases.query, {
     database_id: process.env.NOTION_DATABASE_ID ?? "",
@@ -36,5 +36,5 @@ export const getCoffeeInfoList = async () => {
     }
   }
 
-  return coffeeInfoList as CoffeeInfo[];
+  return coffeeInfoList;
 };
