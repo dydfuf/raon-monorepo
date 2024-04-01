@@ -1,5 +1,7 @@
-import { Button } from "@raonc/ui/components/button";
-import type { MetaFunction } from "@remix-run/node";
+import { type MetaFunction } from "@remix-run/node";
+import { useLoaderData } from "@remix-run/react";
+import { getCoffeeInfoList } from "../.server/notion/service";
+import { CoffeeInfoField } from "../types/coffee";
 
 export const meta: MetaFunction = () => {
   return [
@@ -8,37 +10,47 @@ export const meta: MetaFunction = () => {
   ];
 };
 
+export async function loader() {
+  const coffeeInfoList = await getCoffeeInfoList();
+  return { coffeeInfoList };
+}
+
 export default function Index() {
+  const { coffeeInfoList } = useLoaderData<typeof loader>();
+
   return (
     <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.8" }}>
-      <h1>Welcome to Remix</h1>
-      <h1 className="text-3xl font-bold underline">Welcome to Remix</h1>
-      <Button variant={"destructive"}>hello world</Button>
-      <ul>
-        <li>
-          <a
-            target="_blank"
-            href="https://remix.run/tutorials/blog"
-            rel="noreferrer"
-          >
-            15m Quickstart Blog Tutorial
-          </a>
-        </li>
-        <li>
-          <a
-            target="_blank"
-            href="https://remix.run/tutorials/jokes"
-            rel="noreferrer"
-          >
-            Deep Dive Jokes App Tutorial
-          </a>
-        </li>
-        <li>
-          <a target="_blank" href="https://remix.run/docs" rel="noreferrer">
-            Remix Docs
-          </a>
-        </li>
-      </ul>
+      {coffeeInfoList.map((coffeeInfo) => (
+        <div
+          key={coffeeInfo[CoffeeInfoField.ID]}
+          className="border-[1px] w-full h-full p-2"
+        >
+          <h2>
+            {CoffeeInfoField.NAME_KR} : {coffeeInfo[CoffeeInfoField.NAME_KR]}
+          </h2>
+          <p>
+            {CoffeeInfoField.NAME_EN} : {coffeeInfo[CoffeeInfoField.NAME_EN]}
+          </p>
+          <p>
+            {CoffeeInfoField.REGION} : {coffeeInfo[CoffeeInfoField.REGION]}
+          </p>
+          <p>
+            {CoffeeInfoField.FARM} : {coffeeInfo[CoffeeInfoField.FARM]}
+          </p>
+          <p>
+            {CoffeeInfoField.VARIETY} : {coffeeInfo[CoffeeInfoField.VARIETY]}
+          </p>
+          <p>
+            {CoffeeInfoField.PROCESS} : {coffeeInfo[CoffeeInfoField.PROCESS]}
+          </p>
+          <p>
+            {CoffeeInfoField.NOTE} : {coffeeInfo[CoffeeInfoField.NOTE]}
+          </p>
+          <p>
+            {CoffeeInfoField.SOURCE} : {coffeeInfo[CoffeeInfoField.SOURCE]}
+          </p>
+        </div>
+      ))}
     </div>
   );
 }
