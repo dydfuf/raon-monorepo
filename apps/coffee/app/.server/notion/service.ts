@@ -12,23 +12,18 @@ export const getCoffeeInfoList = async () => {
     if ("properties" in block) {
       const coffeeInfo = Object.entries(block.properties).map(
         ([key, value]) => {
+          let fieldValue = DEFAULT_FIELD_VALUE;
           if (value.type === "title") {
-            return {
-              [key]: value.title[0]?.plain_text ?? DEFAULT_FIELD_VALUE,
-            };
+            fieldValue = value.title[0]?.plain_text;
           } else if (value.type === "rich_text") {
-            return {
-              [key]: value.rich_text[0]?.plain_text ?? DEFAULT_FIELD_VALUE,
-            };
+            fieldValue = value.rich_text[0]?.plain_text;
           } else if (value.type === "unique_id") {
             const { prefix, number } = value.unique_id;
-            return {
-              [key]: `${prefix}-${number}` ?? DEFAULT_FIELD_VALUE,
-            };
+            fieldValue = `${prefix}-${number}`;
+          } else {
+            fieldValue = JSON.stringify(value);
           }
-          return {
-            [key]: JSON.stringify(value),
-          };
+          return { [key]: fieldValue ?? DEFAULT_FIELD_VALUE };
         }
       );
 
