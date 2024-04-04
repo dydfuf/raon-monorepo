@@ -13,6 +13,7 @@ import { useCallback, useEffect, useState } from "react";
 import { CoffeeInfo, CoffeeInfoField } from "../types/coffee";
 import { Badge } from "@raonc/ui/components/badge";
 import { useNavigate } from "@remix-run/react";
+import { hangulIncludes, chosungIncludes } from "@toss/hangul";
 
 interface Props extends DialogProps {
   list: CoffeeInfo[];
@@ -64,7 +65,16 @@ export default function CommandMenu({ list, ...props }: Props) {
           <span className="text-xs">⌘</span>K
         </kbd>
       </Button>
-      <CommandDialog open={open} onOpenChange={setOpen}>
+      <CommandDialog
+        filter={(value, search) => {
+          if (value.includes(search)) return 1;
+          if (hangulIncludes(value, search)) return 1;
+          if (chosungIncludes(value, search)) return 1;
+          return 0;
+        }}
+        open={open}
+        onOpenChange={setOpen}
+      >
         <CommandInput placeholder="원두 이름 및 노트를 입력 해보세요. 🚀" />
         <CommandList>
           <CommandEmpty>정보를 찾을 수 없어요. 😭</CommandEmpty>
