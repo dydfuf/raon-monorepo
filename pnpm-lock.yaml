@@ -129,6 +129,9 @@ importers:
       '@remix-run/serve':
         specifier: ^2.8.1
         version: 2.8.1(typescript@5.3.3)
+      '@toss/hangul':
+        specifier: ^1.7.0
+        version: 1.7.0
       isbot:
         specifier: ^4.1.0
         version: 4.4.0
@@ -4321,6 +4324,10 @@ packages:
   /@tootallnate/quickjs-emscripten@0.23.0:
     resolution: {integrity: sha512-C5Mc6rdnsaJDjO3UpGW/CQTHtCKaYlScZTly4JIu97Jxo/odCiH0ITnDXSJPTOrEKk/ycSZ0AOgTmkDtkOsvIA==}
     dev: true
+
+  /@toss/hangul@1.7.0:
+    resolution: {integrity: sha512-O2dsx0ki9QsnQkxAgNa7zxnAznR9JylUAW7KeImUj5BJZUDgQhT6qoETdMEpcVczD/1p6DWxc6WlbtfEVvzmiw==}
+    dev: false
 
   /@tsconfig/node10@1.0.9:
     resolution: {integrity: sha512-jNsYVVxU8v5g43Erja32laIDHXeoNvFEpX33OK4d6hljo3jDhCBDhx5dhCCTMWUojscpAagGiRkBKxpdl9fxqA==}
