@@ -11,8 +11,8 @@ export const headers: HeadersFunction = ({}) => ({
 
 export const meta: MetaFunction = () => {
   return [
-    { title: "New Remix App" },
-    { name: "description", content: "Welcome to Remix!" },
+    { title: "COFFEE DB" },
+    { name: "description", content: "Search Any Coffee Information" },
   ];
 };
 
@@ -25,7 +25,7 @@ export default function Index() {
   const { coffeeInfoList } = useLoaderData<typeof loader>();
 
   return (
-    <main className="w-[100dvw] h-[100dvh] flex items-center justify-center p-8">
+    <main className="w-[100dvw] h-[100dvh] flex md:items-center justify-center p-8 items-start">
       <CommandMenu list={coffeeInfoList} />
     </main>
   );

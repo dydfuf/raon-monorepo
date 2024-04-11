@@ -74,6 +74,7 @@ export default function CommandMenu({ list, ...props }: Props) {
         }}
         open={open}
         onOpenChange={setOpen}
+        dialogContentClassName="top-0 translate-y-1 md:top-1/2 md:-translate-y-1/2"
       >
         <CommandInput placeholder="원두 이름 및 노트를 입력 해보세요. 🚀" />
         <CommandList>
