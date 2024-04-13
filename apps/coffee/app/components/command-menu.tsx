@@ -6,22 +6,40 @@ import {
   CommandInput,
   CommandItem,
   CommandList,
+  CommandLoading,
 } from "@raonc/ui/components/command";
 import { DialogProps } from "@raonc/ui/components/dialog";
 import { cn } from "@raonc/ui/lib/utils";
 import { useCallback, useEffect, useState } from "react";
 import { CoffeeInfo, CoffeeInfoField } from "../types/coffee";
 import { Badge } from "@raonc/ui/components/badge";
-import { useNavigate } from "@remix-run/react";
+import { useFetcher, useNavigate } from "@remix-run/react";
 import { hangulIncludes, chosungIncludes } from "@toss/hangul";
+import { loader } from "../routes/coffee.list";
 
-interface Props extends DialogProps {
-  list: CoffeeInfo[];
-}
+interface Props extends DialogProps {}
 
-export default function CommandMenu({ list, ...props }: Props) {
+export default function CommandMenu({ ...props }: Props) {
   const navigate = useNavigate();
   const [open, setOpen] = useState(false);
+
+  const fetcher = useFetcher<typeof loader>({ key: "coffee-list" });
+  const [list, setList] = useState<CoffeeInfo[]>([]);
+  const [isLoading, setIsLoading] = useState(false);
+
+  useEffect(() => {
+    if (open && fetcher.state === "idle" && fetcher.data === undefined) {
+      setIsLoading(true);
+      fetcher.load("/coffee/list");
+    }
+  }, [open]);
+
+  useEffect(() => {
+    if (fetcher.data) {
+      setList(fetcher.data.coffeeInfoList);
+      setIsLoading(false);
+    }
+  }, [fetcher.data]);
 
   useEffect(() => {
     const down = (e: KeyboardEvent) => {
@@ -56,7 +74,10 @@ export default function CommandMenu({ list, ...props }: Props) {
         className={cn(
           "relative h-12 w-full justify-start flex items-center rounded-[0.5rem] bg-background text-sm font-normal text-muted-foreground shadow-none sm:pr-12 md:w-80 lg:w-[40rem]"
         )}
-        onClick={() => setOpen(true)}
+        onClick={() => {
+          setOpen(true);
+          // fetcher.load("/coffee/list");
+        }}
         {...props}
       >
         <span className="hidden lg:inline-flex">커피를 검색해보세요 ☕️</span>
@@ -78,7 +99,8 @@ export default function CommandMenu({ list, ...props }: Props) {
       >
         <CommandInput placeholder="원두 이름 및 노트를 입력 해보세요. 🚀" />
         <CommandList>
-          <CommandEmpty>정보를 찾을 수 없어요. 😭</CommandEmpty>
+          {!isLoading && <CommandEmpty>정보를 찾을 수 없어요. 😭</CommandEmpty>}
+          {isLoading && <CommandLoading>로딩중 이에요. 🤑</CommandLoading>}
           <CommandGroup heading={"원두 정보"}>
             {list.map((coffeeInfo) => (
               <CommandItem
