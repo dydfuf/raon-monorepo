@@ -1,4 +1,4 @@
-import { useLoaderData } from "@remix-run/react";
+import { Link, useLoaderData } from "@remix-run/react";
 import { getCoffeeInfoList } from "../.server/notion/service";
 import { CoffeeInfoField } from "../types/coffee";
 import { Badge } from "@raonc/ui/components/badge";
@@ -12,11 +12,12 @@ export default function CoffeeListPage() {
   const { coffeeInfoList } = useLoaderData<typeof loader>();
 
   return (
-    <div className="w-1/2 mx-auto p-8 flex flex-col gap-4">
+    <div className="p-8 flex flex-col gap-4">
       {coffeeInfoList.map((coffeeInfo) => (
-        <div
+        <Link
+          to={`/coffee/${coffeeInfo[CoffeeInfoField.ID].split("-")[1]}`}
           key={coffeeInfo[CoffeeInfoField.ID]}
-          className="flex flex-col p-8 border-[1px] rounded-lg"
+          className="flex flex-col p-8 border-[1px] rounded-lg hover:bg-accent hover:text-accent-foreground"
         >
           <div className="flex flex-col">
             <p className="text-xl">{coffeeInfo[CoffeeInfoField.NAME_KR]}</p>
@@ -31,7 +32,7 @@ export default function CoffeeListPage() {
               ))}
             </div>
           </div>
-        </div>
+        </Link>
       ))}
     </div>
   );

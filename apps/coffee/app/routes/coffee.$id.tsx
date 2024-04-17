@@ -7,7 +7,7 @@ import { Button } from "@raonc/ui/components/button";
 export async function loader({ params }: LoaderFunctionArgs) {
   const { id } = params;
 
-  if (!id) {
+  if (!id && isNaN(Number(id))) {
     throw new Response(null, {
       status: 404,
       statusText: "Not Found",
