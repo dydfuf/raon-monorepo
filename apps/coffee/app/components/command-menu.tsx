@@ -17,9 +17,11 @@ import { useFetcher, useNavigate } from "@remix-run/react";
 import { hangulIncludes, chosungIncludes } from "@toss/hangul";
 import { loader } from "../routes/coffee.list";
 
-interface Props extends DialogProps {}
+interface Props extends DialogProps {
+  isInNav?: boolean;
+}
 
-export default function CommandMenu({ ...props }: Props) {
+export default function CommandMenu({ isInNav, ...props }: Props) {
   const navigate = useNavigate();
   const [open, setOpen] = useState(false);
 
@@ -72,11 +74,13 @@ export default function CommandMenu({ ...props }: Props) {
       <Button
         variant="outline"
         className={cn(
-          "relative h-12 w-full justify-start flex items-center rounded-[0.5rem] bg-background text-sm font-normal text-muted-foreground shadow-none sm:pr-12 md:w-80 lg:w-[40rem]"
+          "relative h-12 rounded-[0.5rem] bg-background shadow-none sm:pr-12",
+          "justify-start flex items-center",
+          "text-sm font-normal text-muted-foreground",
+          { "w-full md:w-[20rem]": isInNav, "w-full md:w-[40rem]": !isInNav }
         )}
         onClick={() => {
           setOpen(true);
-          // fetcher.load("/coffee/list");
         }}
         {...props}
       >
@@ -105,21 +109,7 @@ export default function CommandMenu({ ...props }: Props) {
             {list.map((coffeeInfo) => (
               <CommandItem
                 key={coffeeInfo[CoffeeInfoField.ID]}
-                value={
-                  coffeeInfo[CoffeeInfoField.NAME_KR] +
-                  " " +
-                  coffeeInfo[CoffeeInfoField.NAME_EN] +
-                  " " +
-                  coffeeInfo[CoffeeInfoField.REGION] +
-                  " " +
-                  coffeeInfo[CoffeeInfoField.FARM] +
-                  " " +
-                  coffeeInfo[CoffeeInfoField.VARIETY] +
-                  " " +
-                  coffeeInfo[CoffeeInfoField.PROCESS] +
-                  " " +
-                  coffeeInfo[CoffeeInfoField.NOTE]
-                }
+                value={getCoffeeItemValue(coffeeInfo)}
                 onSelect={() => {
                   runCommand(() => {
                     navigate(
@@ -151,3 +141,18 @@ export default function CommandMenu({ ...props }: Props) {
     </>
   );
 }
+
+const getCoffeeItemValue = (coffeeInfo: CoffeeInfo) =>
+  coffeeInfo[CoffeeInfoField.NAME_KR] +
+  " " +
+  coffeeInfo[CoffeeInfoField.NAME_EN] +
+  " " +
+  coffeeInfo[CoffeeInfoField.REGION] +
+  " " +
+  coffeeInfo[CoffeeInfoField.FARM] +
+  " " +
+  coffeeInfo[CoffeeInfoField.VARIETY] +
+  " " +
+  coffeeInfo[CoffeeInfoField.PROCESS] +
+  " " +
+  coffeeInfo[CoffeeInfoField.NOTE];

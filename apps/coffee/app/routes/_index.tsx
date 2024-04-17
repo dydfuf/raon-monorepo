@@ -2,6 +2,7 @@ import { type MetaFunction } from "@remix-run/node";
 import CommandMenu from "../components/command-menu";
 
 import type { HeadersFunction } from "@remix-run/node";
+import { siteConfig } from "../constant/common";
 
 export const headers: HeadersFunction = ({}) => ({
   "Cache-Control": "max-age=300, s-maxage=3600",
@@ -16,8 +17,17 @@ export const meta: MetaFunction = () => {
 
 export default function Index() {
   return (
-    <main className="w-[100dvw] h-[100dvh] flex md:items-center justify-center p-8 items-start">
-      <CommandMenu />
-    </main>
+    <div className="mx-auto grow flex w-full">
+      <div className="flex flex-col items-center w-full space-y-4 mx-[2rem]">
+        <h1
+          className="font-bold text-[5rem]"
+          style={{ marginTop: `calc(50dvh - 28px - 120px - 120px)` }}
+        >
+          {siteConfig.name}
+        </h1>
+        <CommandMenu />
+        <p>당신의 취향에 맞는 완벽한 커피 원두를 찾아보세요!</p>
+      </div>
+    </div>
   );
 }
