@@ -12,7 +12,7 @@ export default function CoffeeListPage() {
   const { coffeeInfoList } = useLoaderData<typeof loader>();
 
   return (
-    <div className="p-8 flex flex-col gap-4">
+    <div className="mx-auto p-8 flex flex-col gap-4">
       {coffeeInfoList.map((coffeeInfo) => (
         <Link
           to={`/coffee/${coffeeInfo[CoffeeInfoField.ID].split("-")[1]}`}
