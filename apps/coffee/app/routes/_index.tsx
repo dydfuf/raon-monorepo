@@ -26,7 +26,7 @@ export default function Index() {
           {siteConfig.name}
         </h1>
         <CommandMenu />
-        <p>궁금한 커피원두의 이름을 검색해보세요!</p>
+        <p>당신의 취향에 맞는 완벽한 커피 원두를 찾아보세요!</p>
       </div>
     </div>
   );
