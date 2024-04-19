@@ -114,6 +114,9 @@ importers:
 
   apps/coffee:
     dependencies:
+      '@hookform/resolvers':
+        specifier: ^3.3.4
+        version: 3.3.4(react-hook-form@7.50.1)
       '@notionhq/client':
         specifier: ^2.2.14
         version: 2.2.14
