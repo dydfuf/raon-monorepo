@@ -5,15 +5,16 @@ import {
   Scripts,
   ScrollRestoration,
   useNavigation,
-  useNavigationType,
 } from "@remix-run/react";
 import stylesheet from "@raonc/ui/globals.css?url";
+import fontStyleSheet from "../public/font/pretendardvariable.css?url";
 import { LinksFunction } from "@remix-run/node";
 import SiteHeader from "./components/site-header";
 import { TailwindIndicator } from "./components/tailwind-indicator";
 import { Icons } from "./components/Icons";
 
 export const links: LinksFunction = () => [
+  { rel: "stylesheet", href: fontStyleSheet },
   { rel: "stylesheet", href: stylesheet },
 ];
 
@@ -26,7 +27,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Meta />
         <Links />
       </head>
-      <body>
+      <body style={{ fontFamily: "Pretendard Variable" }}>
         {children}
         <ScrollRestoration />
         <Scripts />
