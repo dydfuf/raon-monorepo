@@ -2,7 +2,15 @@ import { LoaderFunctionArgs, MetaFunction } from "@remix-run/node";
 import { getCoffeeInfoById } from "../.server/notion/service";
 import { Link, useLoaderData } from "@remix-run/react";
 import { CoffeeInfoField } from "../types/coffee";
-import { Button } from "@raonc/ui/components/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@raonc/ui/components/card";
+import { cn } from "@raonc/ui/lib/utils";
+import { Badge } from "@raonc/ui/components/badge";
 
 export async function loader({ params }: LoaderFunctionArgs) {
   const { id } = params;
@@ -39,6 +47,13 @@ export default function CoffeeDetailPage() {
   const isUserSubmitted = Boolean(coffeeInfo[CoffeeInfoField.USER_SUBMITTED]);
 
   const CoffeeInfoData = [
+    // {
+    //   key: CoffeeInfoField.NOTE,
+    //   label: "Note",
+    //   value: coffeeInfo[CoffeeInfoField.NOTE],
+    //   isLink: false,
+    //   className: "col-span-2",
+    // },
     {
       key: CoffeeInfoField.NAME_KR,
       label: "Name(KR)",
@@ -49,12 +64,6 @@ export default function CoffeeDetailPage() {
       key: CoffeeInfoField.NAME_EN,
       label: "Name(EN)",
       value: coffeeInfo[CoffeeInfoField.NAME_EN],
-      isLink: false,
-    },
-    {
-      key: CoffeeInfoField.NOTE,
-      label: "Note",
-      value: coffeeInfo[CoffeeInfoField.NOTE],
       isLink: false,
     },
     {
@@ -92,40 +101,64 @@ export default function CoffeeDetailPage() {
   ];
 
   return (
-    <div className="min-w-[100dvw] min-h-[100dvh] flex flex-col items-center justify-center bg-background py-4">
-      <div className="relative w-3/4 min-h-[75dvh] bg-background border-[1px] border-secondary rounded-lg shadow-xl p-6 max-w-[1024px]">
-        <h1 className="text-5xl text-center font-extrabold text-primary">
-          Coffee Detail
-        </h1>
-        <div className="my-4 md:my-16 bg-white/90 p-4 rounded-lg gap-8 flex flex-col">
-          {CoffeeInfoData.map((data) => (
-            <div key={data.key} className="flex flex-col md:flex-row mt-4">
-              <span className="text-2xl font-bold shrink-0">{data.label}</span>
-              <div className="w-full border-dashed border-[1px] h-[1px] md:mt-auto md:mb-1 border-black md:px-4 md:mx-4 my-2" />
-              {data.isLink ? (
-                <Link
-                  to={data.value}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-lg shrink-0 underline"
-                >
-                  From Here
-                </Link>
-              ) : (
-                <span className="text-xl shrink-0">{data.value}</span>
-              )}
+    <div className="mx-auto flex items-center justify-center w-full">
+      <div className="p-4 w-full flex justify-center">
+        <Card className="w-full md:w-[40rem] relative">
+          <CardHeader>
+            <CardTitle className="text-3xl">
+              {coffeeInfo[CoffeeInfoField.NAME_KR]}
+            </CardTitle>
+            <CardDescription>
+              {coffeeInfo[CoffeeInfoField.NAME_EN]}
+            </CardDescription>
+          </CardHeader>
+          <CardContent className="grid grid-cols-2 gap-x-8 gap-y-4">
+            <div className="flex flex-col col-span-2">
+              <p className="text-lg font-bold">Note</p>
+              <div className="flex space-x-2">
+                {coffeeInfo[CoffeeInfoField.NOTE].split(",").map((note) => (
+                  <Badge key={note} variant={"outline"}>
+                    {note}
+                  </Badge>
+                ))}
+              </div>
             </div>
-          ))}
-        </div>
-        {isUserSubmitted && (
-          <div className="absolute left-0 top-0 right-0 bottom-0 bg-gray-500/90 flex items-center justify-center">
-            <span className="text-3xl font-bold text-center">
-              이 커피 정보는 다른 유저가 제안한 정보에요! ☕️
-              <br />
-              빠르게 확인후 업데이트 할게요! 🏃🏻‍➡️
-            </span>
-          </div>
-        )}
+            {CoffeeInfoData.map((data) => (
+              <div key={data.key} className={cn("flex flex-col")}>
+                <p className="text-lg font-bold">{data.label}</p>
+                {data.isLink ? (
+                  <Link
+                    to={data.value}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-lg shrink-0 underline"
+                  >
+                    정보 출처
+                  </Link>
+                ) : (
+                  <span className="text-muted-foreground">{data.value}</span>
+                )}
+              </div>
+            ))}
+          </CardContent>
+          {/** @TODO : 공유하기 버튼을 추가하자. */}
+          {/* <CardFooter className="flex justify-between">
+            <Button type="submit" className="w-full">
+              추가 제안하기
+            </Button>
+          </CardFooter> */}
+          {isUserSubmitted && (
+            <div className="absolute left-0 top-0 right-0 bottom-0 bg-gray-500/90 flex items-center justify-center">
+              <span className="text-3xl font-bold text-center p-8">
+                이 커피 정보는 다른 유저가 제안한 정보에요! ☕️
+                <br />
+                🏃🏻‍➡️🏃🏻‍♂️‍➡️🏃🏻‍♀️‍➡️
+                <br />
+                빠르게 확인후 업데이트 할게요! 🫡
+              </span>
+            </div>
+          )}
+        </Card>
       </div>
     </div>
   );
