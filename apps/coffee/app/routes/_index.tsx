@@ -20,13 +20,20 @@ export default function Index() {
     <div className="mx-auto grow flex w-full">
       <div className="flex flex-col items-center w-full space-y-4 mx-[2rem]">
         <h1
-          className="font-bold text-[5rem]"
-          style={{ marginTop: `calc(50dvh - 28px - 120px - 120px)` }}
+          className="h-[120px]"
+          style={{
+            marginTop: `calc(50dvh - 28px - 120px - 120px)`,
+            alignContent: "end",
+          }}
         >
-          {siteConfig.name}
+          <span className="font-bold text-[3rem] sm:text-[5rem]">
+            {siteConfig.name}
+          </span>
         </h1>
         <CommandMenu />
-        <p>당신의 취향에 맞는 완벽한 커피 원두를 찾아보세요!</p>
+        <p className="text-[1rem] sm:text-[1.25rem]">
+          당신의 취향에 맞는 완벽한 커피 원두를 찾아보세요!
+        </p>
       </div>
     </div>
   );

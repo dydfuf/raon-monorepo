@@ -4,11 +4,14 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
+  useNavigation,
+  useNavigationType,
 } from "@remix-run/react";
 import stylesheet from "@raonc/ui/globals.css?url";
 import { LinksFunction } from "@remix-run/node";
 import SiteHeader from "./components/site-header";
 import { TailwindIndicator } from "./components/tailwind-indicator";
+import { Icons } from "./components/Icons";
 
 export const links: LinksFunction = () => [
   { rel: "stylesheet", href: stylesheet },
@@ -33,10 +36,20 @@ export function Layout({ children }: { children: React.ReactNode }) {
 }
 
 export default function App() {
+  const navigation = useNavigation();
+  const isLoading = ["loading", "submitting"].includes(navigation.state);
+
   return (
     <div className="relative flex min-h-screen flex-col bg-background">
       <SiteHeader />
-      <main className="flex-1 flex">{<Outlet />}</main>
+      <main className="flex-1 flex">
+        {isLoading && (
+          <div className="fixed top-0 left-0 right-0 bottom-0 m-auto flex justify-center items-center bg-accent/60 z-[9999]">
+            <Icons.spinner className="animate-spin" />
+          </div>
+        )}
+        {<Outlet />}
+      </main>
       {/* <SiteFooter /> */}
       <TailwindIndicator />
     </div>

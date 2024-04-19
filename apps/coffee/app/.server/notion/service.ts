@@ -116,3 +116,96 @@ export const getCoffeeInfoByKeyword = async (keyword: string) => {
   return coffeeInfoList;
 };
 
+export const createCoffeeInfo = async (
+  coffeeInfo: Omit<CoffeeInfo, CoffeeInfoField.ID>
+) => {
+  const response = await notion.pages.create({
+    parent: {
+      database_id: process.env.NOTION_DATABASE_ID ?? "",
+    },
+    properties: {
+      [CoffeeInfoField.NAME_KR]: {
+        title: [
+          {
+            type: "text",
+            text: {
+              content: coffeeInfo[CoffeeInfoField.NAME_KR],
+            },
+          },
+        ],
+      },
+      [CoffeeInfoField.NAME_EN]: {
+        rich_text: [
+          {
+            type: "text",
+            text: {
+              content: coffeeInfo[CoffeeInfoField.NAME_EN],
+            },
+          },
+        ],
+      },
+      [CoffeeInfoField.NOTE]: {
+        rich_text: [
+          {
+            type: "text",
+            text: {
+              content: coffeeInfo[CoffeeInfoField.NOTE],
+            },
+          },
+        ],
+      },
+      [CoffeeInfoField.REGION]: {
+        rich_text: [
+          {
+            type: "text",
+            text: {
+              content: coffeeInfo[CoffeeInfoField.REGION],
+            },
+          },
+        ],
+      },
+      [CoffeeInfoField.FARM]: {
+        rich_text: [
+          {
+            type: "text",
+            text: {
+              content: coffeeInfo[CoffeeInfoField.FARM],
+            },
+          },
+        ],
+      },
+      [CoffeeInfoField.VARIETY]: {
+        rich_text: [
+          {
+            type: "text",
+            text: {
+              content: coffeeInfo[CoffeeInfoField.VARIETY],
+            },
+          },
+        ],
+      },
+      [CoffeeInfoField.PROCESS]: {
+        rich_text: [
+          {
+            type: "text",
+            text: {
+              content: coffeeInfo[CoffeeInfoField.PROCESS],
+            },
+          },
+        ],
+      },
+      [CoffeeInfoField.SOURCE]: {
+        rich_text: [
+          {
+            type: "text",
+            text: {
+              content: coffeeInfo[CoffeeInfoField.SOURCE],
+            },
+          },
+        ],
+      },
+    },
+  });
+
+  return response;
+};
