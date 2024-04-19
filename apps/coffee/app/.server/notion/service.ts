@@ -20,6 +20,8 @@ export const getCoffeeInfoList = async () => {
           } else if (value.type === "unique_id") {
             const { prefix, number } = value.unique_id;
             fieldValue = `${prefix}-${number}`;
+          } else if (value.type === "number") {
+            fieldValue = value.number;
           } else {
             fieldValue = JSON.stringify(value);
           }
@@ -31,7 +33,11 @@ export const getCoffeeInfoList = async () => {
     }
   }
 
-  return coffeeInfoList;
+  const NotUserSubmittedCoffeeInfoList = coffeeInfoList.filter(
+    (coffeeInfo) => !coffeeInfo[CoffeeInfoField.USER_SUBMITTED]
+  );
+
+  return NotUserSubmittedCoffeeInfoList;
 };
 
 export const getCoffeeInfoById = async (id: number) => {
@@ -66,54 +72,6 @@ export const getCoffeeInfoById = async (id: number) => {
   });
 
   return coffeeInfo[0];
-};
-
-export const getCoffeeInfoByKeyword = async (keyword: string) => {
-  const coffeeInfoList: CoffeeInfo[] = [];
-
-  const data = await notion.databases.query({
-    database_id: process.env.NOTION_DATABASE_ID ?? "",
-    filter: {
-      or: [
-        {
-          property: CoffeeInfoField.NAME_KR,
-          title: {
-            contains: keyword,
-          },
-        },
-        {
-          property: CoffeeInfoField.NOTE,
-          rich_text: {
-            contains: keyword,
-          },
-        },
-      ],
-    },
-  });
-
-  for (const block of data.results) {
-    if ("properties" in block) {
-      const coffeeInfo = Object.entries(block.properties).map(
-        ([key, value]) => {
-          let fieldValue = DEFAULT_FIELD_VALUE;
-          if (value.type === "title") {
-            fieldValue = value.title[0]?.plain_text;
-          } else if (value.type === "rich_text") {
-            fieldValue = value.rich_text[0]?.plain_text;
-          } else if (value.type === "unique_id") {
-            const { prefix, number } = value.unique_id;
-            fieldValue = `${prefix}-${number}`;
-          } else {
-            fieldValue = JSON.stringify(value);
-          }
-          return { [key]: fieldValue ?? DEFAULT_FIELD_VALUE };
-        }
-      );
-      coffeeInfoList.push(Object.assign({}, ...coffeeInfo));
-    }
-  }
-
-  return coffeeInfoList;
 };
 
 export const createCoffeeInfo = async (
@@ -203,6 +161,9 @@ export const createCoffeeInfo = async (
             },
           },
         ],
+      },
+      [CoffeeInfoField.USER_SUBMITTED]: {
+        number: 1,
       },
     },
   });

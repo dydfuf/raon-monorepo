@@ -69,7 +69,10 @@ export async function action({ request }: ActionFunctionArgs) {
   const { name_kr, name_en, note, region, farm, variety, process, source } =
     body;
 
-  const coffeeInfo: Omit<CoffeeInfo, CoffeeInfoField.ID> = CoffeeInfoDTO.parse({
+  const coffeeInfo: Omit<
+    CoffeeInfo,
+    CoffeeInfoField.ID | CoffeeInfoField.USER_SUBMITTED
+  > = CoffeeInfoDTO.parse({
     [CoffeeInfoField.NAME_KR]: name_kr,
     [CoffeeInfoField.NAME_EN]: name_en,
     [CoffeeInfoField.NOTE]: note,
@@ -201,7 +204,12 @@ export default function CoffeeSuggestionPage() {
                   control={form.control}
                   name={fieldItem.name}
                   render={({ field }) => (
-                    <FormItem className={fieldItem.className}>
+                    <FormItem
+                      className={cn(
+                        "flex flex-col justify-between",
+                        fieldItem.className
+                      )}
+                    >
                       <FormLabel className="text-lg">
                         {fieldItem.label}
                       </FormLabel>
