@@ -36,6 +36,8 @@ export const meta: MetaFunction<typeof loader> = ({ data }) => {
 export default function CoffeeDetailPage() {
   const coffeeInfo = useLoaderData<typeof loader>();
 
+  const isUserSubmitted = Boolean(coffeeInfo[CoffeeInfoField.USER_SUBMITTED]);
+
   const CoffeeInfoData = [
     {
       key: CoffeeInfoField.NAME_KR,
@@ -91,10 +93,7 @@ export default function CoffeeDetailPage() {
 
   return (
     <div className="min-w-[100dvw] min-h-[100dvh] flex flex-col items-center justify-center bg-background py-4">
-      <Button variant={"default"} className="my-4 mx-auto">
-        <Link to={"/"}>Back Home</Link>
-      </Button>
-      <div className="w-3/4 min-h-[75dvh] bg-background border-[1px] border-secondary rounded-lg shadow-xl p-6 max-w-[1024px]">
+      <div className="relative w-3/4 min-h-[75dvh] bg-background border-[1px] border-secondary rounded-lg shadow-xl p-6 max-w-[1024px]">
         <h1 className="text-5xl text-center font-extrabold text-primary">
           Coffee Detail
         </h1>
@@ -118,6 +117,15 @@ export default function CoffeeDetailPage() {
             </div>
           ))}
         </div>
+        {isUserSubmitted && (
+          <div className="absolute left-0 top-0 right-0 bottom-0 bg-gray-500/90 flex items-center justify-center">
+            <span className="text-3xl font-bold text-center">
+              이 커피 정보는 다른 유저가 제안한 정보에요! ☕️
+              <br />
+              빠르게 확인후 업데이트 할게요! 🏃🏻‍➡️
+            </span>
+          </div>
+        )}
       </div>
     </div>
   );

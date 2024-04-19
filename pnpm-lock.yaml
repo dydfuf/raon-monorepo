@@ -114,6 +114,9 @@ importers:
 
   apps/coffee:
     dependencies:
+      '@hookform/resolvers':
+        specifier: ^3.3.4
+        version: 3.3.4(react-hook-form@7.50.1)
       '@notionhq/client':
         specifier: ^2.2.14
         version: 2.2.14
@@ -144,6 +147,12 @@ importers:
       react-dom:
         specifier: ^18.2.0
         version: 18.2.0(react@18.2.0)
+      react-hook-form:
+        specifier: ^7.50.1
+        version: 7.50.1(react@18.2.0)
+      zod:
+        specifier: ^3.22.4
+        version: 3.22.4
     devDependencies:
       '@raonc/eslint-config':
         specifier: workspace:^

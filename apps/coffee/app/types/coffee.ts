@@ -8,6 +8,7 @@ export enum CoffeeInfoField {
   PROCESS = "프로세싱",
   NOTE = "노트",
   SOURCE = "출처",
+  USER_SUBMITTED = "유저제출",
 }
 export type CoffeeInfo = {
   [CoffeeInfoField.ID]: string;
@@ -19,4 +20,5 @@ export type CoffeeInfo = {
   [CoffeeInfoField.PROCESS]: string;
   [CoffeeInfoField.NOTE]: string;
   [CoffeeInfoField.SOURCE]: string;
+  [CoffeeInfoField.USER_SUBMITTED]?: number;
 };
