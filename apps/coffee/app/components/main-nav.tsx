@@ -13,29 +13,20 @@ export default function MainNav() {
         </span>
       </NavLink>
       <nav className="flex items-center gap-6 text-sm">
-        <NavLink
-          to="/coffee/list"
-          className={({ isActive }) =>
-            cn(
-              "transition-colors hover:text-foreground/80",
-              isActive ? "text-foreground" : "text-foreground/60"
-            )
-          }
-          preventScrollReset
-        >
-          All Coffee
-        </NavLink>
-        <NavLink
-          to="/coffee/suggestion"
-          className={({ isActive }) =>
-            cn(
-              "transition-colors hover:text-foreground/80",
-              isActive ? "text-foreground" : "text-foreground/60"
-            )
-          }
-        >
-          Suggestion
-        </NavLink>
+        {siteConfig.mainNav.map((navItem) => (
+          <NavLink
+            key={navItem.to}
+            to={navItem.to}
+            className={({ isActive }) =>
+              cn(
+                "transition-colors hover:text-foreground/80",
+                isActive ? "text-foreground" : "text-foreground/60"
+              )
+            }
+          >
+            {navItem.label}
+          </NavLink>
+        ))}
       </nav>
     </div>
   );
