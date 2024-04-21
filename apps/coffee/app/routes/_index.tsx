@@ -1,7 +1,5 @@
-import { type MetaFunction } from "@remix-run/node";
+import type { MetaFunction, HeadersFunction } from "@vercel/remix";
 import CommandMenu from "../components/command-menu";
-
-import type { HeadersFunction } from "@remix-run/node";
 import { siteConfig } from "../constant/common";
 
 export const headers: HeadersFunction = ({}) => ({

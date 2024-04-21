@@ -21,7 +21,7 @@ import { Input } from "@raonc/ui/components/input";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { CoffeeInfo, CoffeeInfoField } from "../types/coffee";
-import { ActionFunctionArgs, json, redirect } from "@remix-run/node";
+import { ActionFunctionArgs, redirect } from "@vercel/remix";
 import { Form as RemixForm, useFetcher } from "@remix-run/react";
 import {
   AlertDialog,
