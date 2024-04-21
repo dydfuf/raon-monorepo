@@ -30,3 +30,4 @@ export const getCoffeeInfoByBlockProperties = (
 
   return Object.assign({}, ...coffeeInfo);
 };
+

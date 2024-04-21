@@ -74,10 +74,11 @@ export default function CommandMenu({ isInNav, ...props }: Props) {
       <Button
         variant="outline"
         className={cn(
-          "relative h-12 rounded-[0.5rem] bg-background shadow-none sm:pr-12",
+          "relative rounded-[0.5rem] bg-background shadow-none sm:pr-12",
           "justify-start flex items-center",
           "text-sm font-normal text-muted-foreground",
-          { "w-full md:w-[20rem]": isInNav, "w-full md:w-[40rem]": !isInNav }
+          { "w-full md:w-[20rem]": isInNav, "w-full md:w-[40rem]": !isInNav },
+          { "h-12": !isInNav }
         )}
         onClick={() => {
           setOpen(true);
