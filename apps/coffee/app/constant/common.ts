@@ -1,5 +1,6 @@
 export const siteConfig = {
   name: "COFFEE DB",
+  domain: "coffee.raonc.dev",
   mobileNav: [
     {
       label: "All Coffee",

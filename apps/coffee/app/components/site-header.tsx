@@ -1,7 +1,8 @@
-import { useLocation, useNavigation } from "@remix-run/react";
+import { useLocation } from "@remix-run/react";
 import CommandMenu from "./command-menu";
 import MainNav from "./main-nav";
 import { MobileNav } from "./mobile-nav";
+import { ModeToggle } from "./mode-toggle";
 
 export default function SiteHeader() {
   const location = useLocation();
@@ -13,9 +14,11 @@ export default function SiteHeader() {
         <MobileNav />
         <div className="flex flex-1 items-center justify-between space-x-2 md:justify-end">
           <div className="w-full flex-1 md:w-auto md:flex-none">
-            {!isHome && <CommandMenu isInNav={true} />}
+            {!isHome && <CommandMenu isInNav />}
           </div>
-          <nav className="flex items-center">{/* <ModeToggle /> */}</nav>
+          <nav className="flex items-center">
+            <ModeToggle />
+          </nav>
         </div>
       </div>
     </header>
