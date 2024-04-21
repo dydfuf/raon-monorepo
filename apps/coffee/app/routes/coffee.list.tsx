@@ -6,7 +6,7 @@ import {
   getAllNotesByCoffeeInfoList,
   getAllNationByCoffeeInfoList,
 } from "../utils/coffee";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import CoffeeFilter from "../components/coffee-filter";
 import MobileCoffeeFilter from "../components/mobile-coffee-filter";
 
@@ -66,7 +66,7 @@ export default function CoffeeListPage() {
   };
 
   return (
-    <div className="mx-auto p-8 flex flex-col gap-4 w-[1024px]">
+    <div className="mx-auto px-8 pt-4 pb-8 flex flex-col gap-4 w-[1024px]">
       <CoffeeFilter {...filterProps} />
       <MobileCoffeeFilter {...filterProps} />
       {filteredCoffeeInfoList.map((coffeeInfo) => (

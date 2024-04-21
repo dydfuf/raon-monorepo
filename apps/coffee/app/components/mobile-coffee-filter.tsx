@@ -38,10 +38,10 @@ export default function MobileCoffeeFilter({
     selectedNotes.length > 0 ? selectedNotes.join(", ") : "노트별 필터";
 
   return (
-    <div className="grid grid-cols-2 gap-2 md:hidden">
+    <div className="grid grid-cols-2 gap-2 md:hidden sticky top-[57px] bg-background pb-4">
       <Drawer>
         <DrawerTrigger asChild>
-          <Button variant="outline">
+          <Button>
             <span className="line-clamp-1 whitespace-pre-wrap">
               {nationFilterButtonLabel}
             </span>
@@ -72,14 +72,16 @@ export default function MobileCoffeeFilter({
           </DrawerHeader>
           <DrawerFooter>
             <DrawerClose asChild>
-              <Button variant="outline">닫기</Button>
+              <Button variant="secondary" className="text-16 h-12 font-bold">
+                닫기
+              </Button>
             </DrawerClose>
           </DrawerFooter>
         </DrawerContent>
       </Drawer>
       <Drawer>
         <DrawerTrigger asChild>
-          <Button variant="outline">
+          <Button>
             <span className="line-clamp-1 whitespace-pre-wrap">
               {noteFilterButtonLabel}
             </span>
@@ -112,7 +114,9 @@ export default function MobileCoffeeFilter({
           </DrawerHeader>
           <DrawerFooter>
             <DrawerClose asChild>
-              <Button variant="outline">닫기</Button>
+              <Button variant="secondary" className="text-16 h-12 font-bold">
+                닫기
+              </Button>
             </DrawerClose>
           </DrawerFooter>
         </DrawerContent>
