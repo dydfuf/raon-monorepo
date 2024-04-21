@@ -8,8 +8,14 @@ export const getAllNationByCoffeeInfoList = (coffeeInfoList: CoffeeInfo[]) => {
     return Array.from(new Set(nations));
 };
 
-export const getAllNotesByCoffeeInfoList = (coffeeInfoList: CoffeeInfo[]) => {
+export const getAllNotesByCoffeeInfoList = (
+  coffeeInfoList: CoffeeInfo[],
+  allNations: string[]
+) => {
   const notes = coffeeInfoList
+    .filter((coffeeInfo) =>
+      allNations.includes(coffeeInfo[CoffeeInfoField.NATION])
+    )
     .map((coffeeInfo) => coffeeInfo[CoffeeInfoField.NOTE])
     .join(",")
     .split(",")

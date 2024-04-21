@@ -38,8 +38,9 @@ export default function CoffeeFilter({
 
   return (
     <Accordion
-      type="multiple"
+      type="single"
       className="hidden md:block sticky top-[57px] bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60"
+      collapsible
     >
       <AccordionItem value="nation">
         <AccordionTrigger>

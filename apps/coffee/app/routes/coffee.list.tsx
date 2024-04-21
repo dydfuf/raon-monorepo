@@ -6,7 +6,7 @@ import {
   getAllNotesByCoffeeInfoList,
   getAllNationByCoffeeInfoList,
 } from "../utils/coffee";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import CoffeeFilter from "../components/coffee-filter";
 import MobileCoffeeFilter from "../components/mobile-coffee-filter";
 
@@ -18,10 +18,20 @@ export async function loader() {
 export default function CoffeeListPage() {
   const { coffeeInfoList } = useLoaderData<typeof loader>();
   const allNations = getAllNationByCoffeeInfoList(coffeeInfoList);
-  const allNotes = getAllNotesByCoffeeInfoList(coffeeInfoList);
 
+  const [allNotes, setAllNotes] = useState<string[]>([]);
   const [selectedNations, setSelectedNations] = useState<string[]>([]);
   const [selectedNotes, setSelectedNotes] = useState<string[]>([]);
+
+  useEffect(() => {
+    if (selectedNations.length === 0) {
+      setAllNotes(getAllNotesByCoffeeInfoList(coffeeInfoList, allNations));
+      return;
+    }
+
+    setAllNotes(getAllNotesByCoffeeInfoList(coffeeInfoList, selectedNations));
+    setSelectedNotes([]);
+  }, [selectedNations]);
 
   const filterByNations = (coffeeInfo: CoffeeInfo) => {
     const hasSelectedNations = selectedNations.length > 0;
