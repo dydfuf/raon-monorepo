@@ -1,4 +1,4 @@
-import { LoaderFunctionArgs, MetaFunction } from "@remix-run/node";
+import { LoaderFunctionArgs, MetaFunction } from "@vercel/remix";
 import { getCoffeeInfoById } from "../.server/notion/service";
 import { Link, useLoaderData } from "@remix-run/react";
 import { CoffeeInfoField } from "../types/coffee";

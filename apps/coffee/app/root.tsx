@@ -9,11 +9,7 @@ import {
 } from "@remix-run/react";
 import stylesheet from "@raonc/ui/globals.css?url";
 import fontStyleSheet from "../public/font/pretendardvariable.css?url";
-import {
-  LinksFunction,
-  LoaderFunctionArgs,
-  MetaFunction,
-} from "@remix-run/node";
+import { LinksFunction, LoaderFunctionArgs } from "@vercel/remix";
 import SiteHeader from "./components/site-header";
 import { TailwindIndicator } from "./components/tailwind-indicator";
 import { Icons } from "./components/Icons";

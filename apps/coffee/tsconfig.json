@@ -9,7 +9,7 @@
     "**/.client/**/*.tsx"
   ],
   "compilerOptions": {
-    "types": ["@remix-run/node", "vite/client"],
+    "types": ["@vercel/remix", "node", "vite/client"],
     "noEmit": true
   }
 }
