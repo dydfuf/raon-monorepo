@@ -37,14 +37,6 @@ export const links: LinksFunction = () => [
   { rel: "stylesheet", href: stylesheet },
 ];
 
-export const meta: MetaFunction = () => {
-  return [
-    { title: "COFFEE DB" },
-    { viewport: "width=device-width, initial-scale=1, maximum-scale=1" },
-  ];
-};
-
-
 export function App({ children }: { children: React.ReactNode }) {
   const data = useLoaderData<typeof loader>();
   const [theme] = useTheme();
@@ -57,7 +49,10 @@ export function App({ children }: { children: React.ReactNode }) {
     >
       <head>
         <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no"
+        />
         <Meta />
         <PreventFlashOnWrongTheme ssrTheme={Boolean(data.theme)} />
         <Links />
