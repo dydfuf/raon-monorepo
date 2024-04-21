@@ -1,25 +1,9 @@
+import { Coffee, LoaderCircle, PanelLeftOpen, Sun, Moon } from "lucide-react";
+
 type IconProps = React.HTMLAttributes<SVGElement>;
 
 export const Icons = {
-  logo: (props: IconProps) => (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      {...props}
-    >
-      <path d="M10 2v2" />
-      <path d="M14 2v2" />
-      <path d="M16 8a1 1 0 0 1 1 1v8a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1h14a4 4 0 1 1 0 8h-1" />
-      <path d="M6 2v2" />
-    </svg>
-  ),
+  logo: (props: IconProps) => <Coffee {...props} />,
   github: (props: IconProps) => (
     <svg
       width="15"
@@ -54,52 +38,8 @@ export const Icons = {
       ></path>
     </svg>
   ),
-  spinner: (props: IconProps) => (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      {...props}
-    >
-      <path d="M21 12a9 9 0 1 1-6.219-8.56" />
-    </svg>
-  ),
-  toggleMenu: (props: IconProps) => (
-    <svg
-      strokeWidth="1.5"
-      viewBox="0 0 24 24"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      className="h-5 w-5"
-      {...props}
-    >
-      <path
-        d="M3 5H11"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      ></path>
-      <path
-        d="M3 12H16"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      ></path>
-      <path
-        d="M3 19H21"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      ></path>
-    </svg>
-  ),
+  spinner: (props: IconProps) => <LoaderCircle {...props} />,
+  toggleMenu: (props: IconProps) => <PanelLeftOpen {...props} />,
+  sun: (props: IconProps) => <Sun {...props} />,
+  moon: (props: IconProps) => <Moon {...props} />,
 };
