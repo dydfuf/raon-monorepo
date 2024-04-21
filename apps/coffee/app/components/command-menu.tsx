@@ -100,10 +100,10 @@ export default function CommandMenu({ isInNav, ...props }: Props) {
         }}
         open={open}
         onOpenChange={setOpen}
-        dialogContentClassName="top-0 translate-y-1 md:top-1/2 md:-translate-y-1/2"
+        dialogContentClassName="top-0 translate-y-0 md:top-1/2 md:-translate-y-1/2"
       >
         <CommandInput placeholder="원두 이름 및 노트를 입력 해보세요. 🚀" />
-        <CommandList>
+        <CommandList className="max-h-[80dvh]">
           {!isLoading && <CommandEmpty>정보를 찾을 수 없어요. 😭</CommandEmpty>}
           {isLoading && <CommandLoading>로딩중 이에요. 🤑</CommandLoading>}
           <CommandGroup heading={"원두 정보"}>

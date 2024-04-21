@@ -4,6 +4,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@raonc/ui/components/accordion";
+import { ScrollArea } from "@raonc/ui/components/scroll-area";
 import {
   ToggleGroup,
   ToggleGroupItem,
@@ -26,12 +27,28 @@ export default function CoffeeFilter({
   selectedNotes,
   setSelectedNotes,
 }: Props) {
+  const nationFilterButtonLabel =
+    selectedNations.length > 0
+      ? `나라별 필터 | ${selectedNations.join(", ")}`
+      : "나라별 필터";
+  const noteFilterButtonLabel =
+    selectedNotes.length > 0
+      ? `노트별 필터 | ${selectedNotes.join(", ")}`
+      : "노트별 필터";
+
   return (
-    <Accordion type="multiple" className="hidden md:block">
+    <Accordion
+      type="multiple"
+      className="hidden md:block sticky top-[57px] bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60"
+    >
       <AccordionItem value="nation">
-        <AccordionTrigger>나라별</AccordionTrigger>
+        <AccordionTrigger>
+          <span className="line-clamp-1 whitespace-pre-wrap">
+            {nationFilterButtonLabel}
+          </span>
+        </AccordionTrigger>
         <AccordionContent>
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-2 bg-background">
             <ToggleGroup
               type="multiple"
               className="flex flex-wrap gap-2 justify-start"
@@ -52,21 +69,27 @@ export default function CoffeeFilter({
         </AccordionContent>
       </AccordionItem>
       <AccordionItem value="note">
-        <AccordionTrigger>노트별</AccordionTrigger>
+        <AccordionTrigger>
+          <span className="line-clamp-1 whitespace-pre-wrap">
+            {noteFilterButtonLabel}
+          </span>
+        </AccordionTrigger>
         <AccordionContent>
-          <div className="flex flex-wrap gap-2">
-            <ToggleGroup
-              type="multiple"
-              className="flex flex-wrap gap-2 justify-start"
-              onValueChange={setSelectedNotes}
-              defaultValue={selectedNotes}
-            >
-              {allNotes.map((note) => (
-                <ToggleGroupItem key={note} value={note} variant={"outline"}>
-                  {note}
-                </ToggleGroupItem>
-              ))}
-            </ToggleGroup>
+          <div className="flex flex-wrap gap-2 bg-background">
+            <ScrollArea className="max-h-[60dvh]">
+              <ToggleGroup
+                type="multiple"
+                className="flex flex-wrap gap-2 justify-start"
+                onValueChange={setSelectedNotes}
+                defaultValue={selectedNotes}
+              >
+                {allNotes.map((note) => (
+                  <ToggleGroupItem key={note} value={note} variant={"outline"}>
+                    {note}
+                  </ToggleGroupItem>
+                ))}
+              </ToggleGroup>
+            </ScrollArea>
           </div>
         </AccordionContent>
       </AccordionItem>

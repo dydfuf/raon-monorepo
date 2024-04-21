@@ -1,11 +1,11 @@
 import { CoffeeInfo, CoffeeInfoField } from "../types/coffee";
 
 export const getAllNationByCoffeeInfoList = (coffeeInfoList: CoffeeInfo[]) => {
-  return Array.from(
-    new Set(
-      coffeeInfoList.map((coffeeInfo) => coffeeInfo[CoffeeInfoField.NATION])
-    )
-  );
+    const nations = coffeeInfoList.map(
+      (coffeeInfo) => coffeeInfo[CoffeeInfoField.NATION]
+    );
+
+    return Array.from(new Set(nations));
 };
 
 export const getAllNotesByCoffeeInfoList = (coffeeInfoList: CoffeeInfo[]) => {

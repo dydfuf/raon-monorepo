@@ -1,6 +1,6 @@
 import { Link, json, useLoaderData } from "@remix-run/react";
 import { getCoffeeInfoList } from "../.server/notion/service";
-import { CoffeeInfoField } from "../types/coffee";
+import { CoffeeInfo, CoffeeInfoField } from "../types/coffee";
 import NoteBadge from "../components/note-badge";
 import {
   getAllNotesByCoffeeInfoList,
@@ -23,27 +23,28 @@ export default function CoffeeListPage() {
   const [selectedNations, setSelectedNations] = useState<string[]>([]);
   const [selectedNotes, setSelectedNotes] = useState<string[]>([]);
 
-  const filteredCoffeeInfoList = coffeeInfoList.filter((coffeeInfo) => {
+  const filterByNations = (coffeeInfo: CoffeeInfo) => {
     const hasSelectedNations = selectedNations.length > 0;
+
+    if (hasSelectedNations) {
+      return selectedNations.includes(coffeeInfo[CoffeeInfoField.NATION]);
+    }
+    return true;
+  };
+
+  const filterByNotes = (coffeeInfo: CoffeeInfo) => {
     const hasSelectedNotes = selectedNotes.length > 0;
 
-    const filterByNations = () => {
-      if (hasSelectedNations) {
-        return selectedNations.includes(coffeeInfo[CoffeeInfoField.NATION]);
-      }
-      return true;
-    };
+    if (hasSelectedNotes) {
+      const coffeeNotes = coffeeInfo[CoffeeInfoField.NOTE].split(",");
+      return coffeeNotes.some((note) => selectedNotes.includes(note.trim()));
+    }
+    return true;
+  };
 
-    const filterByNotes = () => {
-      if (hasSelectedNotes) {
-        const coffeeNotes = coffeeInfo[CoffeeInfoField.NOTE].split(",");
-        return coffeeNotes.some((note) => selectedNotes.includes(note));
-      }
-      return true;
-    };
-
-    return filterByNations() && filterByNotes();
-  });
+  const filteredCoffeeInfoList = coffeeInfoList
+    .filter(filterByNations)
+    .filter(filterByNotes);
 
   const filterProps = {
     allNations,
