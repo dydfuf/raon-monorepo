@@ -12,7 +12,6 @@ export const meta: MetaFunction = () => {
   return [
     { title: "COFFEE DB" },
     { name: "description", content: "Search Any Coffee Information" },
-    { viewport: "width=device-width, initial-scale=1, maximum-scale=1" },
   ];
 };
 

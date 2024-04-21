@@ -9,7 +9,11 @@ import {
 } from "@remix-run/react";
 import stylesheet from "@raonc/ui/globals.css?url";
 import fontStyleSheet from "../public/font/pretendardvariable.css?url";
-import { LinksFunction, LoaderFunctionArgs } from "@remix-run/node";
+import {
+  LinksFunction,
+  LoaderFunctionArgs,
+  MetaFunction,
+} from "@remix-run/node";
 import SiteHeader from "./components/site-header";
 import { TailwindIndicator } from "./components/tailwind-indicator";
 import { Icons } from "./components/Icons";
@@ -32,6 +36,14 @@ export const links: LinksFunction = () => [
   { rel: "stylesheet", href: fontStyleSheet },
   { rel: "stylesheet", href: stylesheet },
 ];
+
+export const meta: MetaFunction = () => {
+  return [
+    { title: "COFFEE DB" },
+    { viewport: "width=device-width, initial-scale=1, maximum-scale=1" },
+  ];
+};
+
 
 export function App({ children }: { children: React.ReactNode }) {
   const data = useLoaderData<typeof loader>();
