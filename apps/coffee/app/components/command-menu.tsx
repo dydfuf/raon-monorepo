@@ -74,10 +74,11 @@ export default function CommandMenu({ isInNav, ...props }: Props) {
       <Button
         variant="outline"
         className={cn(
-          "relative h-12 rounded-[0.5rem] bg-background shadow-none sm:pr-12",
+          "relative rounded-[0.5rem] bg-background shadow-none sm:pr-12",
           "justify-start flex items-center",
           "text-sm font-normal text-muted-foreground",
-          { "w-full md:w-[20rem]": isInNav, "w-full md:w-[40rem]": !isInNav }
+          { "w-full md:w-[20rem]": isInNav, "w-full md:w-[40rem]": !isInNav },
+          { "h-12": !isInNav }
         )}
         onClick={() => {
           setOpen(true);
@@ -99,10 +100,10 @@ export default function CommandMenu({ isInNav, ...props }: Props) {
         }}
         open={open}
         onOpenChange={setOpen}
-        dialogContentClassName="top-0 translate-y-1 md:top-1/2 md:-translate-y-1/2"
+        dialogContentClassName="top-0 translate-y-0 md:top-1/2 md:-translate-y-1/2"
       >
         <CommandInput placeholder="원두 이름 및 노트를 입력 해보세요. 🚀" />
-        <CommandList>
+        <CommandList className="max-h-[80dvh]">
           {!isLoading && <CommandEmpty>정보를 찾을 수 없어요. 😭</CommandEmpty>}
           {isLoading && <CommandLoading>로딩중 이에요. 🤑</CommandLoading>}
           <CommandGroup heading={"원두 정보"}>
