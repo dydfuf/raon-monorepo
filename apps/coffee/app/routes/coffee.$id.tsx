@@ -10,7 +10,7 @@ import {
   CardTitle,
 } from "@raonc/ui/components/card";
 import { cn } from "@raonc/ui/lib/utils";
-import { Badge } from "@raonc/ui/components/badge";
+import NoteBadge from "../components/note-badge";
 
 export async function loader({ params }: LoaderFunctionArgs) {
   const { id } = params;
@@ -47,13 +47,6 @@ export default function CoffeeDetailPage() {
   const isUserSubmitted = Boolean(coffeeInfo[CoffeeInfoField.USER_SUBMITTED]);
 
   const CoffeeInfoData = [
-    // {
-    //   key: CoffeeInfoField.NOTE,
-    //   label: "Note",
-    //   value: coffeeInfo[CoffeeInfoField.NOTE],
-    //   isLink: false,
-    //   className: "col-span-2",
-    // },
     {
       key: CoffeeInfoField.NAME_KR,
       label: "Name(KR)",
@@ -101,7 +94,7 @@ export default function CoffeeDetailPage() {
   ];
 
   return (
-    <div className="mx-auto flex items-center justify-center w-full">
+    <div className="mx-auto flex items-start md:items-center justify-center w-full">
       <div className="p-4 w-full flex justify-center">
         <Card className="w-full md:w-[40rem] relative">
           <CardHeader>
@@ -113,15 +106,10 @@ export default function CoffeeDetailPage() {
             </CardDescription>
           </CardHeader>
           <CardContent className="grid grid-cols-2 gap-x-8 gap-y-4">
-            <div className="flex flex-col col-span-2">
-              <p className="text-lg font-bold">Note</p>
-              <div className="flex space-x-2">
-                {coffeeInfo[CoffeeInfoField.NOTE].split(",").map((note) => (
-                  <Badge key={note} variant={"outline"}>
-                    {note}
-                  </Badge>
-                ))}
-              </div>
+            <div className="flex flex-wrap gap-2 col-span-2">
+              {coffeeInfo[CoffeeInfoField.NOTE].split(",").map((note) => (
+                <NoteBadge key={note}>{note}</NoteBadge>
+              ))}
             </div>
             {CoffeeInfoData.map((data) => (
               <div key={data.key} className={cn("flex flex-col")}>

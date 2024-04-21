@@ -1,7 +1,7 @@
 import { Link, useLoaderData } from "@remix-run/react";
 import { getCoffeeInfoList } from "../.server/notion/service";
 import { CoffeeInfoField } from "../types/coffee";
-import { Badge } from "@raonc/ui/components/badge";
+import NoteBadge from "../components/note-badge";
 
 export async function loader() {
   const coffeeInfoList = await getCoffeeInfoList();
@@ -26,9 +26,7 @@ export default function CoffeeListPage() {
             </p>
             <div className="flex flex-wrap gap-2 mt-2">
               {coffeeInfo[CoffeeInfoField.NOTE].split(",").map((note) => (
-                <Badge key={note} variant={"outline"}>
-                  {note}
-                </Badge>
+                <NoteBadge key={note}>{note}</NoteBadge>
               ))}
             </div>
           </div>
