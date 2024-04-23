@@ -14,18 +14,18 @@ interface Props {
   allNations: string[];
   allNotes: string[];
   selectedNations: string[];
-  setSelectedNations: (value: string[]) => void;
+  onSelectedNationsChange: (value: string[]) => void;
   selectedNotes: string[];
-  setSelectedNotes: (value: string[]) => void;
+  onSelectedNotesChange: (value: string[]) => void;
 }
 
 export default function CoffeeFilter({
   allNations,
   allNotes,
   selectedNations,
-  setSelectedNations,
+  onSelectedNationsChange,
   selectedNotes,
-  setSelectedNotes,
+  onSelectedNotesChange,
 }: Props) {
   const nationFilterButtonLabel =
     selectedNations.length > 0
@@ -53,7 +53,7 @@ export default function CoffeeFilter({
             <ToggleGroup
               type="multiple"
               className="flex flex-wrap gap-2 justify-start"
-              onValueChange={setSelectedNations}
+              onValueChange={onSelectedNationsChange}
               defaultValue={selectedNations}
             >
               {allNations.map((nation) => (
@@ -81,7 +81,7 @@ export default function CoffeeFilter({
               <ToggleGroup
                 type="multiple"
                 className="flex flex-wrap gap-2 justify-start"
-                onValueChange={setSelectedNotes}
+                onValueChange={onSelectedNotesChange}
                 defaultValue={selectedNotes}
               >
                 {allNotes.map((note) => (
