@@ -14,32 +14,44 @@ import {
   ToggleGroup,
   ToggleGroupItem,
 } from "@raonc/ui/components/toggle-group";
+import { useState } from "react";
 
 interface Props {
   allNations: string[];
   allNotes: string[];
   selectedNations: string[];
-  setSelectedNations: (value: string[]) => void;
+  onSelectedNationsChange: (value: string[]) => void;
   selectedNotes: string[];
-  setSelectedNotes: (value: string[]) => void;
+  onSelectedNotesChange: (value: string[]) => void;
 }
 
 export default function MobileCoffeeFilter({
   allNations,
   allNotes,
-  selectedNations,
-  setSelectedNations,
-  selectedNotes,
-  setSelectedNotes,
+  selectedNations: _selectedNations,
+  onSelectedNationsChange,
+  selectedNotes: _selectedNotes,
+  onSelectedNotesChange,
 }: Props) {
+  const [selectedNations, setSelectedNations] =
+    useState<string[]>(_selectedNations);
+  const [selectedNotes, setSelectedNotes] = useState<string[]>(_selectedNotes);
+
+  const onCloseNationsDrawer = () => {
+    onSelectedNationsChange(selectedNations);
+  };
+  const onCloseNotesDrawer = () => {
+    onSelectedNotesChange(selectedNotes);
+  };
+
   const nationFilterButtonLabel =
-    selectedNations.length > 0 ? selectedNations.join(", ") : "나라별 필터";
+    _selectedNations.length > 0 ? _selectedNations.join(", ") : "나라별 필터";
   const noteFilterButtonLabel =
-    selectedNotes.length > 0 ? selectedNotes.join(", ") : "노트별 필터";
+    _selectedNotes.length > 0 ? _selectedNotes.join(", ") : "노트별 필터";
 
   return (
     <div className="grid grid-cols-2 gap-2 md:hidden sticky top-[57px] bg-background pb-4">
-      <Drawer>
+      <Drawer onClose={onCloseNationsDrawer}>
         <DrawerTrigger asChild>
           <Button>
             <span className="line-clamp-1 whitespace-pre-wrap">
@@ -79,7 +91,7 @@ export default function MobileCoffeeFilter({
           </DrawerFooter>
         </DrawerContent>
       </Drawer>
-      <Drawer>
+      <Drawer onClose={onCloseNotesDrawer}>
         <DrawerTrigger asChild>
           <Button>
             <span className="line-clamp-1 whitespace-pre-wrap">

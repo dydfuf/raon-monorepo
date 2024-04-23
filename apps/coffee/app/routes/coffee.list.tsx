@@ -1,4 +1,4 @@
-import { Link, json, useLoaderData } from "@remix-run/react";
+import { Link, json, useLoaderData, useSearchParams } from "@remix-run/react";
 import { getCoffeeInfoList } from "../.server/notion/service";
 import { CoffeeInfo, CoffeeInfoField } from "../types/coffee";
 import NoteBadge from "../components/note-badge";
@@ -6,9 +6,14 @@ import {
   getAllNotesByCoffeeInfoList,
   getAllNationByCoffeeInfoList,
 } from "../utils/coffee";
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import CoffeeFilter from "../components/coffee-filter";
 import MobileCoffeeFilter from "../components/mobile-coffee-filter";
+import { HeadersFunction } from "@remix-run/node";
+
+export const headers: HeadersFunction = () => ({
+  "Cache-Control": "public, max-age=1800, s-maxage=3600",
+});
 
 export async function loader() {
   const coffeeInfoList = await getCoffeeInfoList();
@@ -20,8 +25,14 @@ export default function CoffeeListPage() {
   const allNations = getAllNationByCoffeeInfoList(coffeeInfoList);
 
   const [allNotes, setAllNotes] = useState<string[]>([]);
-  const [selectedNations, setSelectedNations] = useState<string[]>([]);
-  const [selectedNotes, setSelectedNotes] = useState<string[]>([]);
+
+  const [searchParams, setSearchParams] = useSearchParams();
+  const selectedNations = searchParams.get("nation")
+    ? searchParams.get("nation")?.split(",") ?? []
+    : [];
+  const selectedNotes = searchParams.get("note")
+    ? searchParams.get("note")?.split(",") ?? []
+    : [];
 
   useEffect(() => {
     if (selectedNations.length === 0) {
@@ -30,8 +41,7 @@ export default function CoffeeListPage() {
     }
 
     setAllNotes(getAllNotesByCoffeeInfoList(coffeeInfoList, selectedNations));
-    setSelectedNotes([]);
-  }, [selectedNations]);
+  }, []);
 
   const filterByNations = (coffeeInfo: CoffeeInfo) => {
     const hasSelectedNations = selectedNations.length > 0;
@@ -56,13 +66,33 @@ export default function CoffeeListPage() {
     .filter(filterByNations)
     .filter(filterByNotes);
 
+  const onSelectedNationsChange = (value: string[]) => {
+    setSearchParams(
+      { nation: value.join(",") },
+      {
+        replace: true,
+      }
+    );
+  };
+  const onSelectedNotesChange = (value: string[]) => {
+    setSearchParams(
+      (prev) => {
+        prev.set("note", value.join(","));
+        return prev;
+      },
+      {
+        replace: true,
+      }
+    );
+  };
+
   const filterProps = {
     allNations,
     allNotes,
     selectedNations,
-    setSelectedNations,
+    onSelectedNationsChange,
     selectedNotes,
-    setSelectedNotes,
+    onSelectedNotesChange,
   };
 
   return (
