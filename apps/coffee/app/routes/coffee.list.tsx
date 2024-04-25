@@ -17,7 +17,14 @@ export const headers: HeadersFunction = () => ({
 
 export async function loader() {
   const coffeeInfoList = await getCoffeeInfoList();
-  return json({ coffeeInfoList });
+  return json(
+    { coffeeInfoList },
+    {
+      headers: {
+        "Cache-Control": "public, max-age=1800, s-maxage=3600",
+      },
+    }
+  );
 }
 
 export default function CoffeeListPage() {
