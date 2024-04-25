@@ -9,6 +9,7 @@ import {
   ToggleGroup,
   ToggleGroupItem,
 } from "@raonc/ui/components/toggle-group";
+import { useEffect, useState } from "react";
 
 interface Props {
   allNations: string[];
@@ -36,6 +37,14 @@ export default function CoffeeFilter({
       ? `노트별 필터 | ${selectedNotes.join(", ")}`
       : "노트별 필터";
 
+  const [defaultNationValue, setDefaultNationValue] = useState(selectedNations);
+  const [defaultNoteValue, setDefaultNoteValue] = useState(selectedNotes);
+
+  useEffect(() => {
+    setDefaultNationValue(selectedNations);
+    setDefaultNoteValue(selectedNotes);
+  }, [selectedNations, selectedNotes]);
+
   return (
     <Accordion
       type="single"
@@ -54,7 +63,7 @@ export default function CoffeeFilter({
               type="multiple"
               className="flex flex-wrap gap-2 justify-start"
               onValueChange={onSelectedNationsChange}
-              defaultValue={selectedNations}
+              defaultValue={defaultNationValue}
             >
               {allNations.map((nation) => (
                 <ToggleGroupItem
@@ -82,7 +91,7 @@ export default function CoffeeFilter({
                 type="multiple"
                 className="flex flex-wrap gap-2 justify-start"
                 onValueChange={onSelectedNotesChange}
-                defaultValue={selectedNotes}
+                defaultValue={defaultNoteValue}
               >
                 {allNotes.map((note) => (
                   <ToggleGroupItem key={note} value={note} variant={"outline"}>
