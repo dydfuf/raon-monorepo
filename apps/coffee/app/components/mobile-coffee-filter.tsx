@@ -14,7 +14,7 @@ import {
   ToggleGroup,
   ToggleGroupItem,
 } from "@raonc/ui/components/toggle-group";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 interface Props {
   allNations: string[];
@@ -36,6 +36,13 @@ export default function MobileCoffeeFilter({
   const [selectedNations, setSelectedNations] =
     useState<string[]>(_selectedNations);
   const [selectedNotes, setSelectedNotes] = useState<string[]>(_selectedNotes);
+  const [defaultNationValue, setDefaultNationValue] = useState(selectedNations);
+  const [defaultNoteValue, setDefaultNoteValue] = useState(selectedNotes);
+
+  useEffect(() => {
+    setDefaultNationValue(selectedNations);
+    setDefaultNoteValue(selectedNotes);
+  }, [selectedNations, selectedNotes]);
 
   const onCloseNationsDrawer = () => {
     onSelectedNationsChange(selectedNations);
@@ -68,7 +75,7 @@ export default function MobileCoffeeFilter({
                 type="multiple"
                 className="flex flex-wrap gap-2 justify-start"
                 onValueChange={setSelectedNations}
-                defaultValue={selectedNations}
+                defaultValue={defaultNationValue}
               >
                 {allNations.map((nation) => (
                   <ToggleGroupItem
@@ -109,7 +116,7 @@ export default function MobileCoffeeFilter({
                   type="multiple"
                   className="flex flex-wrap gap-2 justify-start"
                   onValueChange={setSelectedNotes}
-                  defaultValue={selectedNotes}
+                  defaultValue={defaultNoteValue}
                 >
                   {allNotes.map((note) => (
                     <ToggleGroupItem
