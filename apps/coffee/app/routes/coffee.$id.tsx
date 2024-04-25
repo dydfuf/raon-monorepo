@@ -11,6 +11,7 @@ import {
 } from "@raonc/ui/components/card";
 import { cn } from "@raonc/ui/lib/utils";
 import NoteBadge from "../components/note-badge";
+import { siteConfig } from "../constant/common";
 
 export async function loader({ params }: LoaderFunctionArgs) {
   const { id } = params;
@@ -35,9 +36,21 @@ export async function loader({ params }: LoaderFunctionArgs) {
 }
 
 export const meta: MetaFunction<typeof loader> = ({ data }) => {
+  const SITE_NAME = siteConfig.name;
   return [
     { title: `COFFEE DB | ${data?.[CoffeeInfoField.NAME_KR]}` },
-    { name: "description", content: "Search Any Coffee Information" },
+    {
+      name: "description",
+      content: `${SITE_NAME}에서 제공하는 커피 상세정보 입니다.
+      원두명(한글) : ${data?.[CoffeeInfoField.NAME_KR]}
+      원두명(영어) : ${data?.[CoffeeInfoField.NAME_EN]}
+      공법 : ${data?.[CoffeeInfoField.PROCESS]}
+      지역 : ${data?.[CoffeeInfoField.REGION]}
+      농장 : ${data?.[CoffeeInfoField.FARM]}
+      품종 : ${data?.[CoffeeInfoField.VARIETY]}
+      출처 : ${data?.[CoffeeInfoField.SOURCE]}
+      `,
+    },
   ];
 };
 
