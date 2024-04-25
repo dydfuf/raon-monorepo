@@ -10,11 +10,11 @@ export const getAllNationByCoffeeInfoList = (coffeeInfoList: CoffeeInfo[]) => {
 
 export const getAllNotesByCoffeeInfoList = (
   coffeeInfoList: CoffeeInfo[],
-  allNations: string[]
+  selectedNations: string[]
 ) => {
   const notes = coffeeInfoList
     .filter((coffeeInfo) =>
-      allNations.includes(coffeeInfo[CoffeeInfoField.NATION])
+      selectedNations.includes(coffeeInfo[CoffeeInfoField.NATION])
     )
     .map((coffeeInfo) => coffeeInfo[CoffeeInfoField.NOTE])
     .join(",")
