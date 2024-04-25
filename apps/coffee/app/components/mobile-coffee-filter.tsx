@@ -36,13 +36,14 @@ export default function MobileCoffeeFilter({
   const [selectedNations, setSelectedNations] =
     useState<string[]>(_selectedNations);
   const [selectedNotes, setSelectedNotes] = useState<string[]>(_selectedNotes);
-  const [defaultNationValue, setDefaultNationValue] = useState(selectedNations);
-  const [defaultNoteValue, setDefaultNoteValue] = useState(selectedNotes);
+  const [defaultNationValue, setDefaultNationValue] =
+    useState(_selectedNations);
+  const [defaultNoteValue, setDefaultNoteValue] = useState(_selectedNotes);
 
   useEffect(() => {
-    setDefaultNationValue(selectedNations);
-    setDefaultNoteValue(selectedNotes);
-  }, [selectedNations, selectedNotes]);
+    setDefaultNationValue(_selectedNations);
+    setDefaultNoteValue(_selectedNotes);
+  }, [_selectedNations, _selectedNotes]);
 
   const onCloseNationsDrawer = () => {
     onSelectedNationsChange(selectedNations);
