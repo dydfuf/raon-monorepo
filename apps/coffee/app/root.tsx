@@ -9,7 +9,7 @@ import {
 } from "@remix-run/react";
 import stylesheet from "@raonc/ui/globals.css?url";
 import fontStyleSheet from "../public/font/pretendardvariable.css?url";
-import { LinksFunction, LoaderFunctionArgs } from "@vercel/remix";
+import { LinksFunction, LoaderFunctionArgs, MetaFunction } from "@vercel/remix";
 import SiteHeader from "./components/site-header";
 import { TailwindIndicator } from "./components/tailwind-indicator";
 import { Icons } from "./components/Icons";
@@ -20,6 +20,7 @@ import {
 } from "remix-themes";
 import { themeSessionResolver } from "./components/theme-session";
 import { cn } from "@raonc/ui/lib/utils";
+import { siteConfig } from "./constant/common";
 
 export async function loader({ request }: LoaderFunctionArgs) {
   const { getTheme } = await themeSessionResolver(request);
@@ -27,6 +28,10 @@ export async function loader({ request }: LoaderFunctionArgs) {
     theme: getTheme(),
   };
 }
+
+export const meta: MetaFunction = () => {
+  return [{ title: siteConfig.name }];
+};
 
 export const links: LinksFunction = () => [
   { rel: "stylesheet", href: fontStyleSheet },

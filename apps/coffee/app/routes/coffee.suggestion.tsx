@@ -21,7 +21,7 @@ import { Input } from "@raonc/ui/components/input";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { CoffeeInfo, CoffeeInfoField } from "../types/coffee";
-import { ActionFunctionArgs, redirect } from "@vercel/remix";
+import { ActionFunctionArgs, MetaFunction, redirect } from "@vercel/remix";
 import { Form as RemixForm, useFetcher } from "@remix-run/react";
 import {
   AlertDialog,
@@ -36,6 +36,15 @@ import {
 import { useState } from "react";
 import { cn } from "@raonc/ui/lib/utils";
 import { createCoffeeInfo } from "../.server/notion/service";
+import { siteConfig } from "../constant/common";
+
+export const meta: MetaFunction = () => {
+  return [
+    {
+      title: `${siteConfig.name} | 제안하기`,
+    },
+  ];
+};
 
 const formSchema = z.object({
   name_kr: z.string().min(1, "이름(한글)은 필수 입력 사항입니다."),

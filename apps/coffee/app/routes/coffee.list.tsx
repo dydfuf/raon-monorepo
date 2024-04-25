@@ -9,7 +9,8 @@ import {
 import { useEffect, useState } from "react";
 import CoffeeFilter from "../components/coffee-filter";
 import MobileCoffeeFilter from "../components/mobile-coffee-filter";
-import { HeadersFunction } from "@remix-run/node";
+import { HeadersFunction, MetaFunction } from "@vercel/remix";
+import { siteConfig } from "../constant/common";
 
 export const headers: HeadersFunction = () => ({
   "Cache-Control": "public, max-age=1800, s-maxage=3600",
@@ -26,6 +27,24 @@ export async function loader() {
     }
   );
 }
+
+export const meta: MetaFunction<typeof loader> = ({ location }) => {
+  const nation = new URLSearchParams(location.search).get("nation");
+  const nationTitle = nation ? `| 국가 : ${nation}` : "";
+  const note = new URLSearchParams(location.search).get("note");
+  const noteTitle = note ? `| 노트 : ${note}` : "";
+  const SITE_NAME = siteConfig.name;
+
+  return [
+    {
+      title: `${SITE_NAME} | 커피 리스트 ${nationTitle} ${noteTitle}`,
+    },
+    {
+      name: "description",
+      content: `${SITE_NAME}에서 제공하는 커피 리스트 입니다. 국가 : ${nation} 노트 : ${note}`,
+    },
+  ];
+};
 
 export default function CoffeeListPage() {
   const { coffeeInfoList } = useLoaderData<typeof loader>();
