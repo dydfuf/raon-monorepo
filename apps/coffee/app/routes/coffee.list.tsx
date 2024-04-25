@@ -67,7 +67,7 @@ export default function CoffeeListPage() {
     }
 
     setAllNotes(getAllNotesByCoffeeInfoList(coffeeInfoList, selectedNations));
-  }, []);
+  }, [searchParams]);
 
   const filterByNations = (coffeeInfo: CoffeeInfo) => {
     const hasSelectedNations = selectedNations.length > 0;
