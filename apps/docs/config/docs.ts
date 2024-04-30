@@ -253,6 +253,11 @@ export const docsConfig: DocsConfig = {
           items: [],
         },
         {
+          title: "Tag Input",
+          href: "/docs/components/tag-input",
+          items: [],
+        },
+        {
           title: "Textarea",
           href: "/docs/components/textarea",
           items: [],
