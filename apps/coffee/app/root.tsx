@@ -21,6 +21,8 @@ import {
 import { themeSessionResolver } from "./components/theme-session";
 import { cn } from "@raonc/ui/lib/utils";
 import { siteConfig } from "./constant/common";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/remix";
 
 export async function loader({ request }: LoaderFunctionArgs) {
   const { getTheme } = await themeSessionResolver(request);
@@ -62,6 +64,8 @@ export function App({ children }: { children: React.ReactNode }) {
         {children}
         <ScrollRestoration />
         <Scripts />
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
