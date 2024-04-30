@@ -622,6 +622,12 @@ export const Index: Record<string, any> = {
     component: React.lazy(() => import("registry/ui/tabs-demo.tsx")),
     files: ["registry/ui/tabs-demo.tsx"],
   },
+  "tag-input-demo": {
+    name: "tag-input-demo.tsx",
+    type: "component",
+    component: React.lazy(() => import("registry/ui/tag-input-demo.tsx")),
+    files: ["registry/ui/tag-input-demo.tsx"],
+  },
   "textarea-demo": {
     name: "textarea-demo.tsx",
     type: "component",
