@@ -16,7 +16,7 @@ export const getAllNotesByCoffeeInfoList = (
     .filter((coffeeInfo) =>
       selectedNations.includes(coffeeInfo[CoffeeInfoField.NATION])
     )
-    .map((coffeeInfo) => coffeeInfo[CoffeeInfoField.NOTE])
+    .map((coffeeInfo) => coffeeInfo[CoffeeInfoField.NOTE_FOR_FILTER])
     .join(",")
     .split(",")
     .filter((note) => note)

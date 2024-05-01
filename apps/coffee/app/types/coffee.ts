@@ -10,6 +10,7 @@ export enum CoffeeInfoField {
   SOURCE = "출처",
   USER_SUBMITTED = "유저제출",
   NATION = "국가",
+  NOTE_FOR_FILTER = "노트(필터)",
 }
 export type CoffeeInfo = {
   [CoffeeInfoField.ID]: string;
@@ -23,4 +24,5 @@ export type CoffeeInfo = {
   [CoffeeInfoField.SOURCE]: string;
   [CoffeeInfoField.NATION]: string;
   [CoffeeInfoField.USER_SUBMITTED]?: number;
+  [CoffeeInfoField.NOTE_FOR_FILTER]: string;
 };

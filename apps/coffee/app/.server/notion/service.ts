@@ -1,7 +1,7 @@
 import { iteratePaginatedAPI } from "@notionhq/client";
 import { notion } from "./client";
 import { CoffeeInfo, CoffeeInfoField } from "../../types/coffee";
-import { getCoffeeInfoByBlockProperties } from "./util";
+import { addNoteForFilterField, getCoffeeInfoByBlockProperties } from "./util";
 
 export const getCoffeeInfoList = async () => {
   const coffeeInfoList: CoffeeInfo[] = [];
@@ -11,7 +11,8 @@ export const getCoffeeInfoList = async () => {
   })) {
     if ("properties" in block) {
       const coffeeInfo = getCoffeeInfoByBlockProperties(block);
-      coffeeInfoList.push(coffeeInfo);
+      const noteForFilterAddedCoffeeInfo = addNoteForFilterField(coffeeInfo);
+      coffeeInfoList.push(noteForFilterAddedCoffeeInfo);
     }
   }
 
@@ -38,7 +39,7 @@ export const getCoffeeInfoById = async (id: number) => {
     return getCoffeeInfoByBlockProperties(block);
   });
 
-  return coffeeInfo[0];
+  return coffeeInfo[0] ? addNoteForFilterField(coffeeInfo[0]) : undefined;
 };
 
 export const createCoffeeInfo = async (
