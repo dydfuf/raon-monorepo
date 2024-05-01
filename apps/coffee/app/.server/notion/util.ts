@@ -4,6 +4,8 @@ import {
   PartialDatabaseObjectResponse,
 } from "@notionhq/client/build/src/api-endpoints";
 import { DEFAULT_FIELD_VALUE } from "./constant";
+import { CoffeeInfo, CoffeeInfoField } from "../../types/coffee";
+import { COFFEE_NOTE_DICT } from "../../constant/coffee";
 
 export const getCoffeeInfoByBlockProperties = (
   block:
@@ -31,3 +33,16 @@ export const getCoffeeInfoByBlockProperties = (
   return Object.assign({}, ...coffeeInfo);
 };
 
+export const addNoteForFilterField = (coffeeInfo: CoffeeInfo) => {
+  const notes = coffeeInfo[CoffeeInfoField.NOTE]
+    .split(",")
+    .map((note) => note.trim());
+  const noteForFilter = notes
+    .map((note) => {
+      return COFFEE_NOTE_DICT[note] ?? note;
+    })
+    .map((note) => note.trim())
+    .join(", ");
+  coffeeInfo[CoffeeInfoField.NOTE_FOR_FILTER] = noteForFilter;
+  return coffeeInfo;
+};

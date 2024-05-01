@@ -82,7 +82,8 @@ export default function CoffeeListPage() {
     const hasSelectedNotes = selectedNotes.length > 0;
 
     if (hasSelectedNotes) {
-      const coffeeNotes = coffeeInfo[CoffeeInfoField.NOTE].split(",");
+      const coffeeNotes =
+        coffeeInfo[CoffeeInfoField.NOTE_FOR_FILTER].split(",");
       return coffeeNotes.some((note) => selectedNotes.includes(note.trim()));
     }
     return true;
@@ -111,6 +112,7 @@ export default function CoffeeListPage() {
       }
     );
   };
+  console.log(allNotes);
 
   const filterProps = {
     allNations,
