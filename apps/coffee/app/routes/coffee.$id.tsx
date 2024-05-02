@@ -12,6 +12,17 @@ import {
 import { cn } from "@raonc/ui/lib/utils";
 import NoteBadge from "../components/note-badge";
 import { siteConfig } from "../constant/common";
+import { getCoffeeInfoList } from "../server/notion/service";
+
+export const sitemap = async () => {
+  const coffeeInfoList = await getCoffeeInfoList();
+
+  return coffeeInfoList.map((coffeeInfo) => ({
+    loc: `/coffee/${coffeeInfo[CoffeeInfoField.ID]}`,
+    // lastmod: coffeeInfo[CoffeeInfoField.UPDATED_AT],
+    exclude: coffeeInfo[CoffeeInfoField.USER_SUBMITTED],
+  }));
+};
 
 export async function loader({ params }: LoaderFunctionArgs) {
   const { id } = params;

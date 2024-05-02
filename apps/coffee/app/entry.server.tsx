@@ -11,10 +11,19 @@ import { createReadableStreamFromReadable } from "@remix-run/node";
 import { RemixServer } from "@remix-run/react";
 import { isbot } from "isbot";
 import { renderToPipeableStream } from "react-dom/server";
+import { createSitemapGenerator } from "remix-sitemap";
+import { siteConfig } from "./constant/common";
+
+// Step 1. setup the generator
+const { isSitemapUrl, sitemap } = createSitemapGenerator({
+  siteUrl: `https://${siteConfig.domain}`,
+  generateRobotsTxt: true,
+  // configure other things here
+});
 
 const ABORT_DELAY = 5_000;
 
-export default function handleRequest(
+export default async function handleRequest(
   request: Request,
   responseStatusCode: number,
   responseHeaders: Headers,
@@ -24,19 +33,27 @@ export default function handleRequest(
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   loadContext: AppLoadContext
 ) {
-  return isbot(request.headers.get("user-agent") || "")
-    ? handleBotRequest(
-        request,
-        responseStatusCode,
-        responseHeaders,
-        remixContext
-      )
-    : handleBrowserRequest(
-        request,
-        responseStatusCode,
-        responseHeaders,
-        remixContext
-      );
+  const uaIsBot = isbot(request.headers.get("user-agent") || "");
+
+  if (uaIsBot) {
+    return handleBotRequest(
+      request,
+      responseStatusCode,
+      responseHeaders,
+      remixContext
+    );
+  }
+
+  if (isSitemapUrl(request)) {
+    return await sitemap(request, remixContext);
+  }
+
+  return handleBrowserRequest(
+    request,
+    responseStatusCode,
+    responseHeaders,
+    remixContext
+  );
 }
 
 function handleBotRequest(
