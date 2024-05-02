@@ -1,8 +1,5 @@
 import { LoaderFunctionArgs, MetaFunction } from "@vercel/remix";
-import {
-  getCoffeeInfoById,
-  getCoffeeInfoList,
-} from "../.server/notion/service";
+import { getCoffeeInfoById } from "../.server/notion/service";
 import { Link, useLoaderData } from "@remix-run/react";
 import { CoffeeInfoField } from "../types/coffee";
 import {
@@ -15,6 +12,7 @@ import {
 import { cn } from "@raonc/ui/lib/utils";
 import NoteBadge from "../components/note-badge";
 import { siteConfig } from "../constant/common";
+import { getCoffeeInfoList } from "../utils/sitemap";
 
 export const sitemap = async () => {
   const coffeeInfoList = await getCoffeeInfoList();
