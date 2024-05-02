@@ -1,5 +1,8 @@
 import { LoaderFunctionArgs, MetaFunction } from "@vercel/remix";
-import { getCoffeeInfoById } from "../.server/notion/service";
+import {
+  getCoffeeInfoById,
+  getCoffeeInfoList,
+} from "../.server/notion/service";
 import { Link, useLoaderData } from "@remix-run/react";
 import { CoffeeInfoField } from "../types/coffee";
 import {
@@ -12,6 +15,16 @@ import {
 import { cn } from "@raonc/ui/lib/utils";
 import NoteBadge from "../components/note-badge";
 import { siteConfig } from "../constant/common";
+
+export const sitemap = async () => {
+  const coffeeInfoList = await getCoffeeInfoList();
+
+  return coffeeInfoList.map((coffeeInfo) => ({
+    loc: `/coffee/${coffeeInfo[CoffeeInfoField.ID]}`,
+    // lastmod: coffeeInfo[CoffeeInfoField.UPDATED_AT],
+    exclude: coffeeInfo[CoffeeInfoField.USER_SUBMITTED],
+  }));
+};
 
 export async function loader({ params }: LoaderFunctionArgs) {
   const { id } = params;
