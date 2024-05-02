@@ -12,7 +12,7 @@ import {
 import { cn } from "@raonc/ui/lib/utils";
 import NoteBadge from "../components/note-badge";
 import { siteConfig } from "../constant/common";
-import { getCoffeeInfoList } from "../utils/sitemap";
+import { getCoffeeInfoList } from "../server/notion/service";
 
 export const sitemap = async () => {
   const coffeeInfoList = await getCoffeeInfoList();
