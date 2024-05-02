@@ -112,7 +112,6 @@ export default function CoffeeListPage() {
       }
     );
   };
-  console.log(allNotes);
 
   const filterProps = {
     allNations,
