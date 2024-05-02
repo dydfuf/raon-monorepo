@@ -33,6 +33,10 @@ export default async function handleRequest(
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   loadContext: AppLoadContext
 ) {
+  if (isSitemapUrl(request)) {
+    return await sitemap(request, remixContext);
+  }
+
   const uaIsBot = isbot(request.headers.get("user-agent") || "");
 
   if (uaIsBot) {
@@ -42,18 +46,14 @@ export default async function handleRequest(
       responseHeaders,
       remixContext
     );
+  } else {
+    return handleBrowserRequest(
+      request,
+      responseStatusCode,
+      responseHeaders,
+      remixContext
+    );
   }
-
-  if (isSitemapUrl(request)) {
-    return await sitemap(request, remixContext);
-  }
-
-  return handleBrowserRequest(
-    request,
-    responseStatusCode,
-    responseHeaders,
-    remixContext
-  );
 }
 
 function handleBotRequest(
