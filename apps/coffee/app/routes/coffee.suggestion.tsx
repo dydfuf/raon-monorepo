@@ -37,6 +37,7 @@ import { useState } from "react";
 import { cn } from "@raonc/ui/lib/utils";
 import { createCoffeeInfo } from "../.server/notion/service";
 import { siteConfig } from "../constant/common";
+import { MessageBuilder, sendHook } from "../utils/discord";
 
 export const meta: MetaFunction = () => {
   return [
@@ -98,6 +99,26 @@ export async function action({ request }: ActionFunctionArgs) {
     // @ts-ignore
     number = response.properties[CoffeeInfoField.ID]?.unique_id.number;
   }
+
+  const messageBuilder = new MessageBuilder();
+  const discordMessage = messageBuilder
+    .setTitle("새로운 원두 정보 추가 제안")
+    .setColor("#00ff00")
+    .setDescription(
+      `새로운 원두 정보 추가 제안이 들어왔습니다.\n
+      **한글명**: ${name_kr}
+      **영문명**: ${name_en}
+      **노트**: ${note}
+      **지역**: ${region}
+      **농장**: ${farm}
+      **품종**: ${variety}
+      **프로세싱**: ${process}
+      **출처**: ${source}`
+    );
+
+  const hookUrl =
+    "https://discord.com/api/webhooks/1235245232287780946/_2IoAt6_oOk1cV9C4G3p2CiQKpiHQpvnEHD1s9CGREvebkdInD9-Xu7CzZHnX6OQHRAt";
+  await sendHook(hookUrl, discordMessage.getJSON());
 
   // Do something with the data
   return redirect(`/coffee/${number || 0}`);
