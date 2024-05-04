@@ -1,7 +1,7 @@
 import { LoaderFunctionArgs, MetaFunction } from "@vercel/remix";
 import { getCoffeeInfoById } from "../.server/notion/service";
 import { Link, useLoaderData } from "@remix-run/react";
-import { CoffeeInfoField } from "../types/coffee";
+import { CoffeeInfo, CoffeeInfoField } from "../types/coffee";
 import {
   Card,
   CardContent,
@@ -12,10 +12,15 @@ import {
 import { cn } from "@raonc/ui/lib/utils";
 import NoteBadge from "../components/note-badge";
 import { siteConfig } from "../constant/common";
-import { getCoffeeInfoList } from "../server/notion/service";
 
 export const sitemap = async () => {
-  const coffeeInfoList = await getCoffeeInfoList();
+  if (process.env.NODE_ENV === "development") {
+    return;
+  }
+
+  const coffeeInfoList: CoffeeInfo[] = await fetch(
+    `https://${siteConfig.domain}/api/coffee/list`
+  ).then((res) => res.json());
 
   return coffeeInfoList.map((coffeeInfo) => ({
     loc: `/coffee/${coffeeInfo[CoffeeInfoField.ID]}`,
