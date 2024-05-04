@@ -24,6 +24,8 @@ export const getCoffeeInfoByBlockProperties = (
       fieldValue = `${prefix}-${number}`;
     } else if (value.type === "number") {
       fieldValue = value.number;
+    } else if (value.type === "last_edited_time") {
+      fieldValue = value.last_edited_time;
     } else {
       fieldValue = JSON.stringify(value);
     }

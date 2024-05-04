@@ -11,6 +11,7 @@ export enum CoffeeInfoField {
   USER_SUBMITTED = "유저제출",
   NATION = "국가",
   NOTE_FOR_FILTER = "노트(필터)",
+  LAST_EDITED_TIME = "Last edited time",
 }
 export type CoffeeInfo = {
   [CoffeeInfoField.ID]: string;
@@ -25,4 +26,5 @@ export type CoffeeInfo = {
   [CoffeeInfoField.NATION]: string;
   [CoffeeInfoField.USER_SUBMITTED]?: number;
   [CoffeeInfoField.NOTE_FOR_FILTER]: string;
+  [CoffeeInfoField.LAST_EDITED_TIME]?: string;
 };

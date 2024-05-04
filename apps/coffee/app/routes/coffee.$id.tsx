@@ -14,17 +14,15 @@ import NoteBadge from "../components/note-badge";
 import { siteConfig } from "../constant/common";
 
 export const sitemap = async () => {
-  if (process.env.NODE_ENV === "development") {
-    return;
-  }
-
   const coffeeInfoList: CoffeeInfo[] = await fetch(
     `https://${siteConfig.domain}/api/coffee/list`
-  ).then((res) => res.json());
+  )
+    .then((res) => res.json())
+    .then((data) => data.coffeeInfoList);
 
   return coffeeInfoList.map((coffeeInfo) => ({
     loc: `/coffee/${coffeeInfo[CoffeeInfoField.ID]}`,
-    // lastmod: coffeeInfo[CoffeeInfoField.UPDATED_AT],
+    lastmod: coffeeInfo[CoffeeInfoField.LAST_EDITED_TIME],
     exclude: coffeeInfo[CoffeeInfoField.USER_SUBMITTED],
   }));
 };
