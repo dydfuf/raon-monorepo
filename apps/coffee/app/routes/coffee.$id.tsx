@@ -49,9 +49,15 @@ export async function loader({ params }: LoaderFunctionArgs) {
   return coffeeInfo;
 }
 
-export const meta: MetaFunction<typeof loader> = ({ data }) => {
+export const meta: MetaFunction<typeof loader> = ({ data, matches }) => {
+  const parentMeta = matches
+    .flatMap((match) => match.meta ?? [])
+    .filter((meta) => !("title" in meta))
+    .filter((meta) => !("description" in meta));
+
   const SITE_NAME = siteConfig.name;
   return [
+    ...parentMeta,
     { title: `COFFEE DB | ${data?.[CoffeeInfoField.NAME_KR]}` },
     {
       name: "description",

@@ -39,8 +39,14 @@ import { createCoffeeInfo } from "../.server/notion/service";
 import { siteConfig } from "../constant/common";
 import { MessageBuilder, sendHook } from "../utils/discord";
 
-export const meta: MetaFunction = () => {
+export const meta: MetaFunction = ({ matches }) => {
+  const parentMeta = matches
+    .flatMap((match) => match.meta ?? [])
+    .filter((meta) => !("title" in meta))
+    .filter((meta) => !("description" in meta));
+
   return [
+    ...parentMeta,
     {
       title: `${siteConfig.name} | 제안하기`,
       description: `${siteConfig.name}에서 제공하는 원두 정보를 제안해보세요!`,

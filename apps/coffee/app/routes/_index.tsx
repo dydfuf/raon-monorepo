@@ -1,4 +1,4 @@
-import type { MetaFunction, HeadersFunction } from "@vercel/remix";
+import type { HeadersFunction } from "@vercel/remix";
 import CommandMenu from "../components/command-menu";
 import { siteConfig } from "../constant/common";
 import { Link } from "@remix-run/react";
@@ -7,13 +7,6 @@ import { Button } from "@raonc/ui/components/button";
 export const headers: HeadersFunction = ({}) => ({
   "Cache-Control": "max-age=300, s-maxage=3600",
 });
-
-export const meta: MetaFunction = () => {
-  return [
-    { title: siteConfig.name },
-    { name: "description", content: siteConfig.description },
-  ];
-};
 
 export default function Index() {
   return (
