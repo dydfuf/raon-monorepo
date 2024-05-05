@@ -13,7 +13,7 @@ const sessionStorage = createCookieSessionStorage({
     sameSite: "lax",
     secrets: ["s3cr3t"],
     // Set domain and secure only if in production
-    ...(isProduction ? { domain: siteConfig.domain, secure: true } : {}),
+    ...(isProduction ? { domain: "raonc.dev", secure: true } : {}),
   },
 });
 
