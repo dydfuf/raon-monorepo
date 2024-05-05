@@ -1,4 +1,4 @@
-import type { MetaFunction, HeadersFunction } from "@vercel/remix";
+import type { HeadersFunction } from "@vercel/remix";
 import CommandMenu from "../components/command-menu";
 import { siteConfig } from "../constant/common";
 import { Link } from "@remix-run/react";
