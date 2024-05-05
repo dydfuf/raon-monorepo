@@ -10,8 +10,8 @@ export const headers: HeadersFunction = ({}) => ({
 
 export const meta: MetaFunction = () => {
   return [
-    { title: "COFFEE DB" },
-    { name: "description", content: "Search Any Coffee Information" },
+    { title: siteConfig.name },
+    { name: "description", content: siteConfig.description },
   ];
 };
 
