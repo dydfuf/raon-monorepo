@@ -36,24 +36,30 @@ export default async function handleRequest(
   if (isSitemapUrl(request)) {
     return await sitemap(request, remixContext);
   }
+  return handleBrowserRequest(
+    request,
+    responseStatusCode,
+    responseHeaders,
+    remixContext
+  );
 
-  const uaIsBot = isbot(request.headers.get("user-agent") || "");
+  // const uaIsBot = isbot(request.headers.get("user-agent") || "");
 
-  if (uaIsBot) {
-    return handleBotRequest(
-      request,
-      responseStatusCode,
-      responseHeaders,
-      remixContext
-    );
-  } else {
-    return handleBrowserRequest(
-      request,
-      responseStatusCode,
-      responseHeaders,
-      remixContext
-    );
-  }
+  // if (uaIsBot) {
+  //   return handleBotRequest(
+  //     request,
+  //     responseStatusCode,
+  //     responseHeaders,
+  //     remixContext
+  //   );
+  // } else {
+  //   return handleBrowserRequest(
+  //     request,
+  //     responseStatusCode,
+  //     responseHeaders,
+  //     remixContext
+  //   );
+  // }
 }
 
 function handleBotRequest(
