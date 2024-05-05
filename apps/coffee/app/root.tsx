@@ -129,14 +129,23 @@ export function App({ children }: { children: React.ReactNode }) {
           name="viewport"
           content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no"
         />
-        <meta property="twitter:image" content={`/og-image.png`}></meta>
-        <meta property="twitter:card" content={`/og-image.png`}></meta>
+        <meta
+          property="twitter:image"
+          content={`https://${siteConfig.domain}/og-image.png`}
+        ></meta>
+        <meta
+          property="twitter:card"
+          content={`https://${siteConfig.domain}/og-image.png`}
+        ></meta>
         <meta property="twitter:title" content={`${siteConfig.name}`}></meta>
         <meta
           property="twitter:description"
           content={siteConfig.description}
         ></meta>
-        <meta property="og:image" content={`/og-image.png`}></meta>
+        <meta
+          property="og:image"
+          content={`https://${siteConfig.domain}/og-image.png`}
+        ></meta>
         <meta property="og:title" content={siteConfig.name}></meta>
         <meta property="og:description" content={siteConfig.description} />
         {/* <meta property="og:url" content="Canonical link preview URL"></meta> */}
