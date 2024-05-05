@@ -21,7 +21,7 @@ export const sitemap = async () => {
     .then((data) => data.coffeeInfoList);
 
   return coffeeInfoList.map((coffeeInfo) => ({
-    loc: `/coffee/${coffeeInfo[CoffeeInfoField.ID]}`,
+    loc: `/coffee/${coffeeInfo[CoffeeInfoField.ID].split("-")[1]}`,
     lastmod: coffeeInfo[CoffeeInfoField.LAST_EDITED_TIME],
     exclude: coffeeInfo[CoffeeInfoField.USER_SUBMITTED],
   }));
