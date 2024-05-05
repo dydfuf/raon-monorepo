@@ -40,7 +40,10 @@ import { siteConfig } from "../constant/common";
 import { MessageBuilder, sendHook } from "../utils/discord";
 
 export const meta: MetaFunction = ({ matches }) => {
-  const parentMeta = matches.flatMap((match) => match.meta ?? []);
+  const parentMeta = matches
+    .flatMap((match) => match.meta ?? [])
+    .filter((meta) => !("title" in meta))
+    .filter((meta) => !("description" in meta));
 
   return [
     ...parentMeta,

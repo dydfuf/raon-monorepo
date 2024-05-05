@@ -50,7 +50,11 @@ export async function loader({ params }: LoaderFunctionArgs) {
 }
 
 export const meta: MetaFunction<typeof loader> = ({ data, matches }) => {
-  const parentMeta = matches.flatMap((match) => match.meta ?? []);
+  const parentMeta = matches
+    .flatMap((match) => match.meta ?? [])
+    .filter((meta) => !("title" in meta))
+    .filter((meta) => !("description" in meta));
+
   const SITE_NAME = siteConfig.name;
   return [
     ...parentMeta,

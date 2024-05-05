@@ -29,7 +29,10 @@ export async function loader() {
 }
 
 export const meta: MetaFunction<typeof loader> = ({ location, matches }) => {
-  const parentMeta = matches.flatMap((match) => match.meta ?? []);
+  const parentMeta = matches
+    .flatMap((match) => match.meta ?? [])
+    .filter((meta) => !("title" in meta))
+    .filter((meta) => !("description" in meta));
 
   const nation = new URLSearchParams(location.search).get("nation");
   const nationTitle = nation ? `| 국가 : ${nation}` : "";
