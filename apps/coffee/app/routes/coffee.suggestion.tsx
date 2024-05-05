@@ -43,6 +43,11 @@ export const meta: MetaFunction = () => {
   return [
     {
       title: `${siteConfig.name} | 제안하기`,
+      description: `${siteConfig.name}에서 제공하는 원두 정보를 제안해보세요!`,
+    },
+    {
+      name: "description",
+      content: `${siteConfig.name}에서 제공하는 원두 정보를 제안해보세요!`,
     },
   ];
 };
