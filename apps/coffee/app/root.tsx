@@ -35,20 +35,23 @@ export const meta: MetaFunction = ({ location }) => {
   return [
     { title: siteConfig.name },
     { name: "description", content: siteConfig.description },
-    // { name: "og:title", content: siteConfig.name },
-    // { name: "og:description", content: siteConfig.description },
-    // { name: "og:image", content: `https://${siteConfig.domain}/og-image.png` },
-    // { name: "og:url", content: location.pathname },
-    // {
-    //   name: "twitter:image",
-    //   content: `https://${siteConfig.domain}/og-image.png`,
-    // },
-    // {
-    //   name: "twitter:card",
-    //   content: `https://${siteConfig.domain}/og-image.png`,
-    // },
-    // { name: "twitter:title", content: siteConfig.name },
-    // { name: "twitter:description", content: siteConfig.description },
+    { name: "og:title", content: siteConfig.name },
+    { name: "og:description", content: siteConfig.description },
+    { name: "og:image", content: `https://${siteConfig.domain}/og-image.png` },
+    {
+      name: "og:url",
+      content: `https://${siteConfig.domain}${location.pathname}`,
+    },
+    {
+      name: "twitter:image",
+      content: `https://${siteConfig.domain}/og-image.png`,
+    },
+    {
+      name: "twitter:card",
+      content: `https://${siteConfig.domain}/og-image.png`,
+    },
+    { name: "twitter:title", content: siteConfig.name },
+    { name: "twitter:description", content: siteConfig.description },
   ];
 };
 
