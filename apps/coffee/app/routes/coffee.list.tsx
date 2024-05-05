@@ -28,7 +28,9 @@ export async function loader() {
   );
 }
 
-export const meta: MetaFunction<typeof loader> = ({ location }) => {
+export const meta: MetaFunction<typeof loader> = ({ location, matches }) => {
+  const parentMeta = matches.flatMap((match) => match.meta ?? []);
+
   const nation = new URLSearchParams(location.search).get("nation");
   const nationTitle = nation ? `| 국가 : ${nation}` : "";
   const note = new URLSearchParams(location.search).get("note");
@@ -36,6 +38,7 @@ export const meta: MetaFunction<typeof loader> = ({ location }) => {
   const SITE_NAME = siteConfig.name;
 
   return [
+    ...parentMeta,
     {
       title: `${SITE_NAME} | 커피 리스트 ${nationTitle} ${noteTitle}`,
     },

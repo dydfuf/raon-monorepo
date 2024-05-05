@@ -31,8 +31,25 @@ export async function loader({ request }: LoaderFunctionArgs) {
   };
 }
 
-export const meta: MetaFunction = () => {
-  return [{ title: siteConfig.name }];
+export const meta: MetaFunction = ({ location }) => {
+  return [
+    { title: siteConfig.name },
+    { name: "description", content: siteConfig.description },
+    { name: "og:title", content: siteConfig.name },
+    { name: "og:description", content: siteConfig.description },
+    { name: "og:image", content: `https://${siteConfig.domain}/og-image.png` },
+    { name: "og:url", content: location.pathname },
+    {
+      name: "twitter:image",
+      content: `https://${siteConfig.domain}/og-image.png`,
+    },
+    {
+      name: "twitter:card",
+      content: `https://${siteConfig.domain}/og-image.png`,
+    },
+    { name: "twitter:title", content: siteConfig.name },
+    { name: "twitter:description", content: siteConfig.description },
+  ];
 };
 
 export const links: LinksFunction = () => [
@@ -129,26 +146,6 @@ export function App({ children }: { children: React.ReactNode }) {
           name="viewport"
           content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no"
         />
-        <meta
-          property="twitter:image"
-          content={`https://${siteConfig.domain}/og-image.png`}
-        ></meta>
-        <meta
-          property="twitter:card"
-          content={`https://${siteConfig.domain}/og-image.png`}
-        ></meta>
-        <meta property="twitter:title" content={`${siteConfig.name}`}></meta>
-        <meta
-          property="twitter:description"
-          content={siteConfig.description}
-        ></meta>
-        <meta
-          property="og:image"
-          content={`https://${siteConfig.domain}/og-image.png`}
-        ></meta>
-        <meta property="og:title" content={siteConfig.name}></meta>
-        <meta property="og:description" content={siteConfig.description} />
-        {/* <meta property="og:url" content="Canonical link preview URL"></meta> */}
         <Meta />
         <PreventFlashOnWrongTheme ssrTheme={Boolean(data.theme)} />
         <Links />

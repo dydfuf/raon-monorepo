@@ -8,13 +8,6 @@ export const headers: HeadersFunction = ({}) => ({
   "Cache-Control": "max-age=300, s-maxage=3600",
 });
 
-export const meta: MetaFunction = () => {
-  return [
-    { title: siteConfig.name },
-    { name: "description", content: siteConfig.description },
-  ];
-};
-
 export default function Index() {
   return (
     <div className="mx-auto grow flex w-full">
