@@ -153,15 +153,17 @@ export function App({ children }: { children: React.ReactNode }) {
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-DCEDCJ9EXD"
         ></script>
-        <script>
-          {`
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'G-DCEDCJ9EXD');
-        `}
-        </script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+        
+                gtag('config', 'G-DCEDCJ9EXD');
+        `,
+          }}
+        ></script>
         <Meta />
         <PreventFlashOnWrongTheme ssrTheme={Boolean(data.theme)} />
         <Links />
