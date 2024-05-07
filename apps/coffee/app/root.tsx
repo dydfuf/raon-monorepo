@@ -149,6 +149,19 @@ export function App({ children }: { children: React.ReactNode }) {
           name="viewport"
           content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no"
         />
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-DCEDCJ9EXD"
+        ></script>
+        <script>
+          {`
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-DCEDCJ9EXD');
+        `}
+        </script>
         <Meta />
         <PreventFlashOnWrongTheme ssrTheme={Boolean(data.theme)} />
         <Links />
