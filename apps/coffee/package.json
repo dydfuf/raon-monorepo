@@ -1,5 +1,6 @@
 {
   "name": "coffee",
+  "version": "0.0.34",
   "private": true,
   "sideEffects": false,
   "type": "module",
