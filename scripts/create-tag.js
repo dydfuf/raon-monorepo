@@ -52,13 +52,16 @@ const { Select } = require("enquirer");
   // 6. create tag
   shell.exec(`cd ${selectedService} && pnpm version ${newVersion}`);
   console.log("Package version updated.");
+
+  shell.exec(
+    `git add . && git commit -m "Release @${selectedService}-${newVersion}"`
+  );
+  console.log("Commit created.");
+
   const newTagName = `${selectedService.split("/")[1]}-${newVersion}`;
   shell.exec(`git tag -a ${newTagName} -m "Release ${newVersion}"`);
   console.log("Tag created.");
 
   // 7. push tag
-  shell.exec(
-    `git add . && git commit -m "Release @${selectedService}-${newVersion}"`
-  );
   shell.exec(`git push && git push origin ${newTagName}`);
 })();
