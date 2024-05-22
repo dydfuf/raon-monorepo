@@ -36,8 +36,8 @@ importers:
   apps/blog:
     dependencies:
       '@dydfuf/ui':
-        specifier: workspace:^
-        version: link:../../packages/ui
+        specifier: 0.0.9
+        version: 0.0.9(@types/react-dom@18.2.18)(@types/react@18.2.46)(next@14.1.4)(postcss@8.4.35)(react-dom@18.2.0)(react@18.2.0)(tailwindcss@3.4.1)(typescript@5.3.3)
       '@radix-ui/react-icons':
         specifier: ^1.3.0
         version: 1.3.0(react@18.2.0)
@@ -55,7 +55,7 @@ importers:
         version: 3.3.1
       next:
         specifier: 14.1.4
-        version: 14.1.4(react-dom@18.2.0)(react@18.2.0)
+        version: 14.1.4(@babel/core@7.24.3)(react-dom@18.2.0)(react@18.2.0)
       next-themes:
         specifier: ^0.2.1
         version: 0.2.1(next@14.1.4)(react-dom@18.2.0)(react@18.2.0)
@@ -124,8 +124,8 @@ importers:
   apps/coffee:
     dependencies:
       '@dydfuf/ui':
-        specifier: workspace:^
-        version: link:../../packages/ui
+        specifier: 0.0.9
+        version: 0.0.9(@types/react-dom@18.2.18)(@types/react@18.2.46)(next@14.1.4)(postcss@8.4.38)(react-dom@18.2.0)(react@18.2.0)(tailwindcss@3.4.3)(typescript@5.3.3)
       '@hookform/resolvers':
         specifier: ^3.3.4
         version: 3.3.4(react-hook-form@7.50.1)
@@ -146,13 +146,13 @@ importers:
         version: 1.7.0
       '@vercel/analytics':
         specifier: ^1.2.2
-        version: 1.2.2(next@14.1.3)(react@18.2.0)
+        version: 1.2.2(next@14.1.4)(react@18.2.0)
       '@vercel/remix':
         specifier: 2.8.1-patch.2
         version: 2.8.1-patch.2(@remix-run/dev@2.8.1)(@remix-run/node@2.8.1)(@remix-run/server-runtime@2.8.1)(react-dom@18.2.0)(react@18.2.0)
       '@vercel/speed-insights':
         specifier: ^1.0.10
-        version: 1.0.10(react@18.2.0)
+        version: 1.0.10(next@14.1.4)(react@18.2.0)
       isbot:
         specifier: ^4.1.0
         version: 4.4.0
@@ -231,7 +231,7 @@ importers:
     dependencies:
       '@dydfuf/ui':
         specifier: 0.0.9
-        version: link:../../packages/ui
+        version: 0.0.9(@types/react-dom@18.2.18)(@types/react@18.2.46)(next@14.1.3)(postcss@8.4.35)(react-dom@18.2.0)(react@18.2.0)(tailwindcss@3.4.1)(typescript@5.3.3)
       '@hookform/resolvers':
         specifier: ^3.3.4
         version: 3.3.4(react-hook-form@7.50.1)
@@ -1214,6 +1214,198 @@ packages:
     dependencies:
       '@jridgewell/trace-mapping': 0.3.9
     dev: true
+
+  /@dydfuf/ui@0.0.9(@types/react-dom@18.2.18)(@types/react@18.2.46)(next@14.1.3)(postcss@8.4.35)(react-dom@18.2.0)(react@18.2.0)(tailwindcss@3.4.1)(typescript@5.3.3):
+    resolution: {integrity: sha512-kueqYXvrvpKz2vAZ6w/ifPSU52+83ygeW3S41rr7uQQR2HLyDFir/SPXzW9Kb18lTF2nLVsIzmmxJ28Kzaoa+Q==, tarball: https://npm.pkg.github.com/download/@dydfuf/ui/0.0.9/87113b7a02dbcc0f2d1c9eac1003e9bda4be0b26}
+    peerDependencies:
+      react: ^18.2.0
+    dependencies:
+      '@hookform/resolvers': 3.3.4(react-hook-form@7.50.1)
+      '@radix-ui/react-accordion': 1.1.2(@types/react-dom@18.2.18)(@types/react@18.2.46)(react-dom@18.2.0)(react@18.2.0)
+      '@radix-ui/react-alert-dialog': 1.0.5(@types/react-dom@18.2.18)(@types/react@18.2.46)(react-dom@18.2.0)(react@18.2.0)
+      '@radix-ui/react-aspect-ratio': 1.0.3(@types/react-dom@18.2.18)(@types/react@18.2.46)(react-dom@18.2.0)(react@18.2.0)
+      '@radix-ui/react-avatar': 1.0.4(@types/react-dom@18.2.18)(@types/react@18.2.46)(react-dom@18.2.0)(react@18.2.0)
+      '@radix-ui/react-checkbox': 1.0.4(@types/react-dom@18.2.18)(@types/react@18.2.46)(react-dom@18.2.0)(react@18.2.0)
+      '@radix-ui/react-collapsible': 1.0.3(@types/react-dom@18.2.18)(@types/react@18.2.46)(react-dom@18.2.0)(react@18.2.0)
+      '@radix-ui/react-context-menu': 2.1.5(@types/react-dom@18.2.18)(@types/react@18.2.46)(react-dom@18.2.0)(react@18.2.0)
+      '@radix-ui/react-dialog': 1.0.5(@types/react-dom@18.2.18)(@types/react@18.2.46)(react-dom@18.2.0)(react@18.2.0)
+      '@radix-ui/react-dropdown-menu': 2.0.6(@types/react-dom@18.2.18)(@types/react@18.2.46)(react-dom@18.2.0)(react@18.2.0)
+      '@radix-ui/react-hover-card': 1.0.7(@types/react-dom@18.2.18)(@types/react@18.2.46)(react-dom@18.2.0)(react@18.2.0)
+      '@radix-ui/react-icons': 1.3.0(react@18.2.0)
+      '@radix-ui/react-label': 2.0.2(@types/react-dom@18.2.18)(@types/react@18.2.46)(react-dom@18.2.0)(react@18.2.0)
+      '@radix-ui/react-menubar': 1.0.4(@types/react-dom@18.2.18)(@types/react@18.2.46)(react-dom@18.2.0)(react@18.2.0)
+      '@radix-ui/react-navigation-menu': 1.1.4(@types/react-dom@18.2.18)(@types/react@18.2.46)(react-dom@18.2.0)(react@18.2.0)
+      '@radix-ui/react-popover': 1.0.7(@types/react-dom@18.2.18)(@types/react@18.2.46)(react-dom@18.2.0)(react@18.2.0)
+      '@radix-ui/react-progress': 1.0.3(@types/react-dom@18.2.18)(@types/react@18.2.46)(react-dom@18.2.0)(react@18.2.0)
+      '@radix-ui/react-radio-group': 1.1.3(@types/react-dom@18.2.18)(@types/react@18.2.46)(react-dom@18.2.0)(react@18.2.0)
+      '@radix-ui/react-scroll-area': 1.0.5(@types/react-dom@18.2.18)(@types/react@18.2.46)(react-dom@18.2.0)(react@18.2.0)
+      '@radix-ui/react-select': 2.0.0(@types/react-dom@18.2.18)(@types/react@18.2.46)(react-dom@18.2.0)(react@18.2.0)
+      '@radix-ui/react-separator': 1.0.3(@types/react-dom@18.2.18)(@types/react@18.2.46)(react-dom@18.2.0)(react@18.2.0)
+      '@radix-ui/react-slider': 1.1.2(@types/react-dom@18.2.18)(@types/react@18.2.46)(react-dom@18.2.0)(react@18.2.0)
+      '@radix-ui/react-slot': 1.0.2(@types/react@18.2.46)(react@18.2.0)
+      '@radix-ui/react-switch': 1.0.3(@types/react-dom@18.2.18)(@types/react@18.2.46)(react-dom@18.2.0)(react@18.2.0)
+      '@radix-ui/react-tabs': 1.0.4(@types/react-dom@18.2.18)(@types/react@18.2.46)(react-dom@18.2.0)(react@18.2.0)
+      '@radix-ui/react-toast': 1.1.5(@types/react-dom@18.2.18)(@types/react@18.2.46)(react-dom@18.2.0)(react@18.2.0)
+      '@radix-ui/react-toggle': 1.0.3(@types/react-dom@18.2.18)(@types/react@18.2.46)(react-dom@18.2.0)(react@18.2.0)
+      '@radix-ui/react-toggle-group': 1.0.4(@types/react-dom@18.2.18)(@types/react@18.2.46)(react-dom@18.2.0)(react@18.2.0)
+      '@radix-ui/react-tooltip': 1.0.7(@types/react-dom@18.2.18)(@types/react@18.2.46)(react-dom@18.2.0)(react@18.2.0)
+      class-variance-authority: 0.7.0
+      clsx: 2.1.0
+      cmdk: 0.2.1(@types/react@18.2.46)(react-dom@18.2.0)(react@18.2.0)
+      date-fns: 3.3.1
+      embla-carousel-react: 8.0.0(react@18.2.0)
+      emblor: 1.0.1(@types/react-dom@18.2.18)(@types/react@18.2.46)(postcss@8.4.35)(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.3)
+      input-otp: 1.1.0(react-dom@18.2.0)(react@18.2.0)
+      next-themes: 0.2.1(next@14.1.3)(react-dom@18.2.0)(react@18.2.0)
+      react: 18.2.0
+      react-day-picker: 8.10.0(date-fns@3.3.1)(react@18.2.0)
+      react-hook-form: 7.50.1(react@18.2.0)
+      react-resizable-panels: 2.0.11(react-dom@18.2.0)(react@18.2.0)
+      sonner: 1.4.2(react-dom@18.2.0)(react@18.2.0)
+      tailwind-merge: 2.2.1
+      tailwindcss-animate: 1.0.7(tailwindcss@3.4.1)
+      vaul: 0.9.0(@types/react-dom@18.2.18)(@types/react@18.2.46)(react-dom@18.2.0)(react@18.2.0)
+      zod: 3.22.4
+    transitivePeerDependencies:
+      - '@swc/core'
+      - '@types/react'
+      - '@types/react-dom'
+      - next
+      - postcss
+      - react-dom
+      - supports-color
+      - tailwindcss
+      - ts-node
+      - typescript
+    dev: false
+
+  /@dydfuf/ui@0.0.9(@types/react-dom@18.2.18)(@types/react@18.2.46)(next@14.1.4)(postcss@8.4.35)(react-dom@18.2.0)(react@18.2.0)(tailwindcss@3.4.1)(typescript@5.3.3):
+    resolution: {integrity: sha512-kueqYXvrvpKz2vAZ6w/ifPSU52+83ygeW3S41rr7uQQR2HLyDFir/SPXzW9Kb18lTF2nLVsIzmmxJ28Kzaoa+Q==, tarball: https://npm.pkg.github.com/download/@dydfuf/ui/0.0.9/87113b7a02dbcc0f2d1c9eac1003e9bda4be0b26}
+    peerDependencies:
+      react: ^18.2.0
+    dependencies:
+      '@hookform/resolvers': 3.3.4(react-hook-form@7.50.1)
+      '@radix-ui/react-accordion': 1.1.2(@types/react-dom@18.2.18)(@types/react@18.2.46)(react-dom@18.2.0)(react@18.2.0)
+      '@radix-ui/react-alert-dialog': 1.0.5(@types/react-dom@18.2.18)(@types/react@18.2.46)(react-dom@18.2.0)(react@18.2.0)
+      '@radix-ui/react-aspect-ratio': 1.0.3(@types/react-dom@18.2.18)(@types/react@18.2.46)(react-dom@18.2.0)(react@18.2.0)
+      '@radix-ui/react-avatar': 1.0.4(@types/react-dom@18.2.18)(@types/react@18.2.46)(react-dom@18.2.0)(react@18.2.0)
+      '@radix-ui/react-checkbox': 1.0.4(@types/react-dom@18.2.18)(@types/react@18.2.46)(react-dom@18.2.0)(react@18.2.0)
+      '@radix-ui/react-collapsible': 1.0.3(@types/react-dom@18.2.18)(@types/react@18.2.46)(react-dom@18.2.0)(react@18.2.0)
+      '@radix-ui/react-context-menu': 2.1.5(@types/react-dom@18.2.18)(@types/react@18.2.46)(react-dom@18.2.0)(react@18.2.0)
+      '@radix-ui/react-dialog': 1.0.5(@types/react-dom@18.2.18)(@types/react@18.2.46)(react-dom@18.2.0)(react@18.2.0)
+      '@radix-ui/react-dropdown-menu': 2.0.6(@types/react-dom@18.2.18)(@types/react@18.2.46)(react-dom@18.2.0)(react@18.2.0)
+      '@radix-ui/react-hover-card': 1.0.7(@types/react-dom@18.2.18)(@types/react@18.2.46)(react-dom@18.2.0)(react@18.2.0)
+      '@radix-ui/react-icons': 1.3.0(react@18.2.0)
+      '@radix-ui/react-label': 2.0.2(@types/react-dom@18.2.18)(@types/react@18.2.46)(react-dom@18.2.0)(react@18.2.0)
+      '@radix-ui/react-menubar': 1.0.4(@types/react-dom@18.2.18)(@types/react@18.2.46)(react-dom@18.2.0)(react@18.2.0)
+      '@radix-ui/react-navigation-menu': 1.1.4(@types/react-dom@18.2.18)(@types/react@18.2.46)(react-dom@18.2.0)(react@18.2.0)
+      '@radix-ui/react-popover': 1.0.7(@types/react-dom@18.2.18)(@types/react@18.2.46)(react-dom@18.2.0)(react@18.2.0)
+      '@radix-ui/react-progress': 1.0.3(@types/react-dom@18.2.18)(@types/react@18.2.46)(react-dom@18.2.0)(react@18.2.0)
+      '@radix-ui/react-radio-group': 1.1.3(@types/react-dom@18.2.18)(@types/react@18.2.46)(react-dom@18.2.0)(react@18.2.0)
+      '@radix-ui/react-scroll-area': 1.0.5(@types/react-dom@18.2.18)(@types/react@18.2.46)(react-dom@18.2.0)(react@18.2.0)
+      '@radix-ui/react-select': 2.0.0(@types/react-dom@18.2.18)(@types/react@18.2.46)(react-dom@18.2.0)(react@18.2.0)
+      '@radix-ui/react-separator': 1.0.3(@types/react-dom@18.2.18)(@types/react@18.2.46)(react-dom@18.2.0)(react@18.2.0)
+      '@radix-ui/react-slider': 1.1.2(@types/react-dom@18.2.18)(@types/react@18.2.46)(react-dom@18.2.0)(react@18.2.0)
+      '@radix-ui/react-slot': 1.0.2(@types/react@18.2.46)(react@18.2.0)
+      '@radix-ui/react-switch': 1.0.3(@types/react-dom@18.2.18)(@types/react@18.2.46)(react-dom@18.2.0)(react@18.2.0)
+      '@radix-ui/react-tabs': 1.0.4(@types/react-dom@18.2.18)(@types/react@18.2.46)(react-dom@18.2.0)(react@18.2.0)
+      '@radix-ui/react-toast': 1.1.5(@types/react-dom@18.2.18)(@types/react@18.2.46)(react-dom@18.2.0)(react@18.2.0)
+      '@radix-ui/react-toggle': 1.0.3(@types/react-dom@18.2.18)(@types/react@18.2.46)(react-dom@18.2.0)(react@18.2.0)
+      '@radix-ui/react-toggle-group': 1.0.4(@types/react-dom@18.2.18)(@types/react@18.2.46)(react-dom@18.2.0)(react@18.2.0)
+      '@radix-ui/react-tooltip': 1.0.7(@types/react-dom@18.2.18)(@types/react@18.2.46)(react-dom@18.2.0)(react@18.2.0)
+      class-variance-authority: 0.7.0
+      clsx: 2.1.0
+      cmdk: 0.2.1(@types/react@18.2.46)(react-dom@18.2.0)(react@18.2.0)
+      date-fns: 3.3.1
+      embla-carousel-react: 8.0.0(react@18.2.0)
+      emblor: 1.0.1(@types/react-dom@18.2.18)(@types/react@18.2.46)(postcss@8.4.35)(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.3)
+      input-otp: 1.1.0(react-dom@18.2.0)(react@18.2.0)
+      next-themes: 0.2.1(next@14.1.4)(react-dom@18.2.0)(react@18.2.0)
+      react: 18.2.0
+      react-day-picker: 8.10.0(date-fns@3.3.1)(react@18.2.0)
+      react-hook-form: 7.50.1(react@18.2.0)
+      react-resizable-panels: 2.0.11(react-dom@18.2.0)(react@18.2.0)
+      sonner: 1.4.2(react-dom@18.2.0)(react@18.2.0)
+      tailwind-merge: 2.2.1
+      tailwindcss-animate: 1.0.7(tailwindcss@3.4.1)
+      vaul: 0.9.0(@types/react-dom@18.2.18)(@types/react@18.2.46)(react-dom@18.2.0)(react@18.2.0)
+      zod: 3.22.4
+    transitivePeerDependencies:
+      - '@swc/core'
+      - '@types/react'
+      - '@types/react-dom'
+      - next
+      - postcss
+      - react-dom
+      - supports-color
+      - tailwindcss
+      - ts-node
+      - typescript
+    dev: false
+
+  /@dydfuf/ui@0.0.9(@types/react-dom@18.2.18)(@types/react@18.2.46)(next@14.1.4)(postcss@8.4.38)(react-dom@18.2.0)(react@18.2.0)(tailwindcss@3.4.3)(typescript@5.3.3):
+    resolution: {integrity: sha512-kueqYXvrvpKz2vAZ6w/ifPSU52+83ygeW3S41rr7uQQR2HLyDFir/SPXzW9Kb18lTF2nLVsIzmmxJ28Kzaoa+Q==, tarball: https://npm.pkg.github.com/download/@dydfuf/ui/0.0.9/87113b7a02dbcc0f2d1c9eac1003e9bda4be0b26}
+    peerDependencies:
+      react: ^18.2.0
+    dependencies:
+      '@hookform/resolvers': 3.3.4(react-hook-form@7.50.1)
+      '@radix-ui/react-accordion': 1.1.2(@types/react-dom@18.2.18)(@types/react@18.2.46)(react-dom@18.2.0)(react@18.2.0)
+      '@radix-ui/react-alert-dialog': 1.0.5(@types/react-dom@18.2.18)(@types/react@18.2.46)(react-dom@18.2.0)(react@18.2.0)
+      '@radix-ui/react-aspect-ratio': 1.0.3(@types/react-dom@18.2.18)(@types/react@18.2.46)(react-dom@18.2.0)(react@18.2.0)
+      '@radix-ui/react-avatar': 1.0.4(@types/react-dom@18.2.18)(@types/react@18.2.46)(react-dom@18.2.0)(react@18.2.0)
+      '@radix-ui/react-checkbox': 1.0.4(@types/react-dom@18.2.18)(@types/react@18.2.46)(react-dom@18.2.0)(react@18.2.0)
+      '@radix-ui/react-collapsible': 1.0.3(@types/react-dom@18.2.18)(@types/react@18.2.46)(react-dom@18.2.0)(react@18.2.0)
+      '@radix-ui/react-context-menu': 2.1.5(@types/react-dom@18.2.18)(@types/react@18.2.46)(react-dom@18.2.0)(react@18.2.0)
+      '@radix-ui/react-dialog': 1.0.5(@types/react-dom@18.2.18)(@types/react@18.2.46)(react-dom@18.2.0)(react@18.2.0)
+      '@radix-ui/react-dropdown-menu': 2.0.6(@types/react-dom@18.2.18)(@types/react@18.2.46)(react-dom@18.2.0)(react@18.2.0)
+      '@radix-ui/react-hover-card': 1.0.7(@types/react-dom@18.2.18)(@types/react@18.2.46)(react-dom@18.2.0)(react@18.2.0)
+      '@radix-ui/react-icons': 1.3.0(react@18.2.0)
+      '@radix-ui/react-label': 2.0.2(@types/react-dom@18.2.18)(@types/react@18.2.46)(react-dom@18.2.0)(react@18.2.0)
+      '@radix-ui/react-menubar': 1.0.4(@types/react-dom@18.2.18)(@types/react@18.2.46)(react-dom@18.2.0)(react@18.2.0)
+      '@radix-ui/react-navigation-menu': 1.1.4(@types/react-dom@18.2.18)(@types/react@18.2.46)(react-dom@18.2.0)(react@18.2.0)
+      '@radix-ui/react-popover': 1.0.7(@types/react-dom@18.2.18)(@types/react@18.2.46)(react-dom@18.2.0)(react@18.2.0)
+      '@radix-ui/react-progress': 1.0.3(@types/react-dom@18.2.18)(@types/react@18.2.46)(react-dom@18.2.0)(react@18.2.0)
+      '@radix-ui/react-radio-group': 1.1.3(@types/react-dom@18.2.18)(@types/react@18.2.46)(react-dom@18.2.0)(react@18.2.0)
+      '@radix-ui/react-scroll-area': 1.0.5(@types/react-dom@18.2.18)(@types/react@18.2.46)(react-dom@18.2.0)(react@18.2.0)
+      '@radix-ui/react-select': 2.0.0(@types/react-dom@18.2.18)(@types/react@18.2.46)(react-dom@18.2.0)(react@18.2.0)
+      '@radix-ui/react-separator': 1.0.3(@types/react-dom@18.2.18)(@types/react@18.2.46)(react-dom@18.2.0)(react@18.2.0)
+      '@radix-ui/react-slider': 1.1.2(@types/react-dom@18.2.18)(@types/react@18.2.46)(react-dom@18.2.0)(react@18.2.0)
+      '@radix-ui/react-slot': 1.0.2(@types/react@18.2.46)(react@18.2.0)
+      '@radix-ui/react-switch': 1.0.3(@types/react-dom@18.2.18)(@types/react@18.2.46)(react-dom@18.2.0)(react@18.2.0)
+      '@radix-ui/react-tabs': 1.0.4(@types/react-dom@18.2.18)(@types/react@18.2.46)(react-dom@18.2.0)(react@18.2.0)
+      '@radix-ui/react-toast': 1.1.5(@types/react-dom@18.2.18)(@types/react@18.2.46)(react-dom@18.2.0)(react@18.2.0)
+      '@radix-ui/react-toggle': 1.0.3(@types/react-dom@18.2.18)(@types/react@18.2.46)(react-dom@18.2.0)(react@18.2.0)
+      '@radix-ui/react-toggle-group': 1.0.4(@types/react-dom@18.2.18)(@types/react@18.2.46)(react-dom@18.2.0)(react@18.2.0)
+      '@radix-ui/react-tooltip': 1.0.7(@types/react-dom@18.2.18)(@types/react@18.2.46)(react-dom@18.2.0)(react@18.2.0)
+      class-variance-authority: 0.7.0
+      clsx: 2.1.0
+      cmdk: 0.2.1(@types/react@18.2.46)(react-dom@18.2.0)(react@18.2.0)
+      date-fns: 3.3.1
+      embla-carousel-react: 8.0.0(react@18.2.0)
+      emblor: 1.0.1(@types/react-dom@18.2.18)(@types/react@18.2.46)(postcss@8.4.38)(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.3)
+      input-otp: 1.1.0(react-dom@18.2.0)(react@18.2.0)
+      next-themes: 0.2.1(next@14.1.4)(react-dom@18.2.0)(react@18.2.0)
+      react: 18.2.0
+      react-day-picker: 8.10.0(date-fns@3.3.1)(react@18.2.0)
+      react-hook-form: 7.50.1(react@18.2.0)
+      react-resizable-panels: 2.0.11(react-dom@18.2.0)(react@18.2.0)
+      sonner: 1.4.2(react-dom@18.2.0)(react@18.2.0)
+      tailwind-merge: 2.2.1
+      tailwindcss-animate: 1.0.7(tailwindcss@3.4.3)
+      vaul: 0.9.0(@types/react-dom@18.2.18)(@types/react@18.2.46)(react-dom@18.2.0)(react@18.2.0)
+      zod: 3.22.4
+    transitivePeerDependencies:
+      - '@swc/core'
+      - '@types/react'
+      - '@types/react-dom'
+      - next
+      - postcss
+      - react-dom
+      - supports-color
+      - tailwindcss
+      - ts-node
+      - typescript
+    dev: false
 
   /@effect-ts/core@0.60.5:
     resolution: {integrity: sha512-qi1WrtJA90XLMnj2hnUszW9Sx4dXP03ZJtCc5DiUBIOhF4Vw7plfb65/bdBySPoC9s7zy995TdUX1XBSxUkl5w==}
@@ -5128,7 +5320,7 @@ packages:
       react:
         optional: true
     dependencies:
-      next: 14.1.4(react-dom@18.2.0)(react@18.2.0)
+      next: 14.1.4(@babel/core@7.24.3)(react-dom@18.2.0)(react@18.2.0)
       react: 18.2.0
       server-only: 0.0.1
     dev: false
@@ -5153,7 +5345,7 @@ packages:
       ts-morph: 12.0.0
     dev: false
 
-  /@vercel/speed-insights@1.0.10(react@18.2.0):
+  /@vercel/speed-insights@1.0.10(next@14.1.4)(react@18.2.0):
     resolution: {integrity: sha512-4uzdKB0RW6Ff2FkzshzjZ+RlJfLPxgm/00i0XXgxfMPhwnnsk92YgtqsxT9OcPLdJUyVU1DqFlSWWjIQMPkh0g==}
     requiresBuild: true
     peerDependencies:
@@ -5177,6 +5369,7 @@ packages:
       vue-router:
         optional: true
     dependencies:
+      next: 14.1.4(@babel/core@7.24.3)(react-dom@18.2.0)(react@18.2.0)
       react: 18.2.0
     dev: false
 
@@ -6497,6 +6690,33 @@ packages:
       react-easy-sort: 1.6.0(react-dom@18.2.0)(react@18.2.0)
       tailwind-merge: 1.14.0
       tsup: 6.7.0(postcss@8.4.35)(typescript@5.3.3)
+    transitivePeerDependencies:
+      - '@swc/core'
+      - '@types/react'
+      - '@types/react-dom'
+      - postcss
+      - supports-color
+      - ts-node
+      - typescript
+    dev: false
+
+  /emblor@1.0.1(@types/react-dom@18.2.18)(@types/react@18.2.46)(postcss@8.4.38)(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.3):
+    resolution: {integrity: sha512-z2Hgy1MGZdK+iER8vaX7IRqVH1PDXZL/DQzZdzvvyz0HeuRbDDwYEC+BAdGr565L8FXoW4b1YjAYftaaB4ak2A==}
+    peerDependencies:
+      react: ^18.0.0
+      react-dom: ^18.0.0
+    dependencies:
+      '@radix-ui/react-dialog': 1.0.4(@types/react-dom@18.2.18)(@types/react@18.2.46)(react-dom@18.2.0)(react@18.2.0)
+      '@radix-ui/react-popover': 1.0.7(@types/react-dom@18.2.18)(@types/react@18.2.46)(react-dom@18.2.0)(react@18.2.0)
+      '@radix-ui/react-slot': 1.0.2(@types/react@18.2.46)(react@18.2.0)
+      class-variance-authority: 0.7.0
+      clsx: 2.1.0
+      cmdk: 0.2.1(@types/react@18.2.46)(react-dom@18.2.0)(react@18.2.0)
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+      react-easy-sort: 1.6.0(react-dom@18.2.0)(react@18.2.0)
+      tailwind-merge: 1.14.0
+      tsup: 6.7.0(postcss@8.4.38)(typescript@5.3.3)
     transitivePeerDependencies:
       - '@swc/core'
       - '@types/react'
@@ -9749,7 +9969,7 @@ packages:
       react: '*'
       react-dom: '*'
     dependencies:
-      next: 14.1.4(react-dom@18.2.0)(react@18.2.0)
+      next: 14.1.4(@babel/core@7.24.3)(react-dom@18.2.0)(react@18.2.0)
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
     dev: false
@@ -9778,7 +9998,7 @@ packages:
       postcss: 8.4.31
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
-      styled-jsx: 5.1.1(react@18.2.0)
+      styled-jsx: 5.1.1(@babel/core@7.24.3)(react@18.2.0)
     optionalDependencies:
       '@next/swc-darwin-arm64': 14.1.3
       '@next/swc-darwin-x64': 14.1.3
@@ -9794,7 +10014,7 @@ packages:
       - babel-plugin-macros
     dev: false
 
-  /next@14.1.4(react-dom@18.2.0)(react@18.2.0):
+  /next@14.1.4(@babel/core@7.24.3)(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-1WTaXeSrUwlz/XcnhGTY7+8eiaFvdet5z9u3V2jb+Ek1vFo0VhHKSAIJvDWfQpttWjnyw14kBeq28TPq7bTeEQ==}
     engines: {node: '>=18.17.0'}
     hasBin: true
@@ -9817,7 +10037,7 @@ packages:
       postcss: 8.4.31
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
-      styled-jsx: 5.1.1(react@18.2.0)
+      styled-jsx: 5.1.1(@babel/core@7.24.3)(react@18.2.0)
     optionalDependencies:
       '@next/swc-darwin-arm64': 14.1.4
       '@next/swc-darwin-x64': 14.1.4
@@ -10410,6 +10630,23 @@ packages:
     dependencies:
       lilconfig: 2.1.0
       postcss: 8.4.35
+      yaml: 1.10.2
+    dev: false
+
+  /postcss-load-config@3.1.4(postcss@8.4.38):
+    resolution: {integrity: sha512-6DiM4E7v4coTE4uzA8U//WhtPwyhiim3eyjEMFCnUpzbrkK9wJHgKDT2mR+HbtSrd/NubVaYTOpSpjUl8NQeRg==}
+    engines: {node: '>= 10'}
+    peerDependencies:
+      postcss: '>=8.0.9'
+      ts-node: '>=9.0.0'
+    peerDependenciesMeta:
+      postcss:
+        optional: true
+      ts-node:
+        optional: true
+    dependencies:
+      lilconfig: 2.1.0
+      postcss: 8.4.38
       yaml: 1.10.2
     dev: false
 
@@ -11880,7 +12117,7 @@ packages:
     dependencies:
       inline-style-parser: 0.1.1
 
-  /styled-jsx@5.1.1(react@18.2.0):
+  /styled-jsx@5.1.1(@babel/core@7.24.3)(react@18.2.0):
     resolution: {integrity: sha512-pW7uC1l4mBZ8ugbiZrcIsiIvVx1UmTfw7UkC3Um2tmfUq9Bhk8IiyEIPl6F8agHgjzku6j0xQEZbfA5uSgSaCw==}
     engines: {node: '>= 12.0.0'}
     peerDependencies:
@@ -11893,6 +12130,7 @@ packages:
       babel-plugin-macros:
         optional: true
     dependencies:
+      '@babel/core': 7.24.3
       client-only: 0.0.1
       react: 18.2.0
     dev: false
@@ -11959,6 +12197,14 @@ packages:
       tailwindcss: 3.4.1
     dev: false
 
+  /tailwindcss-animate@1.0.7(tailwindcss@3.4.3):
+    resolution: {integrity: sha512-bl6mpH3T7I3UFxuvDEXLxy/VuFxBk5bbzplh7tXI68mwMokNYd1t9qPBHlnyTwfa4JGC4zP516I1hYYtQ/vspA==}
+    peerDependencies:
+      tailwindcss: '>=3.0.0 || insiders'
+    dependencies:
+      tailwindcss: 3.4.3
+    dev: false
+
   /tailwindcss@3.4.1:
     resolution: {integrity: sha512-qAYmXRfk3ENzuPBakNK0SRrUDipP8NQnEY6772uDhflcQz5EhRdD7JNZxyrFHVQNCwULPBn6FNPp9brpO7ctcA==}
     engines: {node: '>=14.0.0'}
@@ -12018,7 +12264,6 @@ packages:
       sucrase: 3.35.0
     transitivePeerDependencies:
       - ts-node
-    dev: true
 
   /tapable@2.2.1:
     resolution: {integrity: sha512-GNzQvQTOIP6RyTfE2Qxb8ZVlNmw0n88vp1szwWRimP02mnTsx3Wtn5qRdqY9w2XduFNUgvOwhNnQsjwCp+kqaQ==}
@@ -12289,6 +12534,43 @@ packages:
       joycon: 3.1.1
       postcss: 8.4.35
       postcss-load-config: 3.1.4(postcss@8.4.35)
+      resolve-from: 5.0.0
+      rollup: 3.29.4
+      source-map: 0.8.0-beta.0
+      sucrase: 3.35.0
+      tree-kill: 1.2.2
+      typescript: 5.3.3
+    transitivePeerDependencies:
+      - supports-color
+      - ts-node
+    dev: false
+
+  /tsup@6.7.0(postcss@8.4.38)(typescript@5.3.3):
+    resolution: {integrity: sha512-L3o8hGkaHnu5TdJns+mCqFsDBo83bJ44rlK7e6VdanIvpea4ArPcU3swWGsLVbXak1PqQx/V+SSmFPujBK+zEQ==}
+    engines: {node: '>=14.18'}
+    hasBin: true
+    peerDependencies:
+      '@swc/core': ^1
+      postcss: ^8.4.12
+      typescript: '>=4.1.0'
+    peerDependenciesMeta:
+      '@swc/core':
+        optional: true
+      postcss:
+        optional: true
+      typescript:
+        optional: true
+    dependencies:
+      bundle-require: 4.0.3(esbuild@0.17.6)
+      cac: 6.7.14
+      chokidar: 3.6.0
+      debug: 4.3.4
+      esbuild: 0.17.6
+      execa: 5.1.1
+      globby: 11.1.0
+      joycon: 3.1.1
+      postcss: 8.4.38
+      postcss-load-config: 3.1.4(postcss@8.4.38)
       resolve-from: 5.0.0
       rollup: 3.29.4
       source-map: 0.8.0-beta.0
