@@ -27,9 +27,6 @@ jobs:
         - name: Install Dependencies
           run: pnpm i
 
-        - name: Build Project Artifacts
-          run: pnpm build
-
         - name: Creating .npmrc
           run: |
             cat << EOF > "$HOME/.npmrc"
@@ -43,3 +40,4 @@ jobs:
           run: pnpm publish --access public
           env:
             GITHUB_TOKEN: ${{ secrets.GH_REGISTRY_TOKEN }}
+          working-directory: packages/ui
