@@ -1,5 +1,5 @@
-import { Checkbox } from "@raonc/ui/components/checkbox";
-import { Label } from "@raonc/ui/components/label";
+import { Checkbox } from "@dydfuf/ui/components/checkbox";
+import { Label } from "@dydfuf/ui/components/label";
 
 export default function LabelDemo() {
   return (

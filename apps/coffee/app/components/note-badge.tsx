@@ -1,5 +1,5 @@
-import { Badge, BadgeProps } from "@raonc/ui/components/badge";
-import { cn } from "@raonc/ui/lib/utils";
+import { Badge, BadgeProps } from "@dydfuf/ui/components/badge";
+import { cn } from "@dydfuf/ui/lib/utils";
 
 interface Props extends BadgeProps {}
 

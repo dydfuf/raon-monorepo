@@ -1,5 +1,5 @@
-import { Label } from "@raonc/ui/components/label";
-import { RadioGroup, RadioGroupItem } from "@raonc/ui/components/radio-group";
+import { Label } from "@dydfuf/ui/components/label";
+import { RadioGroup, RadioGroupItem } from "@dydfuf/ui/components/radio-group";
 
 export default function RadioGroupDemo() {
   return (

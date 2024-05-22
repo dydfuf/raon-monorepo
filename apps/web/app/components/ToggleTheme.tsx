@@ -8,8 +8,8 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@raonc/ui/components/dropdown-menu";
-import { Button } from "@raonc/ui/components/button";
+} from "@dydfuf/ui/components/dropdown-menu";
+import { Button } from "@dydfuf/ui/components/button";
 
 export function ToggleTheme() {
   const { setTheme } = useTheme();

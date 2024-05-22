@@ -1,4 +1,4 @@
-import { Badge } from "@raonc/ui/components/badge";
+import { Badge } from "@dydfuf/ui/components/badge";
 
 export default function BadgeDemo() {
   return <Badge>Badge</Badge>;

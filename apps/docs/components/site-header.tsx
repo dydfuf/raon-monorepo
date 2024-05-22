@@ -1,7 +1,7 @@
 import Link from "next/link";
 
-import { cn } from "@raonc/ui/lib/utils";
-import { buttonVariants } from "@raonc/ui/components/button";
+import { cn } from "@dydfuf/ui/lib/utils";
+import { buttonVariants } from "@dydfuf/ui/components/button";
 import { ModeToggle } from "./mode-toggle";
 import { MainNav } from "./main-nav";
 import { MobileNav } from "./mobile-nav";

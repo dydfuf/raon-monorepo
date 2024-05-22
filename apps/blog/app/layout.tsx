@@ -1,4 +1,4 @@
-import "@raonc/ui/globals.css";
+import "@dydfuf/ui/globals.css";
 import "@radix-ui/themes/styles.css";
 
 import Layout from "../components/Layout";
@@ -43,7 +43,11 @@ const notoSansKr = Noto_Sans_KR({
   weight: ["300", "400", "500", "700"],
 });
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html suppressHydrationWarning>
       <Head />
@@ -61,7 +65,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             {process.env.NODE_ENV === "development" && (
               <ThemePanel defaultOpen={false} />
             )}
-          <TailwindIndicator />
+            <TailwindIndicator />
           </Theme>
         </NextThemeProvider>
       </body>

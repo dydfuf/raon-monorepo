@@ -3,7 +3,7 @@ import { Anton } from "next/font/google";
 import Link from "next/link";
 import { Button, Flex, Text } from "@radix-ui/themes";
 import SwitchTheme from "./SwitchTheme.client";
-import { cn } from "@raonc/ui/lib/utils";
+import { cn } from "@dydfuf/ui/lib/utils";
 
 const anton = Anton({ subsets: ["latin"], weight: ["400"] });
 

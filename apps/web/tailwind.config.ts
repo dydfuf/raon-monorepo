@@ -1,1 +1,1 @@
-export * from "@raonc/ui/tailwind.config";
+export * from "@dydfuf/ui/tailwind.config";

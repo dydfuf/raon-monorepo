@@ -1,4 +1,4 @@
-import { Button } from "@raonc/ui/components/button";
+import { Button } from "@dydfuf/ui/components/button";
 import { Link } from "@remix-run/react";
 import NoteBadge from "../components/note-badge";
 

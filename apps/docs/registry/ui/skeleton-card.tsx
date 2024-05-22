@@ -1,4 +1,4 @@
-import { Skeleton } from "@raonc/ui/components/skeleton";
+import { Skeleton } from "@dydfuf/ui/components/skeleton";
 
 export default function SkeletonCard() {
   return (

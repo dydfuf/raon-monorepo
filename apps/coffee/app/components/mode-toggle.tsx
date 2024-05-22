@@ -1,10 +1,10 @@
-import { Button } from "@raonc/ui/components/button";
+import { Button } from "@dydfuf/ui/components/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@raonc/ui/components/dropdown-menu";
+} from "@dydfuf/ui/components/dropdown-menu";
 import { Theme, useTheme } from "remix-themes";
 import { Icons } from "./Icons";
 

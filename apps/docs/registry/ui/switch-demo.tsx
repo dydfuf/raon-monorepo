@@ -1,5 +1,5 @@
-import { Label } from "@raonc/ui/components/label";
-import { Switch } from "@raonc/ui/components/switch";
+import { Label } from "@dydfuf/ui/components/label";
+import { Switch } from "@dydfuf/ui/components/switch";
 
 export default function SwitchDemo() {
   return (

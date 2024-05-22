@@ -1,6 +1,6 @@
 import { UnderlineIcon } from "@radix-ui/react-icons";
 
-import { Toggle } from "@raonc/ui/components/toggle";
+import { Toggle } from "@dydfuf/ui/components/toggle";
 
 export default function ToggleDisabled() {
   return (

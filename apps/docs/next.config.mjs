@@ -2,7 +2,7 @@ import { withContentlayer } from "next-contentlayer";
 
 /** @type {import('next').NextConfig} */
 const config = {
-  transpilePackages: ["@raonc/ui"],
+  transpilePackages: ["@dydfuf/ui"],
   images: {
     unoptimized: true,
   },

@@ -1,13 +1,13 @@
 import Link from "next/link";
 
-import { BreadcrumbPage } from "@raonc/ui/components/breadcrumb";
+import { BreadcrumbPage } from "@dydfuf/ui/components/breadcrumb";
 import {
   Breadcrumb,
   BreadcrumbItem,
   BreadcrumbLink,
   BreadcrumbList,
   BreadcrumbSeparator,
-} from "@raonc/ui/components/breadcrumb";
+} from "@dydfuf/ui/components/breadcrumb";
 
 export default function BreadcrumbWithCustomSeparator() {
   return (

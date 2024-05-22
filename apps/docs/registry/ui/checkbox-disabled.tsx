@@ -1,4 +1,4 @@
-import { Checkbox } from "@raonc/ui/components/checkbox";
+import { Checkbox } from "@dydfuf/ui/components/checkbox";
 
 export default function CheckboxDisabled() {
   return (

@@ -4,7 +4,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
-import { Button } from "@raonc/ui/components/button";
+import { Button } from "@dydfuf/ui/components/button";
 import {
   Form,
   FormControl,
@@ -13,13 +13,13 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@raonc/ui/components/form";
+} from "@dydfuf/ui/components/form";
 import {
   InputOTP,
   InputOTPGroup,
   InputOTPSlot,
-} from "@raonc/ui/components/input-otp";
-import { toast } from "@raonc/ui/components/use-toast";
+} from "@dydfuf/ui/components/input-otp";
+import { toast } from "@dydfuf/ui/components/use-toast";
 
 const FormSchema = z.object({
   pin: z.string().min(6, {

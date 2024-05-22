@@ -10,20 +10,20 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@raonc/ui/components/accordion";
+} from "@dydfuf/ui/components/accordion";
 import {
   Alert,
   AlertDescription,
   AlertTitle,
-} from "@raonc/ui/components/alert";
-import { AspectRatio } from "@raonc/ui/components/aspect-ratio";
+} from "@dydfuf/ui/components/alert";
+import { AspectRatio } from "@dydfuf/ui/components/aspect-ratio";
 import {
   Tabs,
   TabsContent,
   TabsList,
   TabsTrigger,
-} from "@raonc/ui/components/tabs";
-import { cn } from "@raonc/ui/lib/utils";
+} from "@dydfuf/ui/components/tabs";
+import { cn } from "@dydfuf/ui/lib/utils";
 import { CopyButton } from "./copy-button";
 import { Callout } from "./callout";
 import { CodeBlockWrapper } from "./code-block-wrapper";

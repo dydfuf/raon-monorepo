@@ -3,12 +3,12 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@raonc/ui/components/accordion";
-import { ScrollArea } from "@raonc/ui/components/scroll-area";
+} from "@dydfuf/ui/components/accordion";
+import { ScrollArea } from "@dydfuf/ui/components/scroll-area";
 import {
   ToggleGroup,
   ToggleGroupItem,
-} from "@raonc/ui/components/toggle-group";
+} from "@dydfuf/ui/components/toggle-group";
 import { useEffect, useState } from "react";
 
 interface Props {

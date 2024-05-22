@@ -1,7 +1,7 @@
 import { NavLink } from "@remix-run/react";
 import { Icons } from "./Icons";
 import { siteConfig } from "../constant/common";
-import { cn } from "@raonc/ui/lib/utils";
+import { cn } from "@dydfuf/ui/lib/utils";
 
 export default function MainNav() {
   return (

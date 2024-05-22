@@ -1,4 +1,4 @@
-import { cn } from "@raonc/ui/lib/utils";
+import { cn } from "@dydfuf/ui/lib/utils";
 import ContentCard from "../components/ContentCard";
 import { parseMarkdownMetadata } from "../utils/parseMarkdownMetadata";
 import { getPostByName, getPostNameList } from "../utils/post";

@@ -2,8 +2,8 @@ import Link from "next/link";
 import { ChevronLeftIcon, ChevronRightIcon } from "@radix-ui/react-icons";
 import { Doc, Project } from "contentlayer/generated";
 import { NavItem, NavItemWithChildren } from "types/nav";
-import { buttonVariants } from "@raonc/ui/components/button";
-import { cn } from "@raonc/ui/lib/utils";
+import { buttonVariants } from "@dydfuf/ui/components/button";
+import { cn } from "@dydfuf/ui/lib/utils";
 import { docsConfig } from "config/docs";
 
 interface DocsPagerProps {

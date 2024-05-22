@@ -7,7 +7,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@raonc/ui/components/table";
+} from "@dydfuf/ui/components/table";
 
 const invoices = [
   {

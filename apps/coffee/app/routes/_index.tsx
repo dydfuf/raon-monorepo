@@ -2,7 +2,7 @@ import type { HeadersFunction } from "@vercel/remix";
 import CommandMenu from "../components/command-menu";
 import { siteConfig } from "../constant/common";
 import { Link } from "@remix-run/react";
-import { Button } from "@raonc/ui/components/button";
+import { Button } from "@dydfuf/ui/components/button";
 
 export const headers: HeadersFunction = ({}) => ({
   "Cache-Control": "max-age=300, s-maxage=3600",

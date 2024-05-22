@@ -1,5 +1,5 @@
-import { Label } from "@raonc/ui/components/label";
-import { Textarea } from "@raonc/ui/components/textarea";
+import { Label } from "@dydfuf/ui/components/label";
+import { Textarea } from "@dydfuf/ui/components/textarea";
 
 export default function TextareaWithLabel() {
   return (

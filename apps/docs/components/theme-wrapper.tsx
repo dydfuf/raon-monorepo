@@ -1,6 +1,6 @@
 "use client";
 
-import { cn } from "@raonc/ui/lib/utils";
+import { cn } from "@dydfuf/ui/lib/utils";
 
 interface ThemeWrapperProps extends React.ComponentProps<"div"> {
   defaultTheme?: string;

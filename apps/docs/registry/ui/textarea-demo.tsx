@@ -1,4 +1,4 @@
-import { Textarea } from "@raonc/ui/components/textarea";
+import { Textarea } from "@dydfuf/ui/components/textarea";
 
 export default function TextareaDemo() {
   return <Textarea placeholder="Type your message here." />;

@@ -1,5 +1,5 @@
-// const baseConfig = require("@raonc/ui/tailwind.config");
-import baseConfig from "@raonc/ui/tailwind.config";
+// const baseConfig = require("@dydfuf/ui/tailwind.config");
+import baseConfig from "@dydfuf/ui/tailwind.config";
 
 import type { Config } from "tailwindcss";
 

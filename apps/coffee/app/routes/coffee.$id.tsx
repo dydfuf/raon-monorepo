@@ -8,8 +8,8 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@raonc/ui/components/card";
-import { cn } from "@raonc/ui/lib/utils";
+} from "@dydfuf/ui/components/card";
+import { cn } from "@dydfuf/ui/lib/utils";
 import NoteBadge from "../components/note-badge";
 import { siteConfig } from "../constant/common";
 

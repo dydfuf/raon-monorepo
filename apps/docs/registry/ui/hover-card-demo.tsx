@@ -4,13 +4,13 @@ import {
   Avatar,
   AvatarFallback,
   AvatarImage,
-} from "@raonc/ui/components/avatar";
-import { Button } from "@raonc/ui/components/button";
+} from "@dydfuf/ui/components/avatar";
+import { Button } from "@dydfuf/ui/components/button";
 import {
   HoverCard,
   HoverCardContent,
   HoverCardTrigger,
-} from "@raonc/ui/components/hover-card";
+} from "@dydfuf/ui/components/hover-card";
 
 export default function HoverCardDemo() {
   return (

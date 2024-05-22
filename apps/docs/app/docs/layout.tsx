@@ -1,4 +1,4 @@
-import { ScrollArea } from "@raonc/ui/components/scroll-area";
+import { ScrollArea } from "@dydfuf/ui/components/scroll-area";
 import { PropsWithChildren } from "react";
 import { DocsSidebarNav } from "../../components/docs-sidebar-nav";
 import { docsConfig } from "../../config/docs";

@@ -1,6 +1,6 @@
 "use client";
 
-import { cn } from "@raonc/ui/lib/utils";
+import { cn } from "@dydfuf/ui/lib/utils";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { SidebarNavItem } from "../types/nav";

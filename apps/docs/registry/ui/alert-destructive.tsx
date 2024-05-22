@@ -4,7 +4,7 @@ import {
   Alert,
   AlertDescription,
   AlertTitle,
-} from "@raonc/ui/components/alert";
+} from "@dydfuf/ui/components/alert";
 
 export default function AlertDestructive() {
   return (

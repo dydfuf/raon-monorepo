@@ -7,7 +7,7 @@ import {
   useLoaderData,
   useNavigation,
 } from "@remix-run/react";
-import stylesheet from "@raonc/ui/globals.css?url";
+import stylesheet from "@dydfuf/ui/globals.css?url";
 import fontStyleSheet from "../public/font/pretendardvariable.css?url";
 import { LinksFunction, LoaderFunctionArgs, MetaFunction } from "@vercel/remix";
 import SiteHeader from "./components/site-header";
@@ -19,7 +19,7 @@ import {
   useTheme,
 } from "remix-themes";
 import { themeSessionResolver } from "./components/theme-session";
-import { cn } from "@raonc/ui/lib/utils";
+import { cn } from "@dydfuf/ui/lib/utils";
 import { siteConfig } from "./constant/common";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/remix";

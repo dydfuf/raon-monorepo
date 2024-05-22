@@ -9,8 +9,8 @@ import {
   SunIcon,
 } from "@radix-ui/react-icons";
 import { useTheme } from "next-themes";
-import { cn } from "@raonc/ui/lib/utils";
-import { Button } from "@raonc/ui/components/button";
+import { cn } from "@dydfuf/ui/lib/utils";
+import { Button } from "@dydfuf/ui/components/button";
 import {
   CommandDialog,
   CommandEmpty,
@@ -19,8 +19,8 @@ import {
   CommandItem,
   CommandList,
   CommandSeparator,
-} from "@raonc/ui/components/command";
-import { DialogProps } from "@raonc/ui/components/dialog";
+} from "@dydfuf/ui/components/command";
+import { DialogProps } from "@dydfuf/ui/components/dialog";
 import { docsConfig } from "config/docs";
 import { Icons } from "./icons";
 

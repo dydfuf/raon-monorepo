@@ -2,7 +2,7 @@ import {
   Alert,
   AlertDescription,
   AlertTitle,
-} from "@raonc/ui/components/alert";
+} from "@dydfuf/ui/components/alert";
 
 interface CalloutProps {
   icon?: string;

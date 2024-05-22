@@ -1,8 +1,8 @@
 import * as React from "react";
 
-import { cn } from "@raonc/ui/lib/utils";
+import { cn } from "@dydfuf/ui/lib/utils";
 import { useMediaQuery } from "hooks/use-media-query";
-import { Button } from "@raonc/ui/components/button";
+import { Button } from "@dydfuf/ui/components/button";
 import {
   Dialog,
   DialogContent,
@@ -10,7 +10,7 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@raonc/ui/components/dialog";
+} from "@dydfuf/ui/components/dialog";
 import {
   Drawer,
   DrawerClose,
@@ -20,9 +20,9 @@ import {
   DrawerHeader,
   DrawerTitle,
   DrawerTrigger,
-} from "@raonc/ui/components/drawer";
-import { Input } from "@raonc/ui/components/input";
-import { Label } from "@raonc/ui/components/label";
+} from "@dydfuf/ui/components/drawer";
+import { Input } from "@dydfuf/ui/components/input";
+import { Label } from "@dydfuf/ui/components/label";
 
 export default function DrawerDialogDemo() {
   const [open, setOpen] = React.useState(false);

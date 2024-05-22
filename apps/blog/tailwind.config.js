@@ -1,4 +1,4 @@
-const baseConfig = require("@raonc/ui/tailwind.config");
+const baseConfig = require("@dydfuf/ui/tailwind.config");
 
 const spacing = {};
 const borderWidth = {};

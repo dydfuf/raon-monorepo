@@ -12,7 +12,7 @@ import {
   MenubarSubContent,
   MenubarSubTrigger,
   MenubarTrigger,
-} from "@raonc/ui/components/menubar";
+} from "@dydfuf/ui/components/menubar";
 
 export default function MenubarDemo() {
   return (

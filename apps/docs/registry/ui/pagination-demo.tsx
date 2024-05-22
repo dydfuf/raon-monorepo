@@ -6,7 +6,7 @@ import {
   PaginationLink,
   PaginationNext,
   PaginationPrevious,
-} from "@raonc/ui/components/pagination";
+} from "@dydfuf/ui/components/pagination";
 
 export default function PaginationDemo() {
   return (

@@ -4,7 +4,7 @@ import {
   InputOTP,
   InputOTPGroup,
   InputOTPSlot,
-} from "@raonc/ui/components/input-otp";
+} from "@dydfuf/ui/components/input-otp";
 
 export default function InputOTPPattern() {
   return (

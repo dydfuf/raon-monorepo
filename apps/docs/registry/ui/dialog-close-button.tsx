@@ -1,6 +1,6 @@
 import { CopyIcon } from "@radix-ui/react-icons";
 
-import { Button } from "@raonc/ui/components/button";
+import { Button } from "@dydfuf/ui/components/button";
 import {
   Dialog,
   DialogClose,
@@ -10,9 +10,9 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@raonc/ui/components/dialog";
-import { Input } from "@raonc/ui/components/input";
-import { Label } from "@raonc/ui/components/label";
+} from "@dydfuf/ui/components/dialog";
+import { Input } from "@dydfuf/ui/components/input";
+import { Label } from "@dydfuf/ui/components/label";
 
 export default function DialogCloseButton() {
   return (

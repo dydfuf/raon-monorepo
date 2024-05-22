@@ -1,13 +1,13 @@
 import * as React from "react";
 
-import { Card, CardContent } from "@raonc/ui/components/card";
+import { Card, CardContent } from "@dydfuf/ui/components/card";
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from "@raonc/ui/components/carousel";
+} from "@dydfuf/ui/components/carousel";
 
 export default function CarouselSize() {
   return (

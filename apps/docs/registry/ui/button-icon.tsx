@@ -1,6 +1,6 @@
 import { ChevronRightIcon } from "@radix-ui/react-icons";
 
-import { Button } from "@raonc/ui/components/button";
+import { Button } from "@dydfuf/ui/components/button";
 
 export default function ButtonIcon() {
   return (

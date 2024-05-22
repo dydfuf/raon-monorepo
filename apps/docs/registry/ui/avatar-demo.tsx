@@ -2,7 +2,7 @@ import {
   Avatar,
   AvatarFallback,
   AvatarImage,
-} from "@raonc/ui/components/avatar";
+} from "@dydfuf/ui/components/avatar";
 
 export default function AvatarDemo() {
   return (
