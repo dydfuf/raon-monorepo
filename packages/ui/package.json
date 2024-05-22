@@ -1,5 +1,5 @@
 {
-  "name": "@raonc/ui",
+  "name": "@dydfuf/ui",
   "version": "0.0.4",
   "sideEffects": [
     "**/*.css"
