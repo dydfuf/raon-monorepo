@@ -37,6 +37,6 @@ jobs:
             GH_REGISTRY_TOKEN: ${{ secrets.GH_REGISTRY_TOKEN }}
 
         - name: Publish to GitHub Package Registry
-          run: pnpm publish packages/ui --registry https://npm.pkg.github.com/dydfuf/raon-monorepo --access public --no-git-checks
+          run: cd packages/ui && pnpm publish --registry https://npm.pkg.github.com/dydfuf/raon-monorepo --access public --no-git-checks
           env:
             GITHUB_TOKEN: ${{ secrets.GH_REGISTRY_TOKEN }}
