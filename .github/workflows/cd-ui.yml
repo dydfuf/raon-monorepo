@@ -37,7 +37,6 @@ jobs:
             GH_REGISTRY_TOKEN: ${{ secrets.GH_REGISTRY_TOKEN }}
 
         - name: Publish to GitHub Package Registry
-          run: pnpm publish --access public
+          run: pnpm publish packages/ui --access public --no-git-checks
           env:
             GITHUB_TOKEN: ${{ secrets.GH_REGISTRY_TOKEN }}
-          working-directory: packages/ui
