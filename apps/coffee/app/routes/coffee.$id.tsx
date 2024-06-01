@@ -12,6 +12,7 @@ import {
 import { cn } from "@raonc/ui/lib/utils";
 import NoteBadge from "../components/note-badge";
 import { siteConfig } from "../constant/common";
+import LinkPreview from "../components/link-preview";
 
 export const sitemap = async () => {
   const coffeeInfoList: CoffeeInfo[] = await fetch(
@@ -148,15 +149,16 @@ export default function CoffeeDetailPage() {
               <div key={data.key} className={cn("flex flex-col")}>
                 <p className="text-lg font-bold">{data.label}</p>
                 {data.isLink ? (
-                  <Link
-                    to={data.value}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="text-lg shrink-0 underline"
-                  >
-                    정보 출처
-                  </Link>
+                  <LinkPreview url={data.value} />
                 ) : (
+                  // <Link
+                  //   to={data.value}
+                  //   target="_blank"
+                  //   rel="noreferrer"
+                  //   className="text-lg shrink-0 underline"
+                  // >
+                  //   정보 출처
+                  // </Link>
                   <span className="text-muted-foreground">{data.value}</span>
                 )}
               </div>
