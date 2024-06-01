@@ -1,5 +1,4 @@
 import { LoaderFunctionArgs, MetaFunction } from "@vercel/remix";
-import { getCoffeeInfoById } from "../.server/notion/service";
 import { Link, useLoaderData } from "@remix-run/react";
 import { CoffeeInfo, CoffeeInfoField } from "../types/coffee";
 import {
@@ -12,6 +11,7 @@ import {
 import { cn } from "@raonc/ui/lib/utils";
 import NoteBadge from "../components/note-badge";
 import { siteConfig } from "../constant/common";
+import { getCoffeeInfoById } from "../.server/coffee/service";
 
 export const sitemap = async () => {
   const coffeeInfoList: CoffeeInfo[] = await fetch(
@@ -37,7 +37,7 @@ export async function loader({ params }: LoaderFunctionArgs) {
     });
   }
 
-  const coffeeInfo = await getCoffeeInfoById(Number(id));
+  const coffeeInfo = await getCoffeeInfoById(String(id));
 
   if (!coffeeInfo) {
     throw new Response(null, {

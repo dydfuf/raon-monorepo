@@ -1,5 +1,5 @@
 import { Link, json, useLoaderData, useSearchParams } from "@remix-run/react";
-import { getCoffeeInfoList } from "../.server/notion/service";
+import { getCoffeeInfoList } from "../.server/coffee/service";
 import { CoffeeInfo, CoffeeInfoField } from "../types/coffee";
 import NoteBadge from "../components/note-badge";
 import {
@@ -9,12 +9,8 @@ import {
 import { useEffect, useState } from "react";
 import CoffeeFilter from "../components/coffee-filter";
 import MobileCoffeeFilter from "../components/mobile-coffee-filter";
-import { HeadersFunction, MetaFunction } from "@vercel/remix";
+import { MetaFunction } from "@vercel/remix";
 import { siteConfig } from "../constant/common";
-
-export const headers: HeadersFunction = () => ({
-  "Cache-Control": "public, max-age=1800, s-maxage=3600",
-});
 
 export async function loader() {
   const coffeeInfoList = await getCoffeeInfoList();

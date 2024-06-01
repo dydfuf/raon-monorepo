@@ -1,0 +1,28 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Coffee {
+  ID String @id
+  NAME_EN String
+  NAME_KR String
+  REGION String
+  FARM String
+  VARIETY String
+  PROCESS String
+  NOTE String
+  SOURCE String
+  NATION String
+  USER_SUBMITTED Int?
+  NOTE_FOR_FILTER String
+  LAST_EDITED_TIME String?
+}
+

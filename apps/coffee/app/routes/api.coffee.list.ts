@@ -1,4 +1,4 @@
-import { getCoffeeInfoList } from "../.server/notion/service";
+import { getCoffeeInfoList } from "../.server/coffee/service";
 
 export const loader = async ({}) => {
   const coffeeInfoList = await getCoffeeInfoList();

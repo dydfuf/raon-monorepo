@@ -23,6 +23,22 @@ export const getCoffeeInfoList = async () => {
   return NotUserSubmittedCoffeeInfoList;
 };
 
+export const notFilteredCoffeeInfoList = async () => {
+  const coffeeInfoList: CoffeeInfo[] = [];
+
+  for await (const block of iteratePaginatedAPI(notion.databases.query, {
+    database_id: process.env.NOTION_DATABASE_ID ?? "",
+  })) {
+    if ("properties" in block) {
+      const coffeeInfo = getCoffeeInfoByBlockProperties(block);
+      const noteForFilterAddedCoffeeInfo = addNoteForFilterField(coffeeInfo);
+      coffeeInfoList.push(noteForFilterAddedCoffeeInfo);
+    }
+  }
+
+  return coffeeInfoList;
+};
+
 export const getCoffeeInfoById = async (id: number) => {
   const data = await notion.databases.query({
     database_id: process.env.NOTION_DATABASE_ID ?? "",

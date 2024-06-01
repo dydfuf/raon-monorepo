@@ -28,3 +28,19 @@ export type CoffeeInfo = {
   [CoffeeInfoField.NOTE_FOR_FILTER]: string;
   [CoffeeInfoField.LAST_EDITED_TIME]?: string;
 };
+
+export enum CoffeeInfoFieldReverse {
+  ID = "ID",
+  "이름(영어)" = "NAME_EN",
+  "이름(한글)" = "NAME_KR",
+  지역 = "REGION",
+  농장 = "FARM",
+  품종 = "VARIETY",
+  프로세싱 = "PROCESS",
+  노트 = "NOTE",
+  출처 = "SOURCE",
+  유저제출 = "USER_SUBMITTED",
+  국가 = "NATION",
+  "노트(필터)" = "NOTE_FOR_FILTER",
+  "Last edited time" = "LAST_EDITED_TIME",
+}

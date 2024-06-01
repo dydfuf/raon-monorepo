@@ -38,6 +38,7 @@ import { cn } from "@raonc/ui/lib/utils";
 import { createCoffeeInfo } from "../.server/notion/service";
 import { siteConfig } from "../constant/common";
 import { MessageBuilder, sendHook } from "../utils/discord";
+import { revalidateCoffeeInfo } from "../.server/coffee/service";
 
 export const meta: MetaFunction = ({ matches }) => {
   const parentMeta = matches
@@ -107,6 +108,8 @@ export async function action({ request }: ActionFunctionArgs) {
   const response = await createCoffeeInfo(coffeeInfo);
   let number = 0;
   if (response && "properties" in response) {
+    await revalidateCoffeeInfo();
+
     // @ts-ignore
     number = response.properties[CoffeeInfoField.ID]?.unique_id.number;
   }

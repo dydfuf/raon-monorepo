@@ -4,6 +4,7 @@ import { siteConfig } from "../constant/common";
 import { Link } from "@remix-run/react";
 import { Button } from "@raonc/ui/components/button";
 
+
 export const headers: HeadersFunction = ({}) => ({
   "Cache-Control": "max-age=300, s-maxage=3600",
 });
