@@ -8,7 +8,6 @@ import {
   useNavigation,
 } from "@remix-run/react";
 import stylesheet from "@raonc/ui/globals.css?url";
-import fontStyleSheet from "../public/font/pretendardvariable.css?url";
 import { LinksFunction, LoaderFunctionArgs, MetaFunction } from "@vercel/remix";
 import SiteHeader from "./components/site-header";
 import { TailwindIndicator } from "./components/tailwind-indicator";
@@ -56,7 +55,6 @@ export const meta: MetaFunction = ({ location }) => {
 };
 
 export const links: LinksFunction = () => [
-  { rel: "stylesheet", href: fontStyleSheet },
   { rel: "stylesheet", href: stylesheet },
   {
     rel: "icon",
@@ -141,7 +139,11 @@ export function App({ children }: { children: React.ReactNode }) {
     <html
       lang="en"
       className={cn(theme)}
-      style={{ colorScheme: theme?.toString() }}
+      style={{
+        colorScheme: theme?.toString(),
+        fontFamily:
+          '"Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif',
+      }}
     >
       <head>
         <meta charSet="utf-8" />
@@ -164,6 +166,12 @@ export function App({ children }: { children: React.ReactNode }) {
         `,
           }}
         ></script>
+        <link
+          rel="stylesheet"
+          as="style"
+          crossOrigin=""
+          href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"
+        />
         <Meta />
         <PreventFlashOnWrongTheme ssrTheme={Boolean(data.theme)} />
         <Links />
