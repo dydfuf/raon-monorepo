@@ -12,6 +12,8 @@ import {
 import { cn } from "@raonc/ui/lib/utils";
 import NoteBadge from "../components/note-badge";
 import { siteConfig } from "../constant/common";
+import DotPattern from "../components/dot-pattern";
+import { BorderBeam } from "../components/border-beam";
 
 export const sitemap = async () => {
   const coffeeInfoList: CoffeeInfo[] = await fetch(
@@ -130,6 +132,7 @@ export default function CoffeeDetailPage() {
     <div className="mx-auto flex items-start md:items-center justify-center w-full">
       <div className="p-4 w-full flex justify-center">
         <Card className="w-full md:w-[40rem] relative">
+          <BorderBeam duration={10} />
           <CardHeader>
             <CardTitle className="text-3xl">
               {coffeeInfo[CoffeeInfoField.NAME_KR]}
