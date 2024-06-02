@@ -13,6 +13,7 @@ import { cn } from "@raonc/ui/lib/utils";
 import NoteBadge from "../components/note-badge";
 import { siteConfig } from "../constant/common";
 import { BorderBeam } from "../components/border-beam";
+import { getHexFromString } from "../utils/common";
 
 export const sitemap = async () => {
   const coffeeInfoList: CoffeeInfo[] = await fetch(
@@ -131,7 +132,11 @@ export default function CoffeeDetailPage() {
     <div className="mx-auto flex items-start md:items-center justify-center w-full">
       <div className="p-4 w-full flex justify-center">
         <Card className="w-full md:w-[40rem] relative">
-          <BorderBeam duration={10} />
+          <BorderBeam
+            duration={10}
+            colorFrom={getHexFromString(coffeeInfo[CoffeeInfoField.NAME_KR])}
+            colorTo={getHexFromString(coffeeInfo[CoffeeInfoField.NAME_EN])}
+          />
           <CardHeader>
             <CardTitle className="text-3xl">
               {coffeeInfo[CoffeeInfoField.NAME_KR]}
