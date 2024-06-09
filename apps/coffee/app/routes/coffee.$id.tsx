@@ -1,5 +1,8 @@
 import { LoaderFunctionArgs, MetaFunction } from "@vercel/remix";
-import { getCoffeeInfoById } from "../.server/notion/service";
+import {
+  getCoffeeInfoById,
+  getCoffeeInfoByIdInNotion,
+} from "../.server/notion/service";
 import { Link, useLoaderData } from "@remix-run/react";
 import { CoffeeInfo, CoffeeInfoField } from "../types/coffee";
 import {
@@ -39,13 +42,19 @@ export async function loader({ params }: LoaderFunctionArgs) {
     });
   }
 
-  const coffeeInfo = await getCoffeeInfoById(Number(id));
+  let coffeeInfo = getCoffeeInfoById(Number(id));
 
   if (!coffeeInfo) {
-    throw new Response(null, {
-      status: 404,
-      statusText: "Not Found",
-    });
+    const coffeeInfoInNotion = await getCoffeeInfoByIdInNotion(Number(id));
+
+    if (!coffeeInfoInNotion) {
+      throw new Response(null, {
+        status: 404,
+        statusText: "Not Found",
+      });
+    }
+
+    coffeeInfo = coffeeInfoInNotion;
   }
 
   return coffeeInfo;

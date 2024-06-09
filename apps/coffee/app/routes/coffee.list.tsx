@@ -9,23 +9,12 @@ import {
 import { useEffect, useState } from "react";
 import CoffeeFilter from "../components/coffee-filter";
 import MobileCoffeeFilter from "../components/mobile-coffee-filter";
-import { HeadersFunction, MetaFunction } from "@vercel/remix";
+import { MetaFunction } from "@vercel/remix";
 import { siteConfig } from "../constant/common";
 
-export const headers: HeadersFunction = () => ({
-  "Cache-Control": "public, max-age=1800, s-maxage=3600",
-});
-
 export async function loader() {
-  const coffeeInfoList = await getCoffeeInfoList();
-  return json(
-    { coffeeInfoList },
-    {
-      headers: {
-        "Cache-Control": "public, max-age=1800, s-maxage=3600",
-      },
-    }
-  );
+  const coffeeInfoList = getCoffeeInfoList();
+  return json({ coffeeInfoList });
 }
 
 export const meta: MetaFunction<typeof loader> = ({ location, matches }) => {
