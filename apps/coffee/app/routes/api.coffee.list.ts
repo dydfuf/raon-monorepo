@@ -1,11 +1,7 @@
 import { getCoffeeInfoList } from "../.server/notion/service";
 
-export const loader = async ({}) => {
-  const coffeeInfoList = await getCoffeeInfoList();
+export const loader = ({}) => {
+  const coffeeInfoList = getCoffeeInfoList();
 
-  return new Response(JSON.stringify({ coffeeInfoList }), {
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
+  return new Response(JSON.stringify({ coffeeInfoList }));
 };

@@ -2,10 +2,20 @@ import { iteratePaginatedAPI } from "@notionhq/client";
 import { notion } from "./client";
 import { CoffeeInfo, CoffeeInfoField } from "../../types/coffee";
 import { addNoteForFilterField, getCoffeeInfoByBlockProperties } from "./util";
+import data from "../../data/coffee.json";
 
-export const getCoffeeInfoList = async () => {
+export const getCoffeeInfoList = () => {
+  return data.coffeeInfoList;
+};
+
+export const getCoffeeInfoById = (id: number) => {
+  return data.coffeeInfoList.find(
+    (coffeeInfo) => coffeeInfo.ID === `COFFEE-${id}`
+  ) as CoffeeInfo;
+};
+
+export const geCoffeeInfoListInNotion = async () => {
   const coffeeInfoList: CoffeeInfo[] = [];
-
   for await (const block of iteratePaginatedAPI(notion.databases.query, {
     database_id: process.env.NOTION_DATABASE_ID ?? "",
   })) {
@@ -15,7 +25,6 @@ export const getCoffeeInfoList = async () => {
       coffeeInfoList.push(noteForFilterAddedCoffeeInfo);
     }
   }
-
   const NotUserSubmittedCoffeeInfoList = coffeeInfoList.filter(
     (coffeeInfo) => !coffeeInfo[CoffeeInfoField.USER_SUBMITTED]
   );
@@ -23,7 +32,7 @@ export const getCoffeeInfoList = async () => {
   return NotUserSubmittedCoffeeInfoList;
 };
 
-export const getCoffeeInfoById = async (id: number) => {
+export const getCoffeeInfoByIdInNotion = async (id: number) => {
   const data = await notion.databases.query({
     database_id: process.env.NOTION_DATABASE_ID ?? "",
     filter: {
