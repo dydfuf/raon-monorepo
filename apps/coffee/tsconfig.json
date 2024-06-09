@@ -6,8 +6,7 @@
     "**/.server/**/*.ts",
     "**/.server/**/*.tsx",
     "**/.client/**/*.ts",
-    "**/.client/**/*.tsx",
-    "scripts/update-coffee-list.mjs"
+    "**/.client/**/*.tsx"
   ],
   "compilerOptions": {
     "types": ["@vercel/remix", "node", "vite/client"],
