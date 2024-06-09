@@ -14,7 +14,7 @@ export const getCoffeeInfoById = (id: number) => {
   ) as CoffeeInfo;
 };
 
-export const geCoffeeInfoListInNotion = async () => {
+export const getCoffeeInfoListInNotion = async () => {
   const coffeeInfoList: CoffeeInfo[] = [];
   for await (const block of iteratePaginatedAPI(notion.databases.query, {
     database_id: process.env.NOTION_DATABASE_ID ?? "",
