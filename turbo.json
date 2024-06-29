@@ -1,11 +1,11 @@
 {
   "$schema": "https://turbo.build/schema.json",
   "globalDependencies": ["**/.env.*local"],
-  "tasks": {
+  "pipeline": {
     "build": {
       "dependsOn": ["^build"],
       "outputs": ["dist/**", ".next/**", "!.next/cache/**"],
-      "env": ["UNSPLASH_ACCESS_KEY"]
+      "env": []
     },
     "lint": {
       "dependsOn": ["^lint"]
@@ -14,5 +14,6 @@
       "cache": false,
       "persistent": true
     }
-  }
+  },
+  "globalDotEnv": []
 }
