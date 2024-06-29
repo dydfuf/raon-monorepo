@@ -26,7 +26,7 @@ export default function ContentCard({
     <Card className="h-full">
       <CardHeader className="pb-3">
         <CardTitle className="text-2xl">{title}</CardTitle>
-        <CardDescription>
+        <CardDescription className="text-center">
           {timeToRead} · {releaseDate}
         </CardDescription>
       </CardHeader>
