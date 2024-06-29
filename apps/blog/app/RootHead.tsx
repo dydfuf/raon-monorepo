@@ -1,4 +1,4 @@
-export default function Head() {
+export default function RootHead() {
   return (
     <>
       <meta content="width=device-width, initial-scale=1" name="viewport" />

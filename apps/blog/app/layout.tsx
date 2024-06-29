@@ -2,7 +2,7 @@ import "@raonc/ui/globals.css";
 
 import { Analytics } from "@vercel/analytics/next";
 import { Metadata } from "next";
-import Head from "./Head";
+import RootHead from "./RootHead";
 import NextThemeProvider from "../components/common/NextThemeProvider";
 import { Noto_Sans_KR } from "next/font/google";
 import { TailwindIndicator } from "../components/tailwind-indicator";
@@ -48,7 +48,7 @@ export default function RootLayout({
 }) {
   return (
     <html suppressHydrationWarning>
-      <Head />
+      <RootHead />
       <body className={notoSansKr.className}>
         <NextThemeProvider>
           <AppLayout>{children}</AppLayout>
