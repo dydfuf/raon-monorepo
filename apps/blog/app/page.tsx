@@ -12,7 +12,7 @@ export default function MainPage() {
 
   return (
     <div className="w-full">
-      <div className="w-full gap-5 grid grid-cols-1 p-5 md:grid-cols-2 max-w-[1024] mx-auto">
+      <div className="w-full gap-5 grid grid-cols-1 p-5 md:grid-cols-2 max-w-[1024px] mx-auto">
         {postList.map((post) => {
           const { name, content } = post;
           const { date, description, category, title } =
