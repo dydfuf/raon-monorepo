@@ -5,7 +5,7 @@
     "build": {
       "dependsOn": ["^build"],
       "outputs": ["dist/**", ".next/**", "!.next/cache/**"],
-      "env": []
+      "env": ["UNSPLASH_ACCESS_KEY"]
     },
     "lint": {
       "dependsOn": ["^lint"]
