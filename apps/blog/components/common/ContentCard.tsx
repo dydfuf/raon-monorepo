@@ -25,13 +25,13 @@ export default function ContentCard({
   return (
     <Card className="h-full">
       <CardHeader className="pb-3">
-        <CardTitle className="text-2xl">{title}</CardTitle>
+        <CardTitle className="text-2xl h-16 line-clamp-2">{title}</CardTitle>
         <CardDescription className="text-center">
           {timeToRead} · {releaseDate}
         </CardDescription>
       </CardHeader>
-      <CardContent className="">
-        <div className="flex flex-wrap gap-x-4 gap-y-2">
+      <CardContent>
+        <div className="flex gap-x-4 gap-y-2 flex-wrap">
           {categories.map((category) => (
             <Badge key={category} className="rounded-full">
               {category}
