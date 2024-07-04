@@ -38,7 +38,9 @@ export default function ContentCard({
             </Badge>
           ))}
         </div>
-        <p className="text-sm text-muted-foreground mt-4">{description}</p>
+        <p className="text-sm text-muted-foreground mt-4 line-clamp-4">
+          {description}
+        </p>
       </CardContent>
     </Card>
   );
