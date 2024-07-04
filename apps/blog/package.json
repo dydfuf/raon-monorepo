@@ -22,7 +22,8 @@
     "react-syntax-highlighter": "^15.5.0",
     "reading-time": "^1.5.0",
     "rehype-raw": "6",
-    "remark-gfm": "3.0.1"
+    "remark-gfm": "3.0.1",
+    "unist-util-visit": "^5.0.0"
   },
   "devDependencies": {
     "@raonc/eslint-config": "workspace:^",
