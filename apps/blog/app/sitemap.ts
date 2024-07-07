@@ -1,6 +1,6 @@
 import { MetadataRoute } from "next";
 import { BLOG_URL } from "../constant/common";
-import { getAllArticles } from "./page";
+import { getAllArticles } from "../utils/hashnode";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const data = await getAllArticles();

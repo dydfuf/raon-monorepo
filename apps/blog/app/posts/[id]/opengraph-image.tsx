@@ -1,8 +1,6 @@
 import { ImageResponse } from "next/og";
-import { getArticleQueryById } from "../../../constant/hashnodeQuery";
-import { Post } from "../../../type/hashnode";
 import { SITE_CONFIG } from "../../../constant/common";
-import { getArticleById } from "./page";
+import { getArticleById } from "../../../utils/hashnode";
 
 // Route segment config
 export const runtime = "edge";
