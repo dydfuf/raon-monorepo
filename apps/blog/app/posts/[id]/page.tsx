@@ -5,7 +5,7 @@ import { Badge } from "@raonc/ui/components/badge";
 import { getArticleQueryById } from "../../../constant/hashnodeQuery";
 import { Post } from "../../../type/hashnode";
 
-const getArticleById = async (id: string) => {
+export const getArticleById = async (id: string) => {
   const response = await fetch(`https://gql.hashnode.com/`, {
     cache: "no-cache",
     method: "POST",
@@ -54,4 +54,15 @@ export default async function PostPage({ params }: { params: { id: string } }) {
       </div>
     </div>
   );
+}
+
+export async function generateMetadata({ params }: { params: { id: string } }) {
+  const {
+    seo: { title, description },
+  } = await getArticleById(params.id);
+
+  return {
+    title,
+    description,
+  };
 }

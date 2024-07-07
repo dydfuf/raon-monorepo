@@ -4,7 +4,7 @@ import { format } from "date-fns";
 import { getAllArticlesQuery } from "../constant/hashnodeQuery";
 import { Publication } from "../type/hashnode";
 
-const getAllArticles = async () => {
+export const getAllArticles = async () => {
   const response = await fetch(`https://gql.hashnode.com/`, {
     cache: "no-cache",
     method: "POST",
