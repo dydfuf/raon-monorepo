@@ -2,30 +2,7 @@ import { format } from "date-fns";
 import MarkdownRenderer from "../../../components/MarkdownRenderer";
 
 import { Badge } from "@raonc/ui/components/badge";
-import { getArticleQueryById } from "../../../constant/hashnodeQuery";
-import { Post } from "../../../type/hashnode";
-
-const getArticleById = async (id: string) => {
-  const response = await fetch(`https://gql.hashnode.com/`, {
-    cache: "no-cache",
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `${process.env.HASHNODE_ACCESS_TOKEN}`,
-    },
-    body: JSON.stringify({
-      query: getArticleQueryById(id),
-    }),
-  });
-
-  const {
-    data: {
-      publication: { post },
-    },
-  } = await response.json();
-
-  return post as Post;
-};
+import { getArticleById } from "../../../utils/hashnode";
 
 export default async function PostPage({ params }: { params: { id: string } }) {
   const { title, publishedAt, tags, content, readTimeInMinutes } =
@@ -54,4 +31,15 @@ export default async function PostPage({ params }: { params: { id: string } }) {
       </div>
     </div>
   );
+}
+
+export async function generateMetadata({ params }: { params: { id: string } }) {
+  const {
+    seo: { title, description },
+  } = await getArticleById(params.id);
+
+  return {
+    title,
+    description,
+  };
 }

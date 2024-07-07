@@ -1,28 +1,7 @@
 import Link from "next/link";
 import ContentCard from "../components/common/ContentCard";
 import { format } from "date-fns";
-import { getAllArticlesQuery } from "../constant/hashnodeQuery";
-import { Publication } from "../type/hashnode";
-
-const getAllArticles = async () => {
-  const response = await fetch(`https://gql.hashnode.com/`, {
-    cache: "no-cache",
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `${process.env.HASHNODE_ACCESS_TOKEN}`,
-    },
-    body: JSON.stringify({
-      query: getAllArticlesQuery,
-    }),
-  });
-
-  const {
-    data: { publication },
-  } = await response.json();
-
-  return publication as Publication;
-};
+import { getAllArticles } from "../utils/hashnode";
 
 export default async function MainPage() {
   const data = await getAllArticles();
