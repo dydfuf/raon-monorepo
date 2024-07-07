@@ -19,12 +19,12 @@ export default function SiteHeader() {
         </Link>
 
         <div className="flex flex-1 items-center justify-end space-x-4 font-semibold">
-          <Link href={"/todo"}>
+          {/* <Link href={"/todo"}>
             <span>TODO</span>
           </Link>
           <Link href={"/aboutme"}>
             <span>About Me</span>
-          </Link>
+          </Link> */}
           <div className="w-[15px]">
             <SwitchTheme />
           </div>
