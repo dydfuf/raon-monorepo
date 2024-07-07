@@ -10,7 +10,7 @@ export default async function PostPage({ params }: { params: { id: string } }) {
 
   return (
     <div className="w-full">
-      <div className="w-full p-12 md:grid-cols-2 max-w-[1024px] mx-auto">
+      <div className="w-full p-5 md:grid-cols-2 max-w-[1024px] mx-auto">
         <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl mb-6">
           {title}
         </h1>
