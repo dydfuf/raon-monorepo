@@ -1,7 +1,4 @@
-const baseConfig = require("@raonc/ui/tailwind.config");
+import baseConfig from "@raonc/ui/tailwind.config";
 
 /** @type {import('tailwindcss').Config} */
-module.exports = {
-  ...baseConfig,
-  content: [...baseConfig.content],
-};
+module.exports = baseConfig;

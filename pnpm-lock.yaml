@@ -232,9 +232,15 @@ importers:
       '@raonc/ui':
         specifier: workspace:^
         version: link:../../packages/ui
+      lucide-react:
+        specifier: ^0.372.0
+        version: 0.372.0(react@18.2.0)
       next:
         specifier: 14.2.14
         version: 14.2.14(react-dom@18.2.0)(react@18.2.0)
+      next-themes:
+        specifier: ^0.2.1
+        version: 0.2.1(next@14.2.14)(react-dom@18.2.0)(react@18.2.0)
       react:
         specifier: ^18.2.0
         version: 18.2.0
