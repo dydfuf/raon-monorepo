@@ -21,13 +21,10 @@ const getCoffeeInfo = async (id: string) => {
   return coffeeInfo as CoffeeInfo;
 };
 
-export async function generateMetadata({
-  params,
-  parent,
-}: {
-  params: { id: string };
-  parent: ResolvingMetadata;
-}): Promise<Metadata> {
+export async function generateMetadata(
+  { params }: Props,
+  parent: ResolvingMetadata
+): Promise<Metadata> {
   const { id } = params;
   const coffeeInfo = await getCoffeeInfo(id);
 
@@ -47,11 +44,11 @@ export async function generateMetadata({
   };
 }
 
-interface Props {
-  params: {
-    id: string;
-  };
-}
+type Props = {
+  params: { id: string };
+  searchParams: { [key: string]: string | string[] | undefined };
+};
+
 
 export default async function page({ params: { id } }: Props) {
   const coffeeInfo = await getCoffeeInfo(id);
