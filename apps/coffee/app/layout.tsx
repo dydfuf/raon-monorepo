@@ -90,6 +90,7 @@ export const metadata: Metadata = {
     title: siteConfig.name,
     description: siteConfig.description,
     url: `https://${siteConfig.domain}`,
+    siteName: siteConfig.name,
     type: "website",
     images: [
       {
