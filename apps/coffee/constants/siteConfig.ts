@@ -7,19 +7,19 @@ export const siteConfig = {
       label: "All Coffee",
       to: "/coffee/list",
     },
-    {
-      label: "Suggestion",
-      to: "/coffee/suggestion",
-    },
+    // {
+    //   label: "Suggestion",
+    //   to: "/coffee/suggestion",
+    // },
   ],
   mainNav: [
     {
       label: "All Coffee",
       to: "/coffee/list",
     },
-    {
-      label: "Suggestion",
-      to: "/coffee/suggestion",
-    },
+    // {
+    //   label: "Suggestion",
+    //   to: "/coffee/suggestion",
+    // },
   ],
 };
