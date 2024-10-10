@@ -2,10 +2,10 @@ import { siteConfig } from "../constants/siteConfig";
 import Link from "next/link";
 import { Button } from "@raonc/ui/components/button";
 import CommandMenu from "../components/CommandMenu";
-import { getCoffeeInfoListData } from "../utils/api";
+import { getCoffeeInfoList } from "../utils/api";
 
 export default async function Home() {
-  const { coffeeInfoList } = await getCoffeeInfoListData();
+  const coffeeInfoList = getCoffeeInfoList();
 
   return (
     <div className="mx-auto grow flex w-full">

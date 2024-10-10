@@ -1,4 +1,5 @@
-export const getCoffeeInfoListData = async () => {
-  const response = await fetch("https://coffee.raonc.dev/api/coffee/list");
-  return response.json();
+import data from "../data/coffee.json";
+
+export const getCoffeeInfoList = () => {
+  return data.coffeeInfoList;
 };
