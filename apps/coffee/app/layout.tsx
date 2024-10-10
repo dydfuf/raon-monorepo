@@ -6,7 +6,10 @@ import { Metadata } from "next";
 import { siteConfig } from "../constants/siteConfig";
 
 export const metadata: Metadata = {
-  title: siteConfig.name,
+  title: {
+    default: siteConfig.name,
+    template: `${siteConfig.name} | %s`,
+  },
   description: siteConfig.description,
   icons: [
     {

@@ -9,6 +9,7 @@ import { CoffeeInfo, CoffeeInfoField } from "../../../types/coffee";
 import NoteBadge from "../../../components/NoteBadge";
 import { cn } from "@raonc/ui/lib/utils";
 import Link from "next/link";
+import { Metadata } from "next";
 
 const getCoffeeInfo = async (id: string) => {
   const response = await fetch("https://coffee.raonc.dev/api/coffee/list");
@@ -19,6 +20,19 @@ const getCoffeeInfo = async (id: string) => {
 
   return coffeeInfo as CoffeeInfo;
 };
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { id: string };
+}): Promise<Metadata> {
+  const { id } = params;
+  const coffeeInfo = await getCoffeeInfo(id);
+
+  return {
+    title: coffeeInfo[CoffeeInfoField.NAME_KR],
+  };
+}
 
 interface Props {
   params: {
