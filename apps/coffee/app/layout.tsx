@@ -87,7 +87,10 @@ export const metadata: Metadata = {
     { rel: "manifest", url: "/manifest.json" },
   ],
   openGraph: {
-    title: siteConfig.name,
+    title: {
+      default: siteConfig.name,
+      template: `${siteConfig.name} | %s`,
+    },
     description: siteConfig.description,
     url: `https://${siteConfig.domain}`,
     siteName: siteConfig.name,
@@ -104,7 +107,10 @@ export const metadata: Metadata = {
   twitter: {
     images: [`https://${siteConfig.domain}/og-image.png`],
     card: "summary_large_image",
-    title: siteConfig.name,
+    title: {
+      default: siteConfig.name,
+      template: `${siteConfig.name} | %s`,
+    },
     description: siteConfig.description,
   },
 };

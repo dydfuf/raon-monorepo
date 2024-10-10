@@ -31,6 +31,12 @@ export async function generateMetadata({
 
   return {
     title: coffeeInfo[CoffeeInfoField.NAME_KR],
+    openGraph: {
+      title: coffeeInfo[CoffeeInfoField.NAME_KR],
+    },
+    twitter: {
+      title: coffeeInfo[CoffeeInfoField.NAME_KR],
+    },
   };
 }
 
