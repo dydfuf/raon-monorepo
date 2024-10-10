@@ -2,8 +2,11 @@ import { siteConfig } from "../constants/siteConfig";
 import Link from "next/link";
 import { Button } from "@raonc/ui/components/button";
 import CommandMenu from "../components/CommandMenu";
+import { getCoffeeInfoListData } from "../utils/api";
 
-export default function Home() {
+export default async function Home() {
+  const { coffeeInfoList } = await getCoffeeInfoListData();
+
   return (
     <div className="mx-auto grow flex w-full">
       <div className="flex flex-col items-center w-full space-y-4 mx-[2rem]">
@@ -18,7 +21,7 @@ export default function Home() {
             {siteConfig.name}
           </span>
         </h1>
-        <CommandMenu />
+        <CommandMenu list={coffeeInfoList} />
         <p className="text-[1rem] sm:text-[1.25rem]">
           당신의 취향에 맞는 완벽한 커피 원두를 찾아보세요!
         </p>
