@@ -15,7 +15,7 @@ import { useCallback, useEffect, useState } from "react";
 import { CoffeeInfo, CoffeeInfoField } from "../types/coffee";
 import { Badge } from "@raonc/ui/components/badge";
 import { hangulIncludes, chosungIncludes } from "@toss/hangul";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 interface Props extends DialogProps {
   isInNav?: boolean;
@@ -25,6 +25,9 @@ interface Props extends DialogProps {
 export default function CommandMenu({ isInNav, list, ...props }: Props) {
   const router = useRouter();
   const [open, setOpen] = useState(false);
+
+  const pathname = usePathname();
+  const isHome = pathname === "/";
 
   useEffect(() => {
     const down = (e: KeyboardEvent) => {
@@ -51,6 +54,8 @@ export default function CommandMenu({ isInNav, list, ...props }: Props) {
     setOpen(false);
     command();
   }, []);
+
+  if (isInNav && isHome) return null;
 
   return (
     <>

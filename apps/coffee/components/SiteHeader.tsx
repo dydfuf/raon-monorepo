@@ -1,6 +1,8 @@
+import { Suspense } from "react";
 import MainNav from "./MainNav";
 import { MobileNav } from "./MobileNav";
 import { ModeToggle } from "./ModeToggle";
+import SiteHeaderCommandMenu from "./SiteHeaderCommandMenu";
 
 export default function SiteHeader() {
   return (
@@ -10,7 +12,9 @@ export default function SiteHeader() {
         <MobileNav />
         <div className="flex flex-1 items-center justify-between space-x-2 md:justify-end">
           <div className="w-full flex-1 md:w-auto md:flex-none">
-            {/* {!isHome && <CommandMenu isInNav />} */}
+            <Suspense fallback={<></>}>
+              <SiteHeaderCommandMenu />
+            </Suspense>
           </div>
           <nav className="flex items-center">
             <ModeToggle />
