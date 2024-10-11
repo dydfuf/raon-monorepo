@@ -4,6 +4,9 @@ import { ThemeProvider } from "../components/ThemeProvider";
 import SiteHeader from "../components/SiteHeader";
 import { Metadata } from "next";
 import { siteConfig } from "../constants/siteConfig";
+import { GoogleAnalytics } from "@next/third-parties/google";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata: Metadata = {
   title: {
@@ -135,6 +138,22 @@ export default function RootLayout({
           crossOrigin=""
           href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"
         />
+        <GoogleAnalytics gaId="G-DCEDCJ9EXD" />
+        {/* <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-DCEDCJ9EXD"
+        ></script> */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+        
+                gtag('config', 'G-DCEDCJ9EXD');
+        `,
+          }}
+        ></script>
       </head>
       <body className={`antialiased`}>
         <ThemeProvider
@@ -149,6 +168,8 @@ export default function RootLayout({
             <TailwindIndicator />
           </div>
         </ThemeProvider>
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
