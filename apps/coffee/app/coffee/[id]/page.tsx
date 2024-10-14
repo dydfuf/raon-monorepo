@@ -10,10 +10,10 @@ import NoteBadge from "../../../components/NoteBadge";
 import { cn } from "@raonc/ui/lib/utils";
 import Link from "next/link";
 import { Metadata, ResolvingMetadata } from "next";
+import { getCoffeeInfoList } from "../../../utils/api";
 
 const getCoffeeInfo = async (id: string) => {
-  const response = await fetch("https://coffee.raonc.dev/api/coffee/list");
-  const { coffeeInfoList } = await response.json();
+  const coffeeInfoList = getCoffeeInfoList();
   const coffeeInfo = coffeeInfoList.find(
     (coffeeInfo: { ID: string }) => coffeeInfo.ID === `COFFEE-${id}`
   );
