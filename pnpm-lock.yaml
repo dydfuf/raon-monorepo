@@ -233,7 +233,7 @@ importers:
         specifier: ^14.2.15
         version: 14.2.15(next@14.2.14)(react@18.2.0)
       '@raonc/ui':
-        specifier: workspace:^
+        specifier: workspace:*
         version: link:../../packages/ui
       '@toss/hangul':
         specifier: ^1.7.0
@@ -261,10 +261,10 @@ importers:
         version: 18.2.0(react@18.2.0)
     devDependencies:
       '@raonc/eslint-config':
-        specifier: workspace:^
+        specifier: workspace:*
         version: link:../../packages/eslint-config
       '@raonc/typescript-config':
-        specifier: workspace:^
+        specifier: workspace:*
         version: link:../../packages/typescript-config
       '@types/node':
         specifier: ^20.10.6
