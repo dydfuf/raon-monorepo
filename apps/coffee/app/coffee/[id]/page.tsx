@@ -1,3 +1,4 @@
+import Link from "next/link";
 import {
   Card,
   CardContent,
@@ -8,7 +9,6 @@ import {
 import { CoffeeInfo, CoffeeInfoField } from "../../../types/coffee";
 import NoteBadge from "../../../components/NoteBadge";
 import { cn } from "@raonc/ui/lib/utils";
-import Link from "next/link";
 import { Metadata, ResolvingMetadata } from "next";
 import { getCoffeeInfoList } from "../../../utils/api";
 
@@ -48,7 +48,6 @@ type Props = {
   params: { id: string };
   searchParams: { [key: string]: string | string[] | undefined };
 };
-
 
 export default async function page({ params: { id } }: Props) {
   const coffeeInfo = await getCoffeeInfo(id);
