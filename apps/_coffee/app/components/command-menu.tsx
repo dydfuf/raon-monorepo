@@ -14,7 +14,6 @@ import { useCallback, useEffect, useState } from "react";
 import { CoffeeInfo, CoffeeInfoField } from "../types/coffee";
 import { Badge } from "@raonc/ui/components/badge";
 import { useFetcher, useNavigate } from "@remix-run/react";
-import { hangulIncludes, chosungIncludes } from "@toss/hangul";
 import { loader } from "../routes/coffee.list";
 
 interface Props extends DialogProps {
@@ -78,7 +77,7 @@ export default function CommandMenu({ isInNav, ...props }: Props) {
           "justify-start flex items-center",
           "text-sm font-normal text-muted-foreground",
           { "w-full md:w-[20rem]": isInNav, "w-full md:w-[40rem]": !isInNav },
-          { "h-12": !isInNav }
+          { "h-12": !isInNav },
         )}
         onClick={() => {
           setOpen(true);
@@ -114,7 +113,7 @@ export default function CommandMenu({ isInNav, ...props }: Props) {
                 onSelect={() => {
                   runCommand(() => {
                     navigate(
-                      `/coffee/${coffeeInfo[CoffeeInfoField.ID].split("-")[1]}`
+                      `/coffee/${coffeeInfo[CoffeeInfoField.ID].split("-")[1]}`,
                     );
                   });
                 }}

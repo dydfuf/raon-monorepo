@@ -1,5 +1,6 @@
 "use client";
 
+import { Badge } from "@raonc/ui/components/badge";
 import { Button } from "@raonc/ui/components/button";
 import {
   CommandDialog,
@@ -11,11 +12,10 @@ import {
 } from "@raonc/ui/components/command";
 import { DialogProps } from "@raonc/ui/components/dialog";
 import { cn } from "@raonc/ui/lib/utils";
+import { disassemble, getChoseong } from "es-hangul";
+import { usePathname, useRouter } from "next/navigation";
 import { useCallback, useEffect, useState } from "react";
 import { CoffeeInfo, CoffeeInfoField } from "../types/coffee";
-import { Badge } from "@raonc/ui/components/badge";
-import { hangulIncludes, chosungIncludes } from "@toss/hangul";
-import { usePathname, useRouter } from "next/navigation";
 
 interface Props extends DialogProps {
   isInNav?: boolean;
@@ -66,7 +66,7 @@ export default function CommandMenu({ isInNav, list, ...props }: Props) {
           "justify-start flex items-center",
           "text-sm font-normal text-muted-foreground",
           { "w-full md:w-[20rem]": isInNav, "w-full md:w-[40rem]": !isInNav },
-          { "h-12": !isInNav }
+          { "h-12": !isInNav },
         )}
         onClick={() => {
           setOpen(true);
@@ -83,7 +83,7 @@ export default function CommandMenu({ isInNav, list, ...props }: Props) {
         filter={(value, search) => {
           if (value.includes(search)) return 1;
           if (hangulIncludes(value, search)) return 1;
-          if (chosungIncludes(value, search)) return 1;
+          if (choseongIncludes(value, search)) return 1;
           return 0;
         }}
         open={open}
@@ -101,7 +101,7 @@ export default function CommandMenu({ isInNav, list, ...props }: Props) {
                 onSelect={() => {
                   runCommand(() => {
                     router.push(
-                      `/coffee/${coffeeInfo[CoffeeInfoField.ID].split("-")[1]}`
+                      `/coffee/${coffeeInfo[CoffeeInfoField.ID].split("-")[1]}`,
                     );
                   });
                 }}
@@ -144,3 +144,15 @@ const getCoffeeItemValue = (coffeeInfo: CoffeeInfo) =>
   coffeeInfo[CoffeeInfoField.PROCESS] +
   " " +
   coffeeInfo[CoffeeInfoField.NOTE];
+
+const hangulIncludes = (x: string, y: string) => {
+  const disassembledX = disassemble(x);
+  const disassembledY = disassemble(y);
+
+  return disassembledX.includes(disassembledY);
+};
+
+const choseongIncludes = (x: string, y: string) => {
+  const choseonged = getChoseong(x);
+  return choseonged.includes(y);
+};

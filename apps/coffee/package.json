@@ -11,14 +11,14 @@
   "dependencies": {
     "@next/third-parties": "^14.2.15",
     "@raonc/ui": "workspace:*",
-    "@toss/hangul": "^1.7.0",
     "@vercel/analytics": "^1.3.1",
     "@vercel/speed-insights": "^1.0.12",
     "lucide-react": "^0.372.0",
     "next": "14.2.14",
     "next-themes": "^0.2.1",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "es-hangul": "^2.1.0"
   },
   "devDependencies": {
     "@raonc/eslint-config": "workspace:*",
